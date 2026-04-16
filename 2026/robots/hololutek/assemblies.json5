@@ -1,0 +1,80 @@
+{
+  // Hololutek 2026 — Actuator & sensor assemblies
+  //
+  // Assemblies are grouped by the board they are connected to.
+  // Each component has a "type" field for driver dispatch
+  // and a "bus" ref to a chip defined in platforms/hololutek.json5.
+  //
+  // Per finger: 1 AX12 + 2 servos (PCA) + 1 color sensor (TCA)
+
+  // -- Final design (3 faces x 4 fingers) --
+  // carte_actionneurs: {
+  //   face_0: {
+  //     type: "gripper",
+  //     fingers: {
+  //       count: 4,
+  //       each: {
+  //         ax12:  { type: "ax12" },
+  //         grip:  { type: "servo", bus: "carte_actionneurs.pca" },
+  //         wrist: { type: "servo", bus: "carte_actionneurs.pca" },
+  //         color: { type: "color_sensor", bus: "carte_actionneurs.tca" },
+  //       },
+  //       offsets: { ax12: 0, pca: 0, tca: 0 },
+  //     },
+  //   },
+  //   face_1: {
+  //     type: "gripper",
+  //     fingers: {
+  //       count: 4,
+  //       each: {
+  //         ax12:  { type: "ax12" },
+  //         grip:  { type: "servo", bus: "carte_actionneurs.pca" },
+  //         wrist: { type: "servo", bus: "carte_actionneurs.pca" },
+  //         color: { type: "color_sensor", bus: "carte_actionneurs.tca" },
+  //       },
+  //       offsets: { ax12: 4, pca: 8, tca: 4 },
+  //     },
+  //   },
+  //   face_2: {
+  //     type: "gripper",
+  //     fingers: {
+  //       count: 4,
+  //       each: {
+  //         ax12:  { type: "ax12" },
+  //         grip:  { type: "servo", bus: "carte_actionneurs.pca" },
+  //         wrist: { type: "servo", bus: "carte_actionneurs.pca" },
+  //         color: { type: "color_sensor", bus: "carte_actionneurs.tca" },
+  //       },
+  //       offsets: { ax12: 8, pca: 16, tca: 8 },
+  //     },
+  //   },
+  // },
+
+  // -- Proto: 2 fingers on left side of 1 face --
+  carte_actionneurs: {
+    face_0: {
+      type: "gripper",
+      fingers: [
+        {
+          // Doigt 1 (far left)
+          ax12:  { type: "ax12", id: 3 },              // J14
+          grip:  { type: "servo", bus: "carte_actionneurs.pca", channel: 2 },
+          wrist: { type: "servo", bus: "carte_actionneurs.pca", channel: 3 },
+          // color: { type: "color_sensor", bus: "carte_actionneurs.tca", channel: TODO },
+        },
+        {
+          // Doigt 2 (center-left)
+          ax12:  { type: "ax12", id: 2 },              // J12
+          grip:  { type: "servo", bus: "carte_actionneurs.pca", channel: 0 },
+          wrist: { type: "servo", bus: "carte_actionneurs.pca", channel: 1 },
+          // color: { type: "color_sensor", bus: "carte_actionneurs.tca", channel: TODO },
+        },
+      ],
+    },
+  },
+
+  // Recal sensor channel assignments for this year
+  recal: {
+    channels: [0, 1, 2, 3], // ADS1115 channels
+  },
+}

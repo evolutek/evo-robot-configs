@@ -1,0 +1,77 @@
+{
+  // Hololutek 2026 — Dimensions & footprint profiles
+  //
+  // The robot is an irregular hexagon: 3 long sides (faces with grippers)
+  // alternating with 3 short sides (inter-face panels).
+  //
+  // Apothemes = distance from center to the midpoint of each side (mm).
+  // Listed in order: face_0, short_01, face_1, short_12, face_2, short_20.
+  //
+  // Two levels:
+  //   border:  at or below border height (70 mm) — constrained by table edges
+  //   above:   above border height — only matters for inter-robot collisions
+  //
+  // Two states:
+  //   retracted: grippers closed (folded up above border)
+  //   deployed:  grippers open (flat at border level)
+  //
+  // Rule of thumb (Eurobot): retracted perimeter <= 1200 mm
+
+  height: 350, // TODO: total robot height (mm)
+
+  // Base hexagon body (no grippers, structural frame only)
+  base: {
+    apothemes: {
+      face:  0,   // TODO: center to face midpoint (mm)
+      short: 0,   // TODO: center to short side midpoint (mm)
+    },
+    side_lengths: {
+      face:  0,   // TODO: long side length (mm)
+      short: 0,   // TODO: short side length (mm)
+    },
+  },
+
+  // Effective footprints per level x state
+  // Each profile overrides only the apothemes that differ from base.
+
+  border: {
+    // At or below 70 mm — gripper bases always extend beyond the body here
+
+    retracted: {
+      // Grippers closed (folded up), but their base still protrudes
+      apothemes: {
+        face:  0,   // TODO: center to gripper base edge (mm)
+        short: 0,   // TODO: same as base.apothemes.short
+      },
+    },
+
+    deployed: {
+      // Grippers open flat — widest footprint at border level
+      apothemes: {
+        face:  0,   // TODO: center to open gripper tip (mm)
+        short: 0,   // TODO: same as base.apothemes.short
+      },
+    },
+  },
+
+  above: {
+    // Above 70 mm — only closed grippers protrude here
+
+    retracted: {
+      // Grippers closed and folded up above border
+      apothemes: {
+        face:  0,   // TODO: center to closed gripper top edge (mm)
+        short: 0,   // TODO: same as base.apothemes.short
+      },
+    },
+
+    deployed: {
+      // Grippers open = at border level, nothing extra above
+      // Same as base body
+      apothemes: {
+        face:  0,   // TODO: same as base.apothemes.face
+        short: 0,   // TODO: same as base.apothemes.short
+      },
+    },
+  },
+}

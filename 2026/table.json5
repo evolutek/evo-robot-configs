@@ -1,0 +1,141 @@
+{
+  // Eurobot 2026 — "Winter is Coming"
+  //
+  // Coordinate system:
+  //   x: 0→3000  (left → right)
+  //   y: 0→2000  (front/public → rear)
+  //   Symmetric about x=1500. HL mirrors per team color.
+  //
+  // Position convention:
+  //   x,y is always the center of the element (zones and markers alike)
+  //   w,h are full width and height
+  //
+  // Plan reference grid: numbers 1–6 (x axis), letters A–D (y axis)
+  // All dimensions in mm.
+
+  saison: 2026,
+
+  temps: {
+    match: 100,             // total match duration (seconds)
+    depart_pami: 85,        // PAMIs cannot leave zone_depart before this time
+    preparation: 180,       // setup time before match start
+  },
+
+  table: {
+    largeur: 3000,          // x axis
+    profondeur: 2000,       // y axis
+    hauteur_bordure: 70,
+    epaisseur_bordure: 22,
+  },
+
+  // -- Game element descriptions (for vision) --
+
+  caisses: {
+    noisette: { largeur: 150, profondeur: 50, hauteur: 30, aruco: { bleu: 36, jaune: 47 } },
+    vide:     { largeur: 150, profondeur: 50, hauteur: 30, aruco: { bleu: 41, jaune: 41 } },
+  },
+
+  curseur: { largeur_max: 100, profondeur_max: 100, hauteur_max: 45 },
+
+  // -- ArUco markers (4x4 dictionary) --
+  // Tag allocation (from general rules G.6):
+  //   1–5:   blue team robots
+  //   6–10:  yellow team robots
+  //   11–50: game area & elements (table markers, crates)
+  //   51–70: reserved for blue team
+  //   71–90: reserved for yellow team
+
+  aruco: {
+    dictionnaire: "4x4",
+    tailles_marqueurs: { table: 100, robot: 70, caisse: 40 },
+
+    tags_robots: { bleu: [1, 2, 3, 4, 5], jaune: [6, 7, 8, 9, 10] },
+
+    // 4 fixed markers on the table surface for localization
+    marqueurs_table: [
+      { id: 22, x: 600,  y: 600  },  // front-left
+      { id: 23, x: 2400, y: 600  },  // front-right
+      { id: 20, x: 600,  y: 1400 },  // rear-left
+      { id: 21, x: 2400, y: 1400 },  // rear-right
+    ],
+  },
+
+  // -- Fixed zones --
+
+  zones: {
+    // Shared zones — listed fully, used by both teams
+    globales: {
+      grenier: {
+        // Elevated platform, center rear, PAMI only
+        x: 1500, y: 1775, w: 1800, h: 450,
+        elevation: 55,
+        epaisseur_tasseau: 15,
+
+        frigos: [
+          { x: 1100, y: 1725, w: 100, h: 150 },
+          { x: 1350, y: 1775, w: 100, h: 150 },
+          { x: 1650, y: 1775, w: 100, h: 150 },
+          { x: 1900, y: 1725, w: 100, h: 150 },
+        ],
+      },
+
+      garde_mangers: [
+        { x: 700,  y: 100,  w: 200, h: 200 },
+        { x: 1500, y: 100,  w: 200, h: 200 },
+        { x: 2300, y: 100,  w: 200, h: 200 },
+        { x: 100,  y: 800,  w: 200, h: 200 },
+        { x: 800,  y: 800,  w: 200, h: 200 },
+        { x: 1500, y: 800,  w: 200, h: 200 },
+        { x: 2200, y: 800,  w: 200, h: 200 },
+        { x: 2900, y: 800,  w: 200, h: 200 },
+        { x: 1250, y: 1450, w: 200, h: 200 },
+        { x: 1750, y: 1450, w: 200, h: 200 },
+      ],
+
+      zones_ramassage: [
+        { x: 1100, y: 175,  w: 200, h: 150 },
+        { x: 1900, y: 175,  w: 200, h: 150 },
+        { x: 175,  y: 400,  w: 150, h: 200 },
+        { x: 2825, y: 400,  w: 150, h: 200 },
+        { x: 1150, y: 800,  w: 200, h: 150 },
+        { x: 1850, y: 800,  w: 200, h: 150 },
+        { x: 175,  y: 1200, w: 150, h: 200 },
+        { x: 2825, y: 1200, w: 150, h: 200 },
+      ],
+    },
+
+    // Per-team zones — defined for left side only (x < 1500), HL mirrors
+    equipe: {
+      // Start zone for main robot + up to 6 PAMIs
+      // PAMIs cannot leave before 85s (except ninja PAMI on grenier)
+      zone_depart: { x: 300, y: 1775, w: 600, h: 450 },
+
+      // Ninja PAMI start zone, on the grenier (x shifted by 15mm tasseau)
+      zone_pami_ninja: { x: 715, y: 1900, w: 200, h: 200 },
+
+      // At the side of the grenier
+      // 4 team-color nut crates (bottom) + 3 empty crates (top)
+      zone_chargement: { x: 800, y: 1675, w: 200, h: 150 },
+
+      thermometre: {
+        // Sticker on exterior of front border (y=0)
+        x_debut: 0,
+        x_fin: 1400,
+      },
+    },
+  },
+
+  // -- Scoring reference --
+
+  points: {
+    noisette_dans_nid: 2,
+    noisette_dans_garde_manger: 3,
+    bonus_majorite_garde_manger: 5,
+    frigo_vide: 2,                    // both teams score
+    frigo_plein_caisses_vides: 5,     // both teams score
+    zones_thermometre: [0, 1, 2, 3, 5, 10, 5, 3, 2, 1, 0],
+    retour: [0, 5, 10],              // 0=not in zone, 5=partial, 10=fully in zone
+    pami_par_garde_manger: 5,
+    pami_tous_mangent: 10,
+  },
+}

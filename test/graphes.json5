@@ -1,0 +1,18 @@
+// Minimal test strategy: entry -> wait 2s -> done
+{
+    version: 1,
+
+    graphes: {
+        'test': {
+            'start': {
+                type: 'entry',
+                flow: { next: ['wait_2s'] }
+            },
+
+            'wait_2s': {
+                type: 'wait',
+                inputs: { delay: 2.0 }
+            }
+        }
+    }
+}

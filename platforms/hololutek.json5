@@ -1,0 +1,74 @@
+{
+  // Hololutek — Platform definition (fixed across years)
+
+  name: "hololutek",
+  type: "holonomic",
+  faces: 3,
+
+  wheels: {
+    count: 3,
+    type: "omni",
+  },
+
+  // Boards with microcontrollers / smart ICs
+  boards: {
+    carte_asserv: {
+      bus: "can",
+      can_type: 0x04,
+      can_id: 1,
+    },
+
+    carte_alim: {
+      bus: "can",
+      // TODO: can_type unknown, does NOT implement CAN reset command
+    },
+
+    carte_actionneurs: {
+      // V3: connected via I2C (J7) + USB2AX (J13) directly to RPi, no Bus Evo
+      // Future: Bus Evo (CAN), STM32 handles AX12 locally via UART
+      bus: "i2c",
+      chips: {
+        pca: { type: "pca9685",  address: 0x40, frequency: 50 },
+        mcp: { type: "mcp23017", address: 0x20 },
+        tca: { type: "tca9548a", address: 0x70 },
+        ads: { type: "ads1115",  address: 0x48 },
+      },
+      ax12_bus: "ax12", // AX12 controlled via USB2AX (J13), not via I2C
+    },
+
+    carte_mdb: {
+      bus: "can",
+      can_type: 0x02,
+      // Lidar connected via UART on the MDB board itself
+    },
+  },
+
+  // Communication buses
+  buses: {
+    can: {
+      // MCP2515 via SPI, bitrate 500 kbps
+      // TODO: overlay mcp2515-can0 not yet in /boot/config.txt
+      spi_overlay: "mcp2515-can0",
+      oscillator: 16000000,
+      interrupt_pin: 25,
+      bitrate: 500000,
+    },
+    i2c: {
+      bus: 1,
+    },
+    ax12: {
+      // USB2AX on RPi USB → carte-actionneurs J13 → daisy-chain J10-J14
+      // Future: replaced by CAN commands to carte-actionneurs STM32
+      device: "/dev/ttyACM0",
+      baudrate: 1000000,
+    },
+  },
+
+  // Fixed sensors (platform-level, not year-specific)
+  sensors: {
+    lidar: {
+      device: "/dev/ttyUSB0", // CP210x UART Bridge
+      model: "rplidar_a2",
+    },
+  },
+}
