@@ -72,6 +72,14 @@
             }
         },
 
+        // Mat-de-balise indicator strip. WS2812B chain on RPi GPIO 12 (PWM0,
+        // DMA-driven, requires root). State-driven via the high level: Off /
+        // Disabled / Loading / Running / Error, plus team color for Loading.
+        "mdb_led": {
+            driver: "mdb_led",
+            args: { num_pixels: 36, pin: 12, brightness: 1.0 },
+        },
+
         "tirette_gpio": {
             driver: "rpi_gpio",
             args: { pin: 17, direction: "INPUT" },
