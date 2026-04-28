@@ -213,7 +213,7 @@
                 type: 'action:move_tip_from_arm',
                 inputs: {
                     arm: '11',
-                    position: 'open',
+                    position: 'opened',
                 },
                 outputs: {},
                 flow: {
@@ -237,7 +237,7 @@
                 type: 'action:move_tip_from_arm',
                 inputs: {
                     arm: '12',
-                    position: 'open',
+                    position: 'opened',
                 },
                 outputs: {},
                 flow: {
@@ -249,7 +249,7 @@
                 type: 'action:move_tip_from_arm',
                 inputs: {
                     arm: '13',
-                    position: 'open',
+                    position: 'opened',
                 },
                 outputs: {},
                 flow: {
@@ -261,7 +261,7 @@
                 type: 'action:move_tip_from_arm',
                 inputs: {
                     arm: '14',
-                    position: 'open',
+                    position: 'opened',
                 },
                 outputs: {},
                 flow: {
@@ -446,7 +446,7 @@
                 type: 'action:move_arm',
                 inputs: {
                     arm: '12',
-                    position: 'helf',
+                    position: 'half',
                 },
                 outputs: {},
                 flow: {
