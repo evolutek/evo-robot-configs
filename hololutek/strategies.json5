@@ -1,0 +1,21 @@
+{
+    // Hololutek 2026 — match strategies offered to the operator at setup.
+    //
+    // Each entry becomes a button in the omnissiah GUI on the setup screen.
+    // The operator picks one before triggering /start. Picking a strategy
+    // means picking the entry-point graph it points to in graphes.json5.
+    //
+    // - runner: AI runner that knows how to execute the strategy. Today the
+    //   only runner registered by omnissiah is "graph" (see ai/graph_ai.py).
+    // - graph:  name of the entry-point graph defined in graphes.json5.
+    // - title:  human-readable label shown in the GUI.
+
+    version: 1,
+    strategies: {
+        main: {
+            runner: "graph",
+            graph: "main",
+            title: "Main",
+        },
+    },
+}
