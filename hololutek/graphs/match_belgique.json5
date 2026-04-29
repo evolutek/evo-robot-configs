@@ -1,0 +1,211 @@
+{
+    // Belgium 2025 match strategy, transposed from legacy
+    // /etc/conf.d/strategies.json (yellow side). 19 goals chained in a single
+    // linear flow. The mirror utility handles the blue side at runtime.
+    //
+    // Pattern per goal: cmd:trajman:go_to → cmd:trajman:head_to → optional
+    // action calls → next goal. Headings are radians (legacy used strings like
+    // "5*pi/6"; precomputed here).
+    //
+    // Cursor goals (align_cursor, go_cursor) are skipped: Hololutek 2026 has
+    // no cursor mechanism.
+
+    version: 1,
+
+    graphes: {
+        match_belgique: {
+
+            entry: {type: 'entry', inputs: {}, outputs: {},
+                flow: {next: ['exit_home.go:flow']}},
+
+            // ----- Goal 1: exit home -----
+
+            'exit_home.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 800, y: 450}, avoid: true},
+                outputs: {}, flow: {ok: ['exit_home.head:flow'], fail: []}},
+            'exit_home.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 0.0, avoid: false},
+                outputs: {}, flow: {ok: ['present_upper_zone.go:flow'], fail: []}},
+
+            // ----- Goal 2: present_upper_zone (open face 2 + barrier 24) -----
+
+            'present_upper_zone.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 950, y: 1100}, avoid: true},
+                outputs: {}, flow: {ok: ['present_upper_zone.head:flow'], fail: []}},
+            'present_upper_zone.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 0.5235987755982988, avoid: false},
+                outputs: {}, flow: {ok: ['present_upper_zone.prepare:flow'], fail: []}},
+            'present_upper_zone.prepare': {type: 'action:prepare_grab_face_2',
+                inputs: {}, outputs: {}, flow: {ok: ['present_upper_zone.barrier:flow'], fail: []}},
+            'present_upper_zone.barrier': {type: 'action:move_barrier_from_arm',
+                inputs: {arm: '24', position: 'far'},
+                outputs: {}, flow: {ok: ['grab_upper_zone.go:flow'], fail: []}},
+
+            // ----- Goal 3: grab_upper_zone -----
+
+            'grab_upper_zone.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1000, y: 1200}, avoid: true},
+                outputs: {}, flow: {ok: ['grab_upper_zone.head:flow'], fail: []}},
+            'grab_upper_zone.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 0.5235987755982988, avoid: false},
+                outputs: {}, flow: {ok: ['grab_upper_zone.grab:flow'], fail: []}},
+            'grab_upper_zone.grab': {type: 'action:grab_face_2',
+                inputs: {}, outputs: {}, flow: {ok: ['align_lower_zone.go:flow'], fail: []}},
+
+            // ----- Goal 4: align_lower_zone (open face 3 + barrier 31) -----
+
+            'align_lower_zone.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1550, y: 1200}, avoid: true},
+                outputs: {}, flow: {ok: ['align_lower_zone.head:flow'], fail: []}},
+            'align_lower_zone.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 2.6179938779914944, avoid: false},
+                outputs: {}, flow: {ok: ['align_lower_zone.prepare:flow'], fail: []}},
+            'align_lower_zone.prepare': {type: 'action:prepare_grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['align_lower_zone.barrier:flow'], fail: []}},
+            'align_lower_zone.barrier': {type: 'action:move_barrier_from_arm',
+                inputs: {arm: '31', position: 'far'},
+                outputs: {}, flow: {ok: ['grab_lower_zone.go:flow'], fail: []}},
+
+            // ----- Goal 5: grab_lower_zone -----
+
+            'grab_lower_zone.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1630, y: 1000}, avoid: true},
+                outputs: {}, flow: {ok: ['grab_lower_zone.head:flow'], fail: []}},
+            'grab_lower_zone.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 2.6179938779914944, avoid: false},
+                outputs: {}, flow: {ok: ['grab_lower_zone.grab:flow'], fail: []}},
+            'grab_lower_zone.grab': {type: 'action:grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['drop_lower.go:flow'], fail: []}},
+
+            // ----- Goals 6-7 skipped: cursor mechanism not present on Hololutek 2026 -----
+            // Original legacy: align_cursor (1750,1350,-pi/2) + go_cursor (1750,720,-pi/2)
+            // with cursor() / cursor_stow() actions. Re-add when a cursor
+            // peripheral lands.
+
+            // ----- Goal 8: drop_lower (drop face 3) -----
+
+            'drop_lower.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1600, y: 700}, avoid: true},
+                outputs: {}, flow: {ok: ['drop_lower.head:flow'], fail: []}},
+            'drop_lower.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 2.6179938779914944, avoid: false},
+                outputs: {}, flow: {ok: ['drop_lower.drop:flow'], fail: []}},
+            'drop_lower.drop': {type: 'action:drop_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['exit_lower.go:flow'], fail: []}},
+
+            // ----- Goal 9: exit_lower (clearance move; arm-up already done by drop_face_3) -----
+
+            'exit_lower.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1500, y: 700}, avoid: true},
+                outputs: {}, flow: {ok: ['exit_lower.head:flow'], fail: []}},
+            'exit_lower.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 2.6179938779914944, avoid: false},
+                outputs: {}, flow: {ok: ['present_left_lower.go:flow'], fail: []}},
+
+            // ----- Goal 10: present_left_lower (open face 3 + barrier 34) -----
+
+            'present_left_lower.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1500, y: 450}, avoid: true},
+                outputs: {}, flow: {ok: ['present_left_lower.head:flow'], fail: []}},
+            'present_left_lower.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['present_left_lower.prepare:flow'], fail: []}},
+            'present_left_lower.prepare': {type: 'action:prepare_grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['present_left_lower.barrier:flow'], fail: []}},
+            'present_left_lower.barrier': {type: 'action:move_barrier_from_arm',
+                inputs: {arm: '34', position: 'far'},
+                outputs: {}, flow: {ok: ['grab_left_lower.go:flow'], fail: []}},
+
+            // ----- Goal 11: grab_left_lower -----
+
+            'grab_left_lower.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1600, y: 400}, avoid: true},
+                outputs: {}, flow: {ok: ['grab_left_lower.head:flow'], fail: []}},
+            'grab_left_lower.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['grab_left_lower.grab:flow'], fail: []}},
+            'grab_left_lower.grab': {type: 'action:grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['drop_left.go:flow'], fail: []}},
+
+            // ----- Goal 12: drop_left (drop face 3) -----
+
+            'drop_left.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1200, y: 400}, avoid: true},
+                outputs: {}, flow: {ok: ['drop_left.head:flow'], fail: []}},
+            'drop_left.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['drop_left.drop:flow'], fail: []}},
+            'drop_left.drop': {type: 'action:drop_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['exit_left.go:flow'], fail: []}},
+
+            // ----- Goal 13: exit_left -----
+
+            'exit_left.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1200, y: 500}, avoid: true},
+                outputs: {}, flow: {ok: ['exit_left.head:flow'], fail: []}},
+            'exit_left.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['present_left_upper.go:flow'], fail: []}},
+
+            // ----- Goal 14: present_left_upper (open face 3 + barrier 31) -----
+
+            'present_left_upper.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 900, y: 500}, avoid: true},
+                outputs: {}, flow: {ok: ['present_left_upper.head:flow'], fail: []}},
+            'present_left_upper.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['present_left_upper.prepare:flow'], fail: []}},
+            'present_left_upper.prepare': {type: 'action:prepare_grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['present_left_upper.barrier:flow'], fail: []}},
+            'present_left_upper.barrier': {type: 'action:move_barrier_from_arm',
+                inputs: {arm: '31', position: 'far'},
+                outputs: {}, flow: {ok: ['grab_left_upper.go:flow'], fail: []}},
+
+            // ----- Goal 15: grab_left_upper -----
+
+            'grab_left_upper.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 700, y: 440}, avoid: true},
+                outputs: {}, flow: {ok: ['grab_left_upper.head:flow'], fail: []}},
+            'grab_left_upper.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.0471975511965976, avoid: false},
+                outputs: {}, flow: {ok: ['grab_left_upper.grab:flow'], fail: []}},
+            'grab_left_upper.grab': {type: 'action:grab_face_3',
+                inputs: {}, outputs: {}, flow: {ok: ['drop_middle.go:flow'], fail: []}},
+
+            // ----- Goal 16: drop_middle (drop face 2) -----
+
+            'drop_middle.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 1100, y: 600}, avoid: true},
+                outputs: {}, flow: {ok: ['drop_middle.head:flow'], fail: []}},
+            'drop_middle.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.5707963267948966, avoid: false},
+                outputs: {}, flow: {ok: ['drop_middle.drop:flow'], fail: []}},
+            'drop_middle.drop': {type: 'action:drop_face_2',
+                inputs: {}, outputs: {}, flow: {ok: ['exit_middle.go:flow'], fail: []}},
+
+            // ----- Goal 17: exit_middle -----
+
+            'exit_middle.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 950, y: 450}, avoid: true},
+                outputs: {}, flow: {ok: ['exit_middle.head:flow'], fail: []}},
+            'exit_middle.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: 1.5707963267948966, avoid: false},
+                outputs: {}, flow: {ok: ['return_home.go:flow'], fail: []}},
+
+            // ----- Goal 18: return_home -----
+
+            'return_home.go':   {type: 'cmd:trajman:go_to',
+                inputs: {peripheral: 'trajman', target: {x: 250, y: 300}, avoid: true},
+                outputs: {}, flow: {ok: ['return_home.head:flow'], fail: []}},
+            'return_home.head': {type: 'cmd:trajman:head_to',
+                inputs: {peripheral: 'trajman', heading: -2.6179938779914944, avoid: false},
+                outputs: {}, flow: {ok: ['drop_home.drop:flow'], fail: []}},
+
+            // ----- Goal 19: drop_home (drop face 3 in starting zone) -----
+            // No goto: same position as return_home.
+
+            'drop_home.drop': {type: 'action:drop_face_3',
+                inputs: {}, outputs: {}, flow: {ok: [], fail: []}},
+        },
+    },
+}
