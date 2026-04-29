@@ -154,92 +154,9 @@
             ],
         },
 
-        // ----- Composite actions -----
-        // Each step below is a sub-action call (`action: ...`) instead of a
-        // hardware command. The engine dispatches and chains the resulting
-        // tasks sequentially.
-
-        // Open one finger to receive a can: arm up, flipper a, tip opened.
-        "prepare_grab": {
-            inputs: {"arm": {type: "key", path: "positions.arm"}},
-            commands: [
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "up"}}},
-                {action: "move_flipper_from_arm", inputs: {arm: {input: "arm"}, position: {value: "a"}}},
-                {action: "move_tip_from_arm",     inputs: {arm: {input: "arm"}, position: {value: "opened"}}},
-            ],
-        },
-
-        // Close one finger on a can and lift it: arm down, flipper b, arm up.
-        "grab": {
-            inputs: {"arm": {type: "key", path: "positions.arm"}},
-            commands: [
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "down"}}},
-                {action: "move_flipper_from_arm", inputs: {arm: {input: "arm"}, position: {value: "b"}}},
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "up"}}},
-            ],
-        },
-
-        // Release the held can: arm down, flipper a, arm up.
-        "drop": {
-            inputs: {"arm": {type: "key", path: "positions.arm"}},
-            commands: [
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "down"}}},
-                {action: "move_flipper_from_arm", inputs: {arm: {input: "arm"}, position: {value: "a"}}},
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "up"}}},
-            ],
-        },
-
-        // Fully fold the finger: arm up, flipper a, tip closed.
-        "stow": {
-            inputs: {"arm": {type: "key", path: "positions.arm"}},
-            commands: [
-                {action: "move_arm",              inputs: {arm: {input: "arm"}, position: {value: "up"}}},
-                {action: "move_flipper_from_arm", inputs: {arm: {input: "arm"}, position: {value: "a"}}},
-                {action: "move_tip_from_arm",     inputs: {arm: {input: "arm"}, position: {value: "closed"}}},
-            ],
-        },
-
-        // Face-level composites: apply the per-arm composite to each of the
-        // 4 fingers of one face. Hardcoded arm IDs because action args don't
-        // string-interpolate yet (no `{face}1` template support).
-
-        "prepare_grab_face_2": {commands: [
-            {action: "prepare_grab", inputs: {arm: {value: "21"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "22"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "23"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "24"}}},
-        ]},
-        "prepare_grab_face_3": {commands: [
-            {action: "prepare_grab", inputs: {arm: {value: "31"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "32"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "33"}}},
-            {action: "prepare_grab", inputs: {arm: {value: "34"}}},
-        ]},
-
-        "grab_face_2": {commands: [
-            {action: "grab", inputs: {arm: {value: "21"}}},
-            {action: "grab", inputs: {arm: {value: "22"}}},
-            {action: "grab", inputs: {arm: {value: "23"}}},
-            {action: "grab", inputs: {arm: {value: "24"}}},
-        ]},
-        "grab_face_3": {commands: [
-            {action: "grab", inputs: {arm: {value: "31"}}},
-            {action: "grab", inputs: {arm: {value: "32"}}},
-            {action: "grab", inputs: {arm: {value: "33"}}},
-            {action: "grab", inputs: {arm: {value: "34"}}},
-        ]},
-
-        "drop_face_2": {commands: [
-            {action: "drop", inputs: {arm: {value: "21"}}},
-            {action: "drop", inputs: {arm: {value: "22"}}},
-            {action: "drop", inputs: {arm: {value: "23"}}},
-            {action: "drop", inputs: {arm: {value: "24"}}},
-        ]},
-        "drop_face_3": {commands: [
-            {action: "drop", inputs: {arm: {value: "31"}}},
-            {action: "drop", inputs: {arm: {value: "32"}}},
-            {action: "drop", inputs: {arm: {value: "33"}}},
-            {action: "drop", inputs: {arm: {value: "34"}}},
-        ]},
+        // Multi-step composites (prepare_grab, grab, drop, stow + face-level
+        // versions) live as subgraphs under graphs/, not as actions — graph
+        // engine handles sequencing, branching, and parametric inputs while
+        // the action engine stays at the level of single-driver moves.
     },
 }

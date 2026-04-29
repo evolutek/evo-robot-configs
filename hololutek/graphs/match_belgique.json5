@@ -13,6 +13,10 @@
     version: 1,
 
     graphes: {
+        // Disabled until subgraphs land — references dropped composites
+        // (prepare_grab_face_2/3, grab_face_2/3, drop_face_2/3). Restore by
+        // removing the /* … */ around match_belgique below.
+        /*
         match_belgique: {
 
             entry: {type: 'entry', inputs: {}, outputs: {},
@@ -207,5 +211,6 @@
             'drop_home.drop': {type: 'action:drop_face_3',
                 inputs: {}, outputs: {}, flow: {ok: [], fail: []}},
         },
+        */
     },
 }
