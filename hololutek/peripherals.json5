@@ -89,6 +89,41 @@
             args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
         },
 
+        // Reset / Power buttons — pinout from legacy `service_reset.py`:
+        //   - GPIO 21: reset push-button (active-HIGH, legacy used PUD_DOWN)
+        //   - GPIO 5:  power latch (OUTPUT, driven HIGH by PowerButton.init()
+        //              to keep the robot powered on)
+        //   - GPIO 6:  shutdown signal (active-LOW, legacy used PUD_UP)
+        // The current rpi_gpio driver hardcodes bias=DISABLED, so internal
+        // pulls are not configured here. Counts on external resistors on
+        // the carte-IO; if readings float, we'll need to expose bias.
+        "reset_button_gpio": {
+            driver: "rpi_gpio",
+            args: { pin: 21, direction: "INPUT" },
+        },
+        "reset_button": {
+            driver: "button",
+            args: { gpio: "reset_button_gpio", active_state: true, debounce_s: 0.15 },
+        },
+
+        "power_button_int_gpio": {
+            driver: "rpi_gpio",
+            args: { pin: 6, direction: "INPUT" },
+        },
+        "power_button_hold_gpio": {
+            driver: "rpi_gpio",
+            args: { pin: 5, direction: "OUTPUT" },
+        },
+        "power_button": {
+            driver: "power_button",
+            args: {
+                gpio_int: "power_button_int_gpio",
+                gpio_hold: "power_button_hold_gpio",
+                active_state: false,  // active-LOW per legacy POWER_INT pull-up + falling edge
+                debounce_s: 0.15,
+            },
+        },
+
         "i2c_bus": {
             driver: "rpi_i2c",
             args: { bus: 1 },
