@@ -56,7 +56,10 @@
         // Lidar
         "mdb_lidar": {
             driver: "rplidar",
-            args: { port: "/dev/ttyUSB0", baudrate: 115200 }
+            // /dev/RPLIDAR: udev symlink for the CP210x dongle, see
+            // /etc/udev/rules.d/evolutek.rules on holo. Survives reboots
+            // and USB reconnects (the kernel renumbers ttyUSB* otherwise).
+            args: { port: "/dev/RPLIDAR", baudrate: 115200 }
         },
         /*"mdb_lidar": {
             driver: "virtual_lidar",
@@ -133,7 +136,9 @@
         // ax12_bus forces the serial to 1 Mbps on init.
         "usb2ax_serial": {
             driver: "rpi_serial",
-            args: { port: "/dev/ttyACM0" },
+            // /dev/AX: udev symlink for the Xevelabs USB2AX dongle, see
+            // /etc/udev/rules.d/evolutek.rules on holo.
+            args: { port: "/dev/AX" },
         },
         "bus_ax12": {
             driver: "ax12_bus",
