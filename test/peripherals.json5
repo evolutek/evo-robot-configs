@@ -1,0 +1,207 @@
+{
+    // Test config: full virtual mirror of hololutek/peripherals.json5.
+    //
+    // Same component names, same structure (12 arms over 3 faces), but every
+    // driver is the virtual equivalent so the config can boot on a dev
+    // machine without any physical hardware. Used to exercise the FSM, the
+    // graph engine and the REPL (notably /graph) end-to-end in pure SW.
+    //
+    // Departures from a strict 1-line driver swap (no virtual exists with
+    // matching signature):
+    //   - virtual_holonomic_pilot has no `serial` arg -> drop pilot_serial
+    //   - virtual_lidar takes no args                 -> drop port/baudrate
+    //   - virtual_gpio has no `pin` arg               -> drop pin
+    //   - virtual_tcs34725 has no `bus`/integration/gain (registers are
+    //     injected in memory) -> drop bus + integration_time_ms + gain
+    //
+    // ax12 itself has no virtual twin (the real driver works against any
+    // AX12Bus, so it accepts virtual_ax12_bus transparently).
+
+    version: 1,
+    includes: [],
+    peripherals: {
+
+        // ───────────────────── Shared infrastructure ─────────────────────
+
+        // Pilot (virtual: no serial dep)
+        "pilot": {
+            driver: "virtual_holonomic_pilot",
+            args: {},
+        },
+
+        // Lidar
+        "mdb_lidar": {
+            driver: "virtual_lidar",
+            args: {},
+        },
+
+        // Trajman (no virtual; consumes virtual lidar + pilot)
+        "trajman": {
+            driver: "trajman",
+            args: { lidar: "mdb_lidar", pilot: "pilot" },
+        },
+
+        // Mat-de-balise indicator strip
+        "mdb_led": {
+            driver: "virtual_mdb_led",
+            args: { num_pixels: 36, pin: 12, brightness: 1.0 },
+        },
+
+        // Tirette
+        "tirette_gpio": {
+            driver: "virtual_gpio",
+            args: { direction: "INPUT" },
+        },
+        "tirette": {
+            driver: "virtual_tirette",
+            args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
+        },
+
+        // Reset / Power buttons
+        "reset_button_gpio": {
+            driver: "virtual_gpio",
+            args: { direction: "INPUT" },
+        },
+        "reset_button": {
+            driver: "virtual_button",
+            args: { gpio: "reset_button_gpio", active_state: true, debounce_s: 0.15 },
+        },
+
+        "power_button_int_gpio": {
+            driver: "virtual_gpio",
+            args: { direction: "INPUT" },
+        },
+        "power_button_hold_gpio": {
+            driver: "virtual_gpio",
+            args: { direction: "OUTPUT" },
+        },
+        "power_button": {
+            driver: "virtual_power_button",
+            args: {
+                gpio_int: "power_button_int_gpio",
+                gpio_hold: "power_button_hold_gpio",
+                active_state: false,
+                debounce_s: 0.15,
+            },
+        },
+
+        // I2C bus
+        "i2c_bus": {
+            driver: "virtual_rpi_i2c",
+            args: { bus: 1 },
+        },
+
+        // USB2AX dongle (virtual_serial) + AX12 bus (virtual)
+        "usb2ax_serial": {
+            driver: "virtual_serial",
+            args: {},
+        },
+        "bus_ax12": {
+            driver: "virtual_ax12_bus",
+            args: { bus: "usb2ax_serial" },
+        },
+
+        // ───────────────────── Face 1 (PCA 0x40, AX12 IDs 11-14) ─────────
+
+        "constellation_face1": {
+            driver: "virtual_constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x40, mux_address: 0x70, servo_freq_hz: 333 },
+        },
+
+        // Arm 11 (outer)
+        "ax12_11":  { driver: "ax12", args: { bus: "bus_ax12", id: 11 }, boot_required: false },
+        "servo_111": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch14", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
+        "servo_112": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch13", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_113": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch15", angle_range: 180, min_angle: 70, max_angle: 168 } },
+        "color_led_11": { driver: "virtual_pwm_led", args: { pwm: "constellation_face1.pwm.ch12" } },
+        "color_sensor_11": { driver: "virtual_tcs34725", args: { light: "color_led_11" } },
+
+        // Arm 12 (inner)
+        "ax12_12":  { driver: "ax12", args: { bus: "bus_ax12", id: 12 }, boot_required: false },
+        "servo_121": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch9",  min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 5,  max_angle: 195 } },
+        "servo_122": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch10", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_12": { driver: "virtual_pwm_led", args: { pwm: "constellation_face1.pwm.ch11" } },
+        "color_sensor_12": { driver: "virtual_tcs34725", args: { light: "color_led_12" } },
+
+        // Arm 13 (inner)
+        "ax12_13":  { driver: "ax12", args: { bus: "bus_ax12", id: 13 }, boot_required: false },
+        "servo_131": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch4", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 5, max_angle: 190 } },
+        "servo_132": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch5", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_13": { driver: "virtual_pwm_led", args: { pwm: "constellation_face1.pwm.ch7" } },
+        "color_sensor_13": { driver: "virtual_tcs34725", args: { light: "color_led_13" } },
+
+        // Arm 14 (outer)
+        "ax12_14":  { driver: "ax12", args: { bus: "bus_ax12", id: 14 }, boot_required: false },
+        "servo_141": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
+        "servo_142": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_143": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face1.pwm.ch3", angle_range: 180, min_angle: 5, max_angle: 100 } },
+        "color_led_14": { driver: "virtual_pwm_led", args: { pwm: "constellation_face1.pwm.ch0" } },
+        "color_sensor_14": { driver: "virtual_tcs34725", args: { light: "color_led_14" } },
+
+        // ───────────────────── Face 2 (PCA 0x41, AX12 IDs 21-24) ─────────
+
+        "constellation_face2": {
+            driver: "virtual_constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x41, mux_address: 0x71, servo_freq_hz: 333 },
+        },
+
+        "ax12_21":  { driver: "ax12", args: { bus: "bus_ax12", id: 21 }, boot_required: false },
+        "servo_211": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch14", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 0,  max_angle: 185 } },
+        "servo_212": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch13", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_213": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch15", angle_range: 180, min_angle: 70, max_angle: 162 } },
+        "color_led_21": { driver: "virtual_pwm_led", args: { pwm: "constellation_face2.pwm.ch12" } },
+        "color_sensor_21": { driver: "virtual_tcs34725", args: { light: "color_led_21" } },
+
+        "ax12_22":  { driver: "ax12", args: { bus: "bus_ax12", id: 22 }, boot_required: false },
+        "servo_221": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch9",  min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 15, max_angle: 195 } },
+        "servo_222": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch10", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_22": { driver: "virtual_pwm_led", args: { pwm: "constellation_face2.pwm.ch11" } },
+        "color_sensor_22": { driver: "virtual_tcs34725", args: { light: "color_led_22" } },
+
+        "ax12_23":  { driver: "ax12", args: { bus: "bus_ax12", id: 23 }, boot_required: false },
+        "servo_231": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch4", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 190 } },
+        "servo_232": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch5", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_23": { driver: "virtual_pwm_led", args: { pwm: "constellation_face2.pwm.ch7" } },
+        "color_sensor_23": { driver: "virtual_tcs34725", args: { light: "color_led_23" } },
+
+        "ax12_24":  { driver: "ax12", args: { bus: "bus_ax12", id: 24 }, boot_required: false },
+        "servo_241": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 21, max_angle: 195 } },
+        "servo_242": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_243": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face2.pwm.ch3", angle_range: 180, min_angle: 0, max_angle: 100 } },
+        "color_led_24": { driver: "virtual_pwm_led", args: { pwm: "constellation_face2.pwm.ch0" } },
+        "color_sensor_24": { driver: "virtual_tcs34725", args: { light: "color_led_24" } },
+
+        // ───────────────────── Face 3 (PCA 0x42, AX12 IDs 31-34) ─────────
+
+        "constellation_face3": {
+            driver: "virtual_constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x42, mux_address: 0x72, servo_freq_hz: 333 },
+        },
+
+        "ax12_31":  { driver: "ax12", args: { bus: "bus_ax12", id: 31 }, boot_required: false },
+        "servo_311": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch14", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
+        "servo_312": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch13", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_313": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch15", angle_range: 180, min_angle: 70, max_angle: 165 } },
+        "color_led_31": { driver: "virtual_pwm_led", args: { pwm: "constellation_face3.pwm.ch12" } },
+        "color_sensor_31": { driver: "virtual_tcs34725", args: { light: "color_led_31" } },
+
+        "ax12_32":  { driver: "ax12", args: { bus: "bus_ax12", id: 32 }, boot_required: false },
+        "servo_321": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch9",  min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 15, max_angle: 195 } },
+        "servo_322": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch10", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_32": { driver: "virtual_pwm_led", args: { pwm: "constellation_face3.pwm.ch11" } },
+        "color_sensor_32": { driver: "virtual_tcs34725", args: { light: "color_led_32" } },
+
+        "ax12_33":  { driver: "ax12", args: { bus: "bus_ax12", id: 33 }, boot_required: false },
+        "servo_331": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch4", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 15, max_angle: 190 } },
+        "servo_332": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch5", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "color_led_33": { driver: "virtual_pwm_led", args: { pwm: "constellation_face3.pwm.ch7" } },
+        "color_sensor_33": { driver: "virtual_tcs34725", args: { light: "color_led_33" } },
+
+        "ax12_34":  { driver: "ax12", args: { bus: "bus_ax12", id: 34 }, boot_required: false },
+        "servo_341": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
+        "servo_342": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        "servo_343": { driver: "virtual_pwm_servo", args: { pwm: "constellation_face3.pwm.ch3", angle_range: 180, min_angle: 5, max_angle: 100 } },
+        "color_led_34": { driver: "virtual_pwm_led", args: { pwm: "constellation_face3.pwm.ch0" } },
+        "color_sensor_34": { driver: "virtual_tcs34725", args: { light: "color_led_34" } },
+    },
+}

@@ -1,0 +1,162 @@
+{
+    // Hololutek 2026 — action positions and atomic move actions for the 12 fingers.
+    //
+    // arm_id convention: {face}{finger}. Face 1/2/3 gives prefixes 1/2/3,
+    // finger 1..4 gives the second digit. So arms are 11..14, 21..24, 31..34.
+    //
+    // Peripheral naming (matches peripherals.json5):
+    //   - ax12_{arm}         : shoulder AX12  (e.g. ax12_11)
+    //   - servo_{arm}1       : flipper servo  (e.g. servo_111) — verified live 2026-04-17
+    //   - servo_{arm}2       : tip servo      (e.g. servo_112) — verified live 2026-04-17
+    //   - servo_{arm}3       : barrier servo — fingers 1 & 4 only (e.g. servo_113)
+    //
+    // AX12 values are raw goal positions (0-1023). PCA servo values are degrees.
+    // Driver commands: AX12 → move_to_position(position), PWMServo → move_to_angle(angle).
+    // Min/max bounds are enforced by the pwm_servo driver via min_angle/max_angle.
+    // Calibration source: Dany (2026-04).
+
+    version: 1,
+
+    values: {
+        "positions": {
+
+            // AX12 shoulder (raw goal positions, 0-1023).
+            //
+            // Safety: each (up|half|down) MUST stay inside the per-servo
+            // [CW_ANGLE_LIMIT, CCW_ANGLE_LIMIT] EEPROM bounds, otherwise the
+            // AX12 answers with error 0x02 (Angle Limit Error) and refuses
+            // to move. Bounds measured live on 2026-04-17 (see memory file
+            // project_hololutek_arm_calibration.md for reference values).
+            // Values clamped to ≥5 units inside each limit.
+            "arm": {
+                "11": {"up": 270, "half": 450, "down": 587},
+                "12": {"up": 520, "half": 740, "down": 907}, // down clamped from 910 (CCW=912)
+                "13": {"up": 510, "half": 290, "down": 114}, // down clamped from 113 (CW=109)
+                "14": {"up": 673, "half": 496, "down": 378}, // up   clamped from 680 (CCW=678)
+
+                "21": {"up": 350, "half": 530, "down": 655},
+                "22": {"up": 525, "half": 740, "down": 905}, // down clamped from 910 (CCW=910, was on limit)
+                "23": {"up": 500, "half": 280, "down": 116}, // down clamped from 110 (CW=111)
+                "24": {"up": 670, "half": 496, "down": 371}, // down clamped from 365 (CW=366)
+
+                "31": {"up": 352, "half": 530, "down": 658}, // up/down clamped from 350/660 (CW=347, CCW=663)
+                "32": {"up": 530, "half": 740, "down": 914}, // down clamped from 915 (CCW=919)
+                "33": {"up": 555, "half": 348, "down": 175},
+                "34": {"up": 680, "half": 496, "down": 375},
+            },
+
+            // Tip servo (degrees, range 0-205)
+            "tip": {
+                "11": {"flipped": 10, "opened": 100, "closed": 195},
+                "12": {"flipped":  5, "opened":  95, "closed": 195},
+                "13": {"flipped":  5, "opened":  90, "closed": 190},
+                "14": {"flipped": 10, "opened":  90, "closed": 195},
+
+                "21": {"flipped":  0, "opened":  85, "closed": 185},
+                "22": {"flipped": 15, "opened": 100, "closed": 195},
+                "23": {"flipped": 10, "opened":  95, "closed": 190},
+                "24": {"flipped": 21, "opened": 105, "closed": 195},
+
+                "31": {"flipped": 10, "opened": 100, "closed": 195},
+                "32": {"flipped": 15, "opened": 100, "closed": 195},
+                "33": {"flipped": 15, "opened":  95, "closed": 190},
+                "34": {"flipped": 10, "opened":  85, "closed": 195},
+            },
+
+            // Flipper servo (degrees)
+            "flipper": {
+                "11": {"a": 0, "b": 186},
+                "12": {"a": 0, "b": 186},
+                "13": {"a": 0, "b": 186},
+                "14": {"a": 0, "b": 186},
+
+                "21": {"a": 0, "b": 170},
+                "22": {"a": 0, "b": 180},
+                "23": {"a": 0, "b": 180},
+                "24": {"a": 0, "b": 180},
+
+                "31": {"a": 0, "b": 186},
+                "32": {"a": 0, "b": 170},
+                "33": {"a": 0, "b": 186},
+                "34": {"a": 0, "b": 170},
+            },
+
+            // Barrier servo (degrees) — only on fingers 1 and 4 of each face
+            "barrier": {
+                "11": {"stored": 168, "near": 120, "mid": 100, "far":  70},
+                "14": {"stored":   5, "near":  50, "mid":  70, "far": 100},
+
+                "21": {"stored": 162, "near": 120, "mid": 100, "far":  70},
+                "24": {"stored":   0, "near":  50, "mid":  70, "far": 100},
+
+                "31": {"stored": 165, "near": 120, "mid": 100, "far":  70},
+                "34": {"stored":   5, "near":  50, "mid":  70, "far": 100},
+            },
+        },
+    },
+
+    actions: {
+
+        // Move one shoulder AX12 to a named position (up / half / down).
+        "move_arm": {
+            inputs: {
+                "arm":      {type: "int", path: "positions.arm"},
+                "position": {type: "str", path: "positions.arm.{arm}"},
+            },
+            commands: [
+                {peripheral: "ax12_{arm}", cmd: "move_to_position", args: {
+                    position: {path: "positions.arm.{arm}.{position}"},
+                }},
+            ],
+        },
+
+        // Move one tip servo to a named position (flipped / opened / closed).
+        // Tip is physically on servo_{arm}2 (verified live 2026-04-17 on arm 11:
+        // servo_111 drives the flipper, so servo_112 drives the tip).
+        "move_tip_from_arm": {
+            inputs: {
+                "arm":      {type: "int", path: "positions.tip"},
+                "position": {type: "str", path: "positions.tip.{arm}"},
+            },
+            commands: [
+                {peripheral: "servo_{arm}2", cmd: "move_to_angle", args: {
+                    angle: {path: "positions.tip.{arm}.{position}"},
+                }},
+            ],
+        },
+
+        // Move one flipper servo to a named position (a / b).
+        // Flipper is physically on servo_{arm}1 (see note on move_tip_from_arm).
+        "move_flipper_from_arm": {
+            inputs: {
+                "arm":      {type: "int", path: "positions.flipper"},
+                "position": {type: "str", path: "positions.flipper.{arm}"},
+            },
+            commands: [
+                {peripheral: "servo_{arm}1", cmd: "move_to_angle", args: {
+                    angle: {path: "positions.flipper.{arm}.{position}"},
+                }},
+            ],
+        },
+
+        // Move one barrier servo to a named position (stored / near / mid / far).
+        // Only arms 11, 14, 21, 24, 31, 34 have a barrier — the engine filters
+        // available choices from the keys of positions.barrier.
+        "move_barrier_from_arm": {
+            inputs: {
+                "arm":      {type: "int", path: "positions.barrier"},
+                "position": {type: "str", path: "positions.barrier.{arm}"},
+            },
+            commands: [
+                {peripheral: "servo_{arm}3", cmd: "move_to_angle", args: {
+                    angle: {path: "positions.barrier.{arm}.{position}"},
+                }},
+            ],
+        },
+
+        // Multi-step composites (prepare_grab, grab, drop, stow + face-level
+        // versions) live as subgraphs under graphs/, not as actions — graph
+        // engine handles sequencing, branching, and parametric inputs while
+        // the action engine stays at the level of single-driver moves.
+    },
+}

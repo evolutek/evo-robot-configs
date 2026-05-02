@@ -1,0 +1,21 @@
+{
+    // Placeholder graph until main.json5 is re-exported from the editor in
+    // the new format (graphes.<name>.nodes.<id> instead of flat). Lets the
+    // graph loader succeed and unblocks GUI / FSM / boot end-to-end.
+    version: 1,
+    graphes: {
+        main: {
+            value_inputs: {},
+            value_outputs: {},
+            flow_outputs: [],
+            nodes: {
+                'entry': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {},
+                    flow: { next: [] },
+                },
+            },
+        },
+    },
+}
