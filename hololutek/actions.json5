@@ -100,8 +100,8 @@
         // Move one shoulder AX12 to a named position (up / half / down).
         "move_arm": {
             inputs: {
-                "arm":      {type: "key", path: "positions.arm"},
-                "position": {type: "key", path: "positions.arm.{arm}"},
+                "arm":      {type: "int", path: "positions.arm"},
+                "position": {type: "str", path: "positions.arm.{arm}"},
             },
             commands: [
                 {peripheral: "ax12_{arm}", cmd: "move_to_position", args: {
@@ -115,8 +115,8 @@
         // servo_111 drives the flipper, so servo_112 drives the tip).
         "move_tip_from_arm": {
             inputs: {
-                "arm":      {type: "key", path: "positions.tip"},
-                "position": {type: "key", path: "positions.tip.{arm}"},
+                "arm":      {type: "int", path: "positions.tip"},
+                "position": {type: "str", path: "positions.tip.{arm}"},
             },
             commands: [
                 {peripheral: "servo_{arm}2", cmd: "move_to_angle", args: {
@@ -129,8 +129,8 @@
         // Flipper is physically on servo_{arm}1 (see note on move_tip_from_arm).
         "move_flipper_from_arm": {
             inputs: {
-                "arm":      {type: "key", path: "positions.flipper"},
-                "position": {type: "key", path: "positions.flipper.{arm}"},
+                "arm":      {type: "int", path: "positions.flipper"},
+                "position": {type: "str", path: "positions.flipper.{arm}"},
             },
             commands: [
                 {peripheral: "servo_{arm}1", cmd: "move_to_angle", args: {
@@ -144,8 +144,8 @@
         // available choices from the keys of positions.barrier.
         "move_barrier_from_arm": {
             inputs: {
-                "arm":      {type: "key", path: "positions.barrier"},
-                "position": {type: "key", path: "positions.barrier.{arm}"},
+                "arm":      {type: "int", path: "positions.barrier"},
+                "position": {type: "str", path: "positions.barrier.{arm}"},
             },
             commands: [
                 {peripheral: "servo_{arm}3", cmd: "move_to_angle", args: {
