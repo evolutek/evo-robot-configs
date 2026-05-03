@@ -1,0 +1,1084 @@
+{
+    version: 1,
+    graphes: {
+        match_belgique: {
+            value_inputs: {},
+            value_outputs: {},
+            flow_outputs: [],
+            nodes: {
+                'node-11': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {},
+                    flow: {
+                        next: [],
+                    },
+                },
+            },
+        },
+        open_face: {
+            value_inputs: {
+                face: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-18': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-28': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 1,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-29': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 2,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-30': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 3,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-31': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-22': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-21': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-19': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-20': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-17': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        face: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-27': {
+                    type: 'math/mul',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+            },
+        },
+        lower_face: {
+            value_inputs: {
+                face: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-2': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-6': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-12': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 1,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-14': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 3,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-15': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-4': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-3': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-5': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        face: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-13': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 2,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-11': {
+                    type: 'math/mul',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+            },
+        },
+        grip_face: {
+            value_inputs: {
+                face: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-6': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-2': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        face: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-4': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-3': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-5': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-11': {
+                    type: 'math/mul',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-14': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 3,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-12': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 1,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-13': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 2,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-15': {
+                    type: 'math/add',
+                    inputs: {
+                        a: 0,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+            },
+        },
+        fold_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-32': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-33': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-38': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-34': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-30': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-37': {
+                    type: 'action:move_flipper_from_arm',
+                    inputs: {
+                        position: 'a',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-31': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-29': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-36': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-35': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'up',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+            },
+        },
+        open_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-28': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'opened',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-30': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-24': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-25': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-26': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-21': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-22': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-23': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-29': {
+                    type: 'action:move_flipper_from_arm',
+                    inputs: {
+                        position: 'a',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+            },
+        },
+        lower_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-22': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-29': {
+                    type: 'action:move_flipper_from_arm',
+                    inputs: {
+                        position: 'a',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-27': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'down',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-23': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-24': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-25': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-21': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-30': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-26': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-28': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+            },
+        },
+        grip_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-11': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-18': {
+                    type: 'action:move_flipper_from_arm',
+                    inputs: {
+                        position: 'a',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-12': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-13': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-14': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-10': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-19': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-15': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-17': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-16': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'up',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+            },
+        },
+        load_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'f64',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-2': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-6': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+                'node-9': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-13': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-12': {
+                    type: 'action:move_flipper_from_arm',
+                    inputs: {
+                        position: 'b',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-11': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-10': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'up',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [],
+                        ok: [],
+                    },
+                },
+                'node-7': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-15': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 0,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+            },
+        },
+        prepare_finger: {
+            value_inputs: {},
+            value_outputs: {},
+            flow_outputs: [],
+            nodes: {
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {},
+                    flow: {
+                        next: [],
+                    },
+                },
+            },
+        },
+        prepare_face: {
+            value_inputs: {
+                face: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-2': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-6': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        true: [],
+                        false: [],
+                    },
+                },
+                'node-5': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-3': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-4': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 4,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
+                },
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        face: [],
+                    },
+                    flow: {
+                        next: [],
+                    },
+                },
+            },
+        },
+    },
+}

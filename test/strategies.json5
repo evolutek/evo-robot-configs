@@ -12,18 +12,10 @@
 
     version: 1,
     strategies: {
-        main: {
+        match_belgique: {
             runner: "graph",
-            graph: "main",
-            title: "Main",
+            graph: "match_belgique",
+            title: "Match Belgique 2025",
         },
-        // Disabled until subgraphs land — graph definition is also commented
-        // out in graphs/match_belgique.json5 because it referenced dropped
-        // composites (prepare_grab_face_2/3, etc.).
-        // match_belgique: {
-        //     runner: "graph",
-        //     graph: "match_belgique",
-        //     title: "Match Belgique 2025",
-        // },
     },
 }
