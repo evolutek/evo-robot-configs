@@ -7421,63 +7421,9 @@
         store_finger: {
             name: 'store_finger',
             raw: {
-                last_node_id: 19,
-                last_link_id: 32,
+                last_node_id: 32,
+                last_link_id: 61,
                 nodes: [
-                    {
-                        id: 7,
-                        type: 'math/mod',
-                        pos: {
-                            '0': 204.0572509765625,
-                            '1': 282.2336730957031,
-                            '2': 0,
-                            '3': 0,
-                            '4': 0,
-                            '5': 0,
-                            '6': 0,
-                            '7': 0,
-                            '8': 0,
-                            '9': 0,
-                        },
-                        size: {
-                            '0': 210,
-                            '1': 102,
-                        },
-                        flags: {},
-                        order: 1,
-                        mode: 0,
-                        inputs: [
-                            {
-                                name: 'a',
-                                type: 'number',
-                                links: [
-                                    1,
-                                ],
-                            },
-                            {
-                                name: 'b',
-                                type: 'number',
-                                links: [],
-                            },
-                        ],
-                        outputs: [
-                            {
-                                name: 'result',
-                                type: 'number',
-                                links: [
-                                    2,
-                                    3,
-                                ],
-                                slot_index: 0,
-                            },
-                        ],
-                        title: 'math/mod',
-                        properties: {},
-                        widgets_values: [
-                            0,
-                            10,
-                        ],
-                    },
                     {
                         id: 4,
                         type: 'compare/gt',
@@ -7498,7 +7444,7 @@
                             '1': 102,
                         },
                         flags: {},
-                        order: 2,
+                        order: 4,
                         mode: 0,
                         inputs: [
                             {
@@ -7551,7 +7497,7 @@
                             '1': 102,
                         },
                         flags: {},
-                        order: 3,
+                        order: 5,
                         mode: 0,
                         inputs: [
                             {
@@ -7585,192 +7531,6 @@
                         ],
                     },
                     {
-                        id: 6,
-                        type: 'logic/and',
-                        pos: {
-                            '0': 700.0571899414062,
-                            '1': 275.2336730957031,
-                            '2': 0,
-                            '3': 0,
-                            '4': 0,
-                            '5': 0,
-                            '6': 0,
-                            '7': 0,
-                            '8': 0,
-                            '9': 0,
-                        },
-                        size: {
-                            '0': 210,
-                            '1': 102,
-                        },
-                        flags: {},
-                        order: 4,
-                        mode: 0,
-                        inputs: [
-                            {
-                                name: 'a',
-                                type: 'bool',
-                                links: [
-                                    4,
-                                ],
-                            },
-                            {
-                                name: 'b',
-                                type: 'bool',
-                                links: [
-                                    5,
-                                ],
-                            },
-                        ],
-                        outputs: [
-                            {
-                                name: 'result',
-                                type: 'bool',
-                                links: [
-                                    6,
-                                ],
-                                slot_index: 0,
-                            },
-                        ],
-                        title: 'logic/and',
-                        properties: {},
-                        widgets_values: [
-                            false,
-                            false,
-                        ],
-                    },
-                    {
-                        id: 8,
-                        type: 'action:move_barrier_from_arm',
-                        pos: {
-                            '0': 1228,
-                            '1': -87,
-                            '2': 0,
-                            '3': 0,
-                            '4': 0,
-                            '5': 0,
-                            '6': 0,
-                            '7': 0,
-                            '8': 0,
-                            '9': 0,
-                        },
-                        size: {
-                            '0': 235.1999969482422,
-                            '1': 122,
-                        },
-                        flags: {},
-                        order: 6,
-                        mode: 0,
-                        inputs: [
-                            {
-                                name: 'flow',
-                                type: 'flow',
-                                links: [
-                                    10,
-                                ],
-                            },
-                            {
-                                name: 'arm',
-                                type: 'number',
-                                links: [
-                                    9,
-                                ],
-                            },
-                            {
-                                name: 'position',
-                                type: 'str',
-                                links: [],
-                            },
-                        ],
-                        outputs: [
-                            {
-                                name: 'fail',
-                                type: 'flow',
-                                links: [
-                                    12,
-                                ],
-                                slot_index: 0,
-                            },
-                            {
-                                name: 'ok',
-                                type: 'flow',
-                                links: [
-                                    11,
-                                ],
-                                slot_index: 1,
-                            },
-                        ],
-                        title: 'action:move_barrier_from_arm',
-                        properties: {},
-                        widgets_values: [
-                            null,
-                            'stored',
-                        ],
-                    },
-                    {
-                        id: 3,
-                        type: 'if',
-                        pos: {
-                            '0': 951,
-                            '1': 99,
-                            '2': 0,
-                            '3': 0,
-                            '4': 0,
-                            '5': 0,
-                            '6': 0,
-                            '7': 0,
-                            '8': 0,
-                            '9': 0,
-                        },
-                        size: {
-                            '0': 210,
-                            '1': 78,
-                        },
-                        flags: {},
-                        order: 5,
-                        mode: 0,
-                        inputs: [
-                            {
-                                name: 'flow',
-                                type: 'flow',
-                                links: [
-                                    7,
-                                ],
-                            },
-                            {
-                                name: 'condition',
-                                type: 'bool',
-                                links: [
-                                    6,
-                                ],
-                            },
-                        ],
-                        outputs: [
-                            {
-                                name: 'false',
-                                type: 'flow',
-                                links: [
-                                    8,
-                                ],
-                                slot_index: 0,
-                            },
-                            {
-                                name: 'true',
-                                type: 'flow',
-                                links: [
-                                    10,
-                                    14,
-                                ],
-                                slot_index: 1,
-                            },
-                        ],
-                        title: 'if',
-                        properties: {},
-                        widgets_values: [
-                            false,
-                        ],
-                    },
-                    {
                         id: 10,
                         type: 'action:get_tip_position',
                         pos: {
@@ -7790,7 +7550,7 @@
                             '1': 122,
                         },
                         flags: {},
-                        order: 7,
+                        order: 11,
                         mode: 0,
                         inputs: [
                             {
@@ -7847,54 +7607,6 @@
                         ],
                     },
                     {
-                        id: 1,
-                        type: 'graph:entry',
-                        pos: {
-                            '0': 12,
-                            '1': 99,
-                            '2': 0,
-                            '3': 0,
-                            '4': 0,
-                            '5': 0,
-                            '6': 0,
-                            '7': 0,
-                            '8': 0,
-                            '9': 0,
-                        },
-                        size: {
-                            '0': 140,
-                            '1': 46,
-                        },
-                        flags: {},
-                        order: 0,
-                        mode: 0,
-                        inputs: [],
-                        outputs: [
-                            {
-                                name: 'next',
-                                type: 'flow',
-                                links: [
-                                    7,
-                                ],
-                                slot_index: 0,
-                            },
-                            {
-                                name: 'finger',
-                                type: 'number',
-                                links: [
-                                    1,
-                                    9,
-                                    13,
-                                    23,
-                                    27,
-                                ],
-                                slot_index: 1,
-                            },
-                        ],
-                        title: 'graph:entry',
-                        properties: {},
-                    },
-                    {
                         id: 14,
                         type: 'compare/eq_str',
                         pos: {
@@ -7914,7 +7626,7 @@
                             '1': 102,
                         },
                         flags: {},
-                        order: 9,
+                        order: 14,
                         mode: 0,
                         inputs: [
                             {
@@ -7967,7 +7679,7 @@
                             '1': 78,
                         },
                         flags: {},
-                        order: 10,
+                        order: 16,
                         mode: 0,
                         inputs: [
                             {
@@ -8010,6 +7722,73 @@
                         ],
                     },
                     {
+                        id: 15,
+                        type: 'action:move_arm',
+                        pos: {
+                            '0': 2378,
+                            '1': -216,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 122,
+                        },
+                        flags: {},
+                        order: 18,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    22,
+                                    29,
+                                ],
+                            },
+                            {
+                                name: 'arm',
+                                type: 'number',
+                                links: [
+                                    23,
+                                ],
+                            },
+                            {
+                                name: 'position',
+                                type: 'str',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'ok',
+                                type: 'flow',
+                                links: [],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'fail',
+                                type: 'flow',
+                                links: [
+                                    24,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'action:move_arm',
+                        properties: {},
+                        widgets_values: [
+                            null,
+                            'up',
+                        ],
+                    },
+                    {
                         id: 16,
                         type: 'action:move_tip_from_arm',
                         pos: {
@@ -8029,7 +7808,7 @@
                             '1': 122,
                         },
                         flags: {},
-                        order: 11,
+                        order: 17,
                         mode: 0,
                         inputs: [
                             {
@@ -8058,6 +7837,7 @@
                                 type: 'flow',
                                 links: [
                                     29,
+                                    33,
                                 ],
                                 slot_index: 0,
                             },
@@ -8078,11 +7858,11 @@
                         ],
                     },
                     {
-                        id: 15,
-                        type: 'action:move_arm',
+                        id: 23,
+                        type: 'if',
                         pos: {
-                            '0': 2378,
-                            '1': -216,
+                            '0': 2934,
+                            '1': -440,
                             '2': 0,
                             '3': 0,
                             '4': 0,
@@ -8094,64 +7874,57 @@
                         },
                         size: {
                             '0': 210,
-                            '1': 122,
+                            '1': 78,
                         },
                         flags: {},
-                        order: 12,
+                        order: 21,
                         mode: 0,
                         inputs: [
                             {
                                 name: 'flow',
                                 type: 'flow',
                                 links: [
-                                    22,
-                                    29,
+                                    36,
                                 ],
                             },
                             {
-                                name: 'arm',
-                                type: 'number',
+                                name: 'condition',
+                                type: 'bool',
                                 links: [
-                                    23,
+                                    37,
                                 ],
-                            },
-                            {
-                                name: 'position',
-                                type: 'str',
-                                links: [],
                             },
                         ],
                         outputs: [
                             {
-                                name: 'ok',
+                                name: 'false',
                                 type: 'flow',
                                 links: [
-                                    25,
+                                    44,
                                 ],
                                 slot_index: 0,
                             },
                             {
-                                name: 'fail',
+                                name: 'true',
                                 type: 'flow',
                                 links: [
-                                    24,
+                                    45,
                                 ],
                                 slot_index: 1,
                             },
                         ],
-                        title: 'action:move_arm',
+                        title: 'if',
                         properties: {},
                         widgets_values: [
-                            null,
-                            'up',
+                            false,
                         ],
                     },
                     {
                         id: 2,
                         type: 'graph:exit',
                         pos: {
-                            '0': 3178,
-                            '1': 150,
+                            '0': 3522,
+                            '1': 149,
                             '2': 0,
                             '3': 0,
                             '4': 0,
@@ -8166,15 +7939,17 @@
                             '1': 46,
                         },
                         flags: {},
-                        order: 8,
+                        order: 13,
                         mode: 0,
                         inputs: [
                             {
                                 name: 'done',
                                 type: 'flow',
                                 links: [
-                                    11,
-                                    25,
+                                    39,
+                                    45,
+                                    51,
+                                    52,
                                 ],
                             },
                             {
@@ -8186,12 +7961,837 @@
                                     15,
                                     24,
                                     28,
+                                    34,
+                                    40,
                                 ],
                             },
                         ],
                         outputs: [],
                         title: 'graph:exit',
                         properties: {},
+                    },
+                    {
+                        id: 24,
+                        type: 'action:move_flipper_from_arm',
+                        pos: {
+                            '0': 3231,
+                            '1': -418,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 235.1999969482422,
+                            '1': 122,
+                        },
+                        flags: {},
+                        order: 22,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    44,
+                                ],
+                            },
+                            {
+                                name: 'arm',
+                                type: 'number',
+                                links: [
+                                    46,
+                                ],
+                            },
+                            {
+                                name: 'position',
+                                type: 'str',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'fail',
+                                type: 'flow',
+                                links: [
+                                    40,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'ok',
+                                type: 'flow',
+                                links: [
+                                    39,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'action:move_flipper_from_arm',
+                        properties: {},
+                        widgets_values: [
+                            null,
+                            'b',
+                        ],
+                    },
+                    {
+                        id: 21,
+                        type: 'cmd:tcs34725:get_color',
+                        pos: {
+                            '0': 2371,
+                            '1': -426,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 98,
+                        },
+                        flags: {},
+                        order: 19,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    33,
+                                ],
+                            },
+                            {
+                                name: 'peripheral',
+                                type: 'str',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'fail',
+                                type: 'flow',
+                                links: [
+                                    34,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'ok',
+                                type: 'flow',
+                                links: [
+                                    36,
+                                ],
+                                slot_index: 1,
+                            },
+                            {
+                                name: 'name',
+                                type: 'enum',
+                                links: [
+                                    47,
+                                ],
+                                slot_index: 2,
+                            },
+                        ],
+                        title: 'cmd:tcs34725:get_color',
+                        properties: {},
+                        widgets_values: [
+                            null,
+                        ],
+                    },
+                    {
+                        id: 7,
+                        type: 'math/mod',
+                        pos: {
+                            '0': 206,
+                            '1': 282,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 2,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'number',
+                                links: [
+                                    1,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'number',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'number',
+                                links: [
+                                    2,
+                                    3,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'math/mod',
+                        properties: {},
+                        widgets_values: [
+                            0,
+                            10,
+                        ],
+                    },
+                    {
+                        id: 6,
+                        type: 'logic/and',
+                        pos: {
+                            '0': 700,
+                            '1': 275,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 8,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'bool',
+                                links: [
+                                    4,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'bool',
+                                links: [
+                                    5,
+                                ],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'bool',
+                                links: [
+                                    6,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'logic/and',
+                        properties: {},
+                        widgets_values: [
+                            false,
+                            false,
+                        ],
+                    },
+                    {
+                        id: 3,
+                        type: 'if',
+                        pos: {
+                            '0': 951,
+                            '1': 99,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 78,
+                        },
+                        flags: {},
+                        order: 10,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    7,
+                                ],
+                            },
+                            {
+                                name: 'condition',
+                                type: 'bool',
+                                links: [
+                                    6,
+                                ],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'false',
+                                type: 'flow',
+                                links: [
+                                    8,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'true',
+                                type: 'flow',
+                                links: [
+                                    14,
+                                    49,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'if',
+                        properties: {},
+                        widgets_values: [
+                            false,
+                        ],
+                    },
+                    {
+                        id: 1,
+                        type: 'graph:entry',
+                        pos: {
+                            '0': 12,
+                            '1': 99,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 140,
+                            '1': 46,
+                        },
+                        flags: {},
+                        order: 0,
+                        mode: 0,
+                        inputs: [],
+                        outputs: [
+                            {
+                                name: 'next',
+                                type: 'flow',
+                                links: [
+                                    7,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'finger',
+                                type: 'number',
+                                links: [
+                                    1,
+                                    13,
+                                    23,
+                                    27,
+                                    46,
+                                    48,
+                                    53,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'graph:entry',
+                        properties: {},
+                    },
+                    {
+                        id: 26,
+                        type: 'math/mod',
+                        pos: {
+                            '0': 577,
+                            '1': 647,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 3,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'number',
+                                links: [
+                                    48,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'number',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'number',
+                                links: [
+                                    60,
+                                    61,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'math/mod',
+                        properties: {},
+                        widgets_values: [
+                            0,
+                            10,
+                        ],
+                    },
+                    {
+                        id: 27,
+                        type: 'compare/eq',
+                        pos: {
+                            '0': 835,
+                            '1': 565,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 6,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'number',
+                                links: [
+                                    60,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'number',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'bool',
+                                links: [
+                                    58,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'compare/eq',
+                        properties: {},
+                        widgets_values: [
+                            0,
+                            1,
+                        ],
+                    },
+                    {
+                        id: 28,
+                        type: 'compare/eq',
+                        pos: {
+                            '0': 838,
+                            '1': 726,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 7,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'number',
+                                links: [
+                                    61,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'number',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'bool',
+                                links: [
+                                    59,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'compare/eq',
+                        properties: {},
+                        widgets_values: [
+                            0,
+                            4,
+                        ],
+                    },
+                    {
+                        id: 31,
+                        type: 'logic/or',
+                        pos: {
+                            '0': 1096,
+                            '1': 640,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 9,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'bool',
+                                links: [
+                                    58,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'bool',
+                                links: [
+                                    59,
+                                ],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'bool',
+                                links: [
+                                    57,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'logic/or',
+                        properties: {},
+                        widgets_values: [
+                            false,
+                            false,
+                        ],
+                    },
+                    {
+                        id: 30,
+                        type: 'if',
+                        pos: {
+                            '0': 1343,
+                            '1': 465,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 78,
+                        },
+                        flags: {},
+                        order: 12,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    49,
+                                ],
+                            },
+                            {
+                                name: 'condition',
+                                type: 'bool',
+                                links: [
+                                    57,
+                                ],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'false',
+                                type: 'flow',
+                                links: [
+                                    51,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'true',
+                                type: 'flow',
+                                links: [
+                                    50,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'if',
+                        properties: {},
+                        widgets_values: [
+                            false,
+                        ],
+                    },
+                    {
+                        id: 8,
+                        type: 'action:move_barrier_from_arm',
+                        pos: {
+                            '0': 1596,
+                            '1': 304,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 235.1999969482422,
+                            '1': 122,
+                        },
+                        flags: {},
+                        order: 15,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [
+                                    50,
+                                ],
+                            },
+                            {
+                                name: 'arm',
+                                type: 'number',
+                                links: [
+                                    53,
+                                ],
+                            },
+                            {
+                                name: 'position',
+                                type: 'str',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'fail',
+                                type: 'flow',
+                                links: [
+                                    12,
+                                ],
+                                slot_index: 0,
+                            },
+                            {
+                                name: 'ok',
+                                type: 'flow',
+                                links: [
+                                    52,
+                                ],
+                                slot_index: 1,
+                            },
+                        ],
+                        title: 'action:move_barrier_from_arm',
+                        properties: {},
+                        widgets_values: [
+                            null,
+                            'stored',
+                        ],
+                    },
+                    {
+                        id: 22,
+                        type: 'compare/eq_enum',
+                        pos: {
+                            '0': 2667,
+                            '1': -376,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 210,
+                            '1': 102,
+                        },
+                        flags: {},
+                        order: 20,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'a',
+                                type: 'enum',
+                                links: [
+                                    47,
+                                ],
+                            },
+                            {
+                                name: 'b',
+                                type: 'enum',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'result',
+                                type: 'bool',
+                                links: [
+                                    37,
+                                ],
+                                slot_index: 0,
+                            },
+                        ],
+                        title: 'compare/eq_enum',
+                        properties: {},
+                        widgets_values: [
+                            0,
+                            'Yellow',
+                        ],
+                    },
+                    {
+                        id: 32,
+                        type: 'cmd:mdb_led:get_team_color',
+                        pos: {
+                            '0': 2586,
+                            '1': -615,
+                            '2': 0,
+                            '3': 0,
+                            '4': 0,
+                            '5': 0,
+                            '6': 0,
+                            '7': 0,
+                            '8': 0,
+                            '9': 0,
+                        },
+                        size: {
+                            '0': 218.39999389648438,
+                            '1': 138,
+                        },
+                        flags: {},
+                        order: 1,
+                        mode: 0,
+                        inputs: [
+                            {
+                                name: 'flow',
+                                type: 'flow',
+                                links: [],
+                            },
+                            {
+                                name: 'peripheral',
+                                type: 'str',
+                                links: [],
+                            },
+                        ],
+                        outputs: [
+                            {
+                                name: 'fail',
+                                type: 'flow',
+                                links: null,
+                            },
+                            {
+                                name: 'ok',
+                                type: 'flow',
+                                links: null,
+                            },
+                            {
+                                name: 'r',
+                                type: 'number',
+                                links: null,
+                            },
+                            {
+                                name: 'g',
+                                type: 'number',
+                                links: null,
+                            },
+                            {
+                                name: 'b',
+                                type: 'number',
+                                links: null,
+                            },
+                        ],
+                        title: 'cmd:mdb_led:get_team_color',
+                        properties: {},
+                        widgets_values: [
+                            '',
+                        ],
                     },
                 ],
                 links: [
@@ -8257,30 +8857,6 @@
                         0,
                         2,
                         1,
-                        'flow',
-                    ],
-                    [
-                        9,
-                        1,
-                        1,
-                        8,
-                        1,
-                        'number',
-                    ],
-                    [
-                        10,
-                        3,
-                        1,
-                        8,
-                        0,
-                        'flow',
-                    ],
-                    [
-                        11,
-                        8,
-                        1,
-                        2,
-                        0,
                         'flow',
                     ],
                     [
@@ -8364,14 +8940,6 @@
                         'flow',
                     ],
                     [
-                        25,
-                        15,
-                        0,
-                        2,
-                        0,
-                        'flow',
-                    ],
-                    [
                         26,
                         13,
                         0,
@@ -8403,6 +8971,174 @@
                         0,
                         'flow',
                     ],
+                    [
+                        33,
+                        16,
+                        0,
+                        21,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        34,
+                        21,
+                        0,
+                        2,
+                        1,
+                        'flow',
+                    ],
+                    [
+                        36,
+                        21,
+                        1,
+                        23,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        37,
+                        22,
+                        0,
+                        23,
+                        1,
+                        'bool',
+                    ],
+                    [
+                        39,
+                        24,
+                        1,
+                        2,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        40,
+                        24,
+                        0,
+                        2,
+                        1,
+                        'flow',
+                    ],
+                    [
+                        44,
+                        23,
+                        0,
+                        24,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        45,
+                        23,
+                        1,
+                        2,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        46,
+                        1,
+                        1,
+                        24,
+                        1,
+                        'number',
+                    ],
+                    [
+                        47,
+                        21,
+                        2,
+                        22,
+                        0,
+                        'enum',
+                    ],
+                    [
+                        48,
+                        1,
+                        1,
+                        26,
+                        0,
+                        'number',
+                    ],
+                    [
+                        49,
+                        3,
+                        1,
+                        30,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        50,
+                        30,
+                        1,
+                        8,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        51,
+                        30,
+                        0,
+                        2,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        52,
+                        8,
+                        1,
+                        2,
+                        0,
+                        'flow',
+                    ],
+                    [
+                        53,
+                        1,
+                        1,
+                        8,
+                        1,
+                        'number',
+                    ],
+                    [
+                        57,
+                        31,
+                        0,
+                        30,
+                        1,
+                        'bool',
+                    ],
+                    [
+                        58,
+                        27,
+                        0,
+                        31,
+                        0,
+                        'bool',
+                    ],
+                    [
+                        59,
+                        28,
+                        0,
+                        31,
+                        1,
+                        'bool',
+                    ],
+                    [
+                        60,
+                        26,
+                        0,
+                        27,
+                        0,
+                        'number',
+                    ],
+                    [
+                        61,
+                        26,
+                        0,
+                        28,
+                        0,
+                        'number',
+                    ],
                 ],
                 groups: [],
                 config: {},
@@ -8422,20 +9158,6 @@
                     'fail',
                 ],
                 nodes: {
-                    'node-7': {
-                        type: 'math/mod',
-                        inputs: {
-                            a: 0,
-                            b: 10,
-                        },
-                        outputs: {
-                            result: [
-                                'node-4:a',
-                                'node-5:a',
-                            ],
-                        },
-                        flow: {},
-                    },
                     'node-4': {
                         type: 'compare/gt',
                         inputs: {
@@ -8462,50 +9184,6 @@
                         },
                         flow: {},
                     },
-                    'node-6': {
-                        type: 'logic/and',
-                        inputs: {
-                            a: false,
-                            b: false,
-                        },
-                        outputs: {
-                            result: [
-                                'node-3:condition',
-                            ],
-                        },
-                        flow: {},
-                    },
-                    'node-8': {
-                        type: 'action:move_barrier_from_arm',
-                        inputs: {
-                            position: 'stored',
-                        },
-                        outputs: {},
-                        flow: {
-                            ok: [
-                                'node-2:fail',
-                            ],
-                            fail: [
-                                'node-2:done',
-                            ],
-                        },
-                    },
-                    'node-3': {
-                        type: 'if',
-                        inputs: {
-                            condition: false,
-                        },
-                        outputs: {},
-                        flow: {
-                            false: [
-                                'node-2:fail',
-                            ],
-                            true: [
-                                'node-8:flow',
-                                'node-10:flow',
-                            ],
-                        },
-                    },
                     'node-10': {
                         type: 'action:get_tip_position',
                         inputs: {
@@ -8517,29 +9195,11 @@
                             ],
                         },
                         flow: {
-                            ok: [
+                            fail: [
                                 'node-13:flow',
                             ],
-                            fail: [
+                            ok: [
                                 'node-2:fail',
-                            ],
-                        },
-                    },
-                    'node-1': {
-                        type: 'graph:entry',
-                        inputs: {},
-                        outputs: {
-                            finger: [
-                                'node-7:a',
-                                'node-8:arm',
-                                'node-10:arm',
-                                'node-15:arm',
-                                'node-16:arm',
-                            ],
-                        },
-                        flow: {
-                            next: [
-                                'node-3:flow',
                             ],
                         },
                     },
@@ -8571,21 +9231,6 @@
                             ],
                         },
                     },
-                    'node-16': {
-                        type: 'action:move_tip_from_arm',
-                        inputs: {
-                            position: 'closed',
-                        },
-                        outputs: {},
-                        flow: {
-                            ok: [
-                                'node-15:flow',
-                            ],
-                            fail: [
-                                'node-2:fail',
-                            ],
-                        },
-                    },
                     'node-15': {
                         type: 'action:move_arm',
                         inputs: {
@@ -8593,11 +9238,40 @@
                         },
                         outputs: {},
                         flow: {
+                            fail: [],
                             ok: [
-                                'node-2:done',
-                            ],
-                            fail: [
                                 'node-2:fail',
+                            ],
+                        },
+                    },
+                    'node-16': {
+                        type: 'action:move_tip_from_arm',
+                        inputs: {
+                            position: 'closed',
+                        },
+                        outputs: {},
+                        flow: {
+                            fail: [
+                                'node-15:flow',
+                                'node-21:flow',
+                            ],
+                            ok: [
+                                'node-2:fail',
+                            ],
+                        },
+                    },
+                    'node-23': {
+                        type: 'if',
+                        inputs: {
+                            condition: false,
+                        },
+                        outputs: {},
+                        flow: {
+                            false: [
+                                'node-24:flow',
+                            ],
+                            true: [
+                                'node-2:done',
                             ],
                         },
                     },
@@ -8606,6 +9280,212 @@
                         inputs: {},
                         outputs: {},
                         flow: {},
+                    },
+                    'node-24': {
+                        type: 'action:move_flipper_from_arm',
+                        inputs: {
+                            position: 'b',
+                        },
+                        outputs: {},
+                        flow: {
+                            fail: [
+                                'node-2:fail',
+                            ],
+                            ok: [
+                                'node-2:done',
+                            ],
+                        },
+                    },
+                    'node-21': {
+                        type: 'cmd:tcs34725:get_color',
+                        inputs: {},
+                        outputs: {
+                            name: [
+                                'node-22:a',
+                            ],
+                        },
+                        flow: {
+                            fail: [
+                                'node-2:fail',
+                            ],
+                            ok: [
+                                'node-23:flow',
+                            ],
+                        },
+                    },
+                    'node-7': {
+                        type: 'math/mod',
+                        inputs: {
+                            a: 0,
+                            b: 10,
+                        },
+                        outputs: {
+                            result: [
+                                'node-4:a',
+                                'node-5:a',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-6': {
+                        type: 'logic/and',
+                        inputs: {
+                            a: false,
+                            b: false,
+                        },
+                        outputs: {
+                            result: [
+                                'node-3:condition',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-3': {
+                        type: 'if',
+                        inputs: {
+                            condition: false,
+                        },
+                        outputs: {},
+                        flow: {
+                            false: [
+                                'node-2:fail',
+                            ],
+                            true: [
+                                'node-10:flow',
+                                'node-30:flow',
+                            ],
+                        },
+                    },
+                    'node-1': {
+                        type: 'graph:entry',
+                        inputs: {},
+                        outputs: {
+                            finger: [
+                                'node-7:a',
+                                'node-10:arm',
+                                'node-15:arm',
+                                'node-16:arm',
+                                'node-24:arm',
+                                'node-26:a',
+                                'node-8:arm',
+                            ],
+                        },
+                        flow: {
+                            next: [
+                                'node-3:flow',
+                            ],
+                        },
+                    },
+                    'node-26': {
+                        type: 'math/mod',
+                        inputs: {
+                            a: 0,
+                            b: 10,
+                        },
+                        outputs: {
+                            result: [
+                                'node-27:a',
+                                'node-28:a',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-27': {
+                        type: 'compare/eq',
+                        inputs: {
+                            a: 0,
+                            b: 1,
+                        },
+                        outputs: {
+                            result: [
+                                'node-31:a',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-28': {
+                        type: 'compare/eq',
+                        inputs: {
+                            a: 0,
+                            b: 4,
+                        },
+                        outputs: {
+                            result: [
+                                'node-31:b',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-31': {
+                        type: 'logic/or',
+                        inputs: {
+                            a: false,
+                            b: false,
+                        },
+                        outputs: {
+                            result: [
+                                'node-30:condition',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-30': {
+                        type: 'if',
+                        inputs: {
+                            condition: false,
+                        },
+                        outputs: {},
+                        flow: {
+                            false: [
+                                'node-2:done',
+                            ],
+                            true: [
+                                'node-8:flow',
+                            ],
+                        },
+                    },
+                    'node-8': {
+                        type: 'action:move_barrier_from_arm',
+                        inputs: {
+                            position: 'stored',
+                        },
+                        outputs: {},
+                        flow: {
+                            fail: [
+                                'node-2:fail',
+                            ],
+                            ok: [
+                                'node-2:done',
+                            ],
+                        },
+                    },
+                    'node-22': {
+                        type: 'compare/eq_enum',
+                        inputs: {
+                            a: 0,
+                            b: 'Yellow',
+                        },
+                        outputs: {
+                            result: [
+                                'node-23:condition',
+                            ],
+                        },
+                        flow: {},
+                    },
+                    'node-32': {
+                        type: 'cmd:mdb_led:get_team_color',
+                        inputs: {
+                            peripheral: '',
+                        },
+                        outputs: {
+                            r: [],
+                            g: [],
+                            b: [],
+                        },
+                        flow: {
+                            fail: [],
+                            ok: [],
+                        },
                     },
                 },
             },
@@ -9090,14 +9970,54 @@
                     },
                 },
             },
+            'compare/eq_enum': {
+                title: 'Eq (enum)',
+                flow_inputs: [],
+                flow_outputs: [],
+                value_inputs: {
+                    a: {
+                        type: 'enum_any',
+                        default: 0,
+                    },
+                    b: {
+                        type: 'enum_any',
+                        default: 0,
+                    },
+                },
+                value_outputs: {
+                    result: {
+                        type: 'bool',
+                    },
+                },
+            },
+            'compare/ne_enum': {
+                title: 'Ne (enum)',
+                flow_inputs: [],
+                flow_outputs: [],
+                value_inputs: {
+                    a: {
+                        type: 'enum_any',
+                        default: 0,
+                    },
+                    b: {
+                        type: 'enum_any',
+                        default: 0,
+                    },
+                },
+                value_outputs: {
+                    result: {
+                        type: 'bool',
+                    },
+                },
+            },
             'cmd:tirette:get_state': {
                 title: 'tirette.get_state',
                 flow_inputs: [
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9117,8 +10037,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9138,8 +10058,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9155,8 +10075,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9172,8 +10092,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9193,8 +10113,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9214,8 +10134,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9231,8 +10151,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9248,8 +10168,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9269,8 +10189,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9286,8 +10206,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9307,8 +10227,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9324,8 +10244,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9341,8 +10261,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9358,8 +10278,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9375,8 +10295,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9392,8 +10312,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9409,8 +10329,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9433,8 +10353,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9460,8 +10380,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9503,8 +10423,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9535,8 +10455,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9552,8 +10472,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9577,8 +10497,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9598,8 +10518,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9623,8 +10543,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9644,8 +10564,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9665,8 +10585,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9682,8 +10602,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9699,8 +10619,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9716,8 +10636,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9740,8 +10660,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9767,8 +10687,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9810,8 +10730,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9842,8 +10762,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9859,8 +10779,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9884,8 +10804,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9905,8 +10825,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9930,8 +10850,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9951,8 +10871,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -9972,8 +10892,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10001,8 +10921,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10030,8 +10950,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10071,8 +10991,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10100,8 +11020,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10125,8 +11045,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10150,8 +11070,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10175,8 +11095,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10196,8 +11116,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10225,8 +11145,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10252,8 +11172,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10279,8 +11199,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10306,8 +11226,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10342,8 +11262,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10369,8 +11289,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10393,8 +11313,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10410,8 +11330,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10427,8 +11347,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10444,8 +11364,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10468,8 +11388,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10495,8 +11415,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10538,8 +11458,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10570,8 +11490,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10587,8 +11507,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10612,8 +11532,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10633,8 +11553,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10658,8 +11578,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10679,8 +11599,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10700,8 +11620,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10717,8 +11637,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10734,8 +11654,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10751,8 +11671,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10775,8 +11695,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10802,8 +11722,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10845,8 +11765,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10877,8 +11797,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10894,8 +11814,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10919,8 +11839,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10940,8 +11860,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10965,8 +11885,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -10986,8 +11906,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11007,8 +11927,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11028,8 +11948,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11045,8 +11965,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11066,8 +11986,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11087,8 +12007,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11108,8 +12028,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11129,8 +12049,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11150,8 +12070,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11167,8 +12087,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11188,8 +12108,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11209,8 +12129,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11230,8 +12150,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11251,8 +12171,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11272,8 +12192,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11305,8 +12225,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11336,8 +12256,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11365,8 +12285,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11386,8 +12306,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11407,8 +12327,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11424,8 +12344,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11441,8 +12361,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11469,8 +12389,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11497,8 +12417,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11526,8 +12446,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11553,8 +12473,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11583,8 +12503,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11613,8 +12533,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11634,8 +12554,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11655,8 +12575,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11676,8 +12596,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11697,8 +12617,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11718,8 +12638,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11739,8 +12659,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11760,8 +12680,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11781,8 +12701,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11802,8 +12722,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11823,8 +12743,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11840,8 +12760,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11861,8 +12781,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11882,8 +12802,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11903,8 +12823,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11924,8 +12844,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11945,8 +12865,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11962,8 +12882,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -11979,8 +12899,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12000,8 +12920,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12021,8 +12941,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12042,8 +12962,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12063,8 +12983,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12084,8 +13004,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12105,8 +13025,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12126,8 +13046,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12147,8 +13067,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12164,8 +13084,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12185,8 +13105,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12206,8 +13126,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12227,8 +13147,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12248,8 +13168,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12269,8 +13189,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12294,8 +13214,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12323,8 +13243,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12356,8 +13276,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12380,8 +13300,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12401,8 +13321,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12422,8 +13342,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12439,8 +13359,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12460,8 +13380,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12481,8 +13401,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12502,8 +13422,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12523,8 +13443,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12544,8 +13464,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12561,8 +13481,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12582,8 +13502,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12603,8 +13523,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12624,8 +13544,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12645,8 +13565,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12666,8 +13586,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12699,8 +13619,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12730,8 +13650,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12759,8 +13679,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12780,8 +13700,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12801,8 +13721,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12818,8 +13738,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12835,8 +13755,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12863,8 +13783,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12891,8 +13811,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12920,8 +13840,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12947,8 +13867,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -12977,8 +13897,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13007,8 +13927,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13028,8 +13948,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13049,8 +13969,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13070,8 +13990,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13091,8 +14011,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13121,8 +14041,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13151,8 +14071,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13184,8 +14104,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13205,8 +14125,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13226,8 +14146,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13247,8 +14167,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13264,8 +14184,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13281,8 +14201,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13298,8 +14218,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13315,8 +14235,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13332,8 +14252,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13349,8 +14269,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13376,8 +14296,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13408,8 +14328,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13425,8 +14345,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13442,8 +14362,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13459,8 +14379,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13476,8 +14396,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13493,8 +14413,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13526,8 +14446,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13551,8 +14471,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     peripheral: {
@@ -13570,14 +14490,125 @@
                 },
                 value_outputs: {},
             },
+            'cmd:rpi_i2c:write_to': {
+                title: 'rpi_i2c.write_to',
+                flow_inputs: [
+                    'flow',
+                ],
+                flow_outputs: [
+                    'fail',
+                    'ok',
+                ],
+                value_inputs: {
+                    peripheral: {
+                        type: 'str',
+                        default: null,
+                    },
+                    address: {
+                        type: 'u8',
+                        default: null,
+                    },
+                    data: {
+                        type: 'bytes',
+                        default: null,
+                    },
+                },
+                value_outputs: {},
+            },
+            'cmd:rpi_i2c:read_from': {
+                title: 'rpi_i2c.read_from',
+                flow_inputs: [
+                    'flow',
+                ],
+                flow_outputs: [
+                    'fail',
+                    'ok',
+                ],
+                value_inputs: {
+                    peripheral: {
+                        type: 'str',
+                        default: null,
+                    },
+                    address: {
+                        type: 'u8',
+                        default: null,
+                    },
+                    count: {
+                        type: 'u16',
+                        default: null,
+                    },
+                },
+                value_outputs: {
+                    data: {
+                        type: 'bytes',
+                    },
+                },
+            },
+            'cmd:rpi_i2c:write_then_read': {
+                title: 'rpi_i2c.write_then_read',
+                flow_inputs: [
+                    'flow',
+                ],
+                flow_outputs: [
+                    'fail',
+                    'ok',
+                ],
+                value_inputs: {
+                    peripheral: {
+                        type: 'str',
+                        default: null,
+                    },
+                    address: {
+                        type: 'u8',
+                        default: null,
+                    },
+                    out_data: {
+                        type: 'bytes',
+                        default: null,
+                    },
+                    in_count: {
+                        type: 'u16',
+                        default: null,
+                    },
+                },
+                value_outputs: {
+                    data: {
+                        type: 'bytes',
+                    },
+                },
+            },
+            'cmd:rpi_i2c:scan': {
+                title: 'rpi_i2c.scan',
+                flow_inputs: [
+                    'flow',
+                ],
+                flow_outputs: [
+                    'fail',
+                    'ok',
+                ],
+                value_inputs: {
+                    peripheral: {
+                        type: 'str',
+                        default: null,
+                    },
+                },
+                value_outputs: {
+                    addresses: {
+                        type: 'array',
+                        element_type: {
+                            type: 'u8',
+                        },
+                    },
+                },
+            },
             'action:move_arm': {
                 title: 'Action (move_arm)',
                 flow_inputs: [
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13589,8 +14620,8 @@
                     position: {
                         type: 'str',
                         choices: [
-                            'half',
                             'down',
+                            'half',
                             'up',
                         ],
                         default: null,
@@ -13604,8 +14635,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13617,9 +14648,9 @@
                     position: {
                         type: 'str',
                         choices: [
-                            'closed',
                             'flipped',
                             'opened',
+                            'closed',
                         ],
                         default: null,
                     },
@@ -13632,8 +14663,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13645,8 +14676,8 @@
                     position: {
                         type: 'str',
                         choices: [
-                            'a',
                             'b',
+                            'a',
                         ],
                         default: null,
                     },
@@ -13659,8 +14690,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13672,10 +14703,10 @@
                     position: {
                         type: 'str',
                         choices: [
-                            'near',
                             'far',
-                            'mid',
                             'stored',
+                            'mid',
+                            'near',
                         ],
                         default: null,
                     },
@@ -13688,8 +14719,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13715,8 +14746,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13742,8 +14773,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13769,8 +14800,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'ok',
                     'fail',
+                    'ok',
                 ],
                 value_inputs: {
                     arm: {
@@ -13823,8 +14854,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     face: {
@@ -13840,8 +14871,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     face: {
@@ -13857,8 +14888,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     face: {
@@ -13874,8 +14905,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     finger: {
@@ -13891,8 +14922,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     finger: {
@@ -13908,8 +14939,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     finger: {
@@ -13925,8 +14956,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     finger: {
@@ -13942,8 +14973,8 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     finger: {
@@ -13968,11 +14999,28 @@
                     'flow',
                 ],
                 flow_outputs: [
-                    'done',
                     'fail',
+                    'done',
                 ],
                 value_inputs: {
                     face: {
+                        type: 'int',
+                        default: 0,
+                    },
+                },
+                value_outputs: {},
+            },
+            'graph:call:store_finger': {
+                title: 'Call',
+                flow_inputs: [
+                    'flow',
+                ],
+                flow_outputs: [
+                    'fail',
+                    'done',
+                ],
+                value_inputs: {
+                    finger: {
                         type: 'int',
                         default: 0,
                     },
