@@ -1427,9 +1427,7 @@
                         peripheral: '',
                     },
                     outputs: {
-                        r: [],
-                        g: [],
-                        b: [],
+                        color: [],
                     },
                     flow: {
                         fail: [],
