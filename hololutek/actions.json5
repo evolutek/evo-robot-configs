@@ -159,4 +159,13 @@
         // engine handles sequencing, branching, and parametric inputs while
         // the action engine stays at the level of single-driver moves.
     },
+
+    // Auto-registers a `get_<leaf>_position` action per template. `using`:
+    // "angle" → get_angle (PWM, degrees), "position" → get_position (AX12, raw).
+    peripheral_positions: {
+        "ax12_{arm}":   { path: "positions.arm.{arm}",     using: "position", epsilon: 10 },
+        "servo_{arm}1": { path: "positions.flipper.{arm}", using: "angle",    epsilon: 5  },
+        "servo_{arm}2": { path: "positions.tip.{arm}",     using: "angle",    epsilon: 5  },
+        "servo_{arm}3": { path: "positions.barrier.{arm}", using: "angle",    epsilon: 5  },
+    },
 }
