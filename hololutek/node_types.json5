@@ -509,12 +509,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "active_state": {
                     "type": "bool",
@@ -585,12 +580,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "pressed": {
                     "type": "bool",
@@ -661,12 +651,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "pressed": {
                     "type": "bool",
@@ -682,12 +667,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:virtual_power_button:is_pressed": {
@@ -798,6 +778,23 @@
         },
         "cmd:differential_serial_pilot:unfree": {
             "title": "differential_serial_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:match_begin": {
+            "title": "differential_serial_pilot.match_begin",
             "flow_inputs": [
                 "flow",
             ],
@@ -1078,12 +1075,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:holonomic_serial_pilot:free": {
@@ -1095,12 +1087,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:holonomic_serial_pilot:unfree": {
@@ -1112,12 +1099,19 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:match_begin": {
+            "title": "holonomic_serial_pilot.match_begin",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:holonomic_serial_pilot:get_velocity": {
@@ -1129,12 +1123,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "x": {
                     "type": "f32",
@@ -1153,12 +1142,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "x": {
                     "type": "f32",
@@ -1180,12 +1164,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "pose": {
                     "type": "struct",
@@ -1224,10 +1203,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "pose": {
                     "type": "struct",
                     "fields": {
@@ -1255,12 +1230,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:holonomic_serial_pilot:go_to": {
@@ -1273,10 +1243,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "x": {
                     "type": "f32",
                     "default": null,
@@ -1298,10 +1264,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "heading": {
                     "type": "f32",
                     "default": null,
@@ -1319,10 +1281,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "x": {
                     "type": "f32",
                     "default": null,
@@ -1344,10 +1302,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "angle": {
                     "type": "f32",
                     "default": null,
@@ -1365,15 +1319,23 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "forward": {
                     "type": "f32",
                     "default": null,
                 },
             },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:reset": {
+            "title": "holonomic_serial_pilot.reset",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:holonomic_serial_pilot:set_pid_trsl": {
@@ -1386,10 +1348,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "p": {
                     "type": "f32",
                     "default": null,
@@ -1415,10 +1373,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "p": {
                     "type": "f32",
                     "default": null,
@@ -1444,10 +1398,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "trsl_acc": {
                     "type": "f32",
                     "default": null,
@@ -1485,10 +1435,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "diam_left": {
                     "type": "f32",
                     "default": null,
@@ -1514,10 +1460,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "trsl": {
                     "type": "f32",
                     "default": null,
@@ -1539,10 +1481,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "size_x": {
                     "type": "f32",
                     "default": null,
@@ -1564,10 +1502,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "left": {
                     "type": "f32",
                     "default": null,
@@ -1589,10 +1523,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "interval_ms": {
                     "type": "i32",
                     "default": null,
@@ -1610,10 +1540,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "direction": {
                     "type": "u8",
                     "default": null,
@@ -1638,12 +1564,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "x": {
                     "type": "f32",
@@ -1665,12 +1586,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "kp": {
                     "type": "f32",
@@ -1692,12 +1608,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "kp": {
                     "type": "f32",
@@ -1719,12 +1630,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "trsl_acc": {
                     "type": "f32",
@@ -1755,12 +1661,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "spacing": {
                     "type": "f32",
@@ -1782,12 +1683,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "trsl": {
                     "type": "f32",
@@ -1833,6 +1729,23 @@
         },
         "cmd:virtual_differential_pilot:unfree": {
             "title": "virtual_differential_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:match_begin": {
+            "title": "virtual_differential_pilot.match_begin",
             "flow_inputs": [
                 "flow",
             ],
@@ -2140,6 +2053,23 @@
         },
         "cmd:virtual_holonomic_pilot:unfree": {
             "title": "virtual_holonomic_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:match_begin": {
+            "title": "virtual_holonomic_pilot.match_begin",
             "flow_inputs": [
                 "flow",
             ],
@@ -2524,6 +2454,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
                 "angle": {
@@ -2545,6 +2507,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
                 "fraction": {
@@ -2566,6 +2560,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
             },
@@ -2583,6 +2609,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
             },
@@ -2604,6 +2662,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
             },
@@ -2625,6 +2715,38 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
                     "default": null,
                 },
             },
@@ -2646,6 +2768,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_led_11",
+                        "color_led_12",
+                        "color_led_13",
+                        "color_led_14",
+                        "color_led_21",
+                        "color_led_22",
+                        "color_led_23",
+                        "color_led_24",
+                        "color_led_31",
+                        "color_led_32",
+                        "color_led_33",
+                        "color_led_34",
+                    ],
                     "default": null,
                 },
                 "intensity": {
@@ -2667,6 +2803,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_led_11",
+                        "color_led_12",
+                        "color_led_13",
+                        "color_led_14",
+                        "color_led_21",
+                        "color_led_22",
+                        "color_led_23",
+                        "color_led_24",
+                        "color_led_31",
+                        "color_led_32",
+                        "color_led_33",
+                        "color_led_34",
+                    ],
                     "default": null,
                 },
             },
@@ -2686,10 +2836,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "index": {
                     "type": "u16",
                     "default": null,
@@ -2719,10 +2865,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "index": {
                     "type": "u16",
                     "default": null,
@@ -2750,10 +2892,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "r": {
                     "type": "f32",
                     "default": null,
@@ -2779,10 +2917,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "brightness": {
                     "type": "f32",
                     "default": null,
@@ -2799,12 +2933,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "brightness": {
                     "type": "f32",
@@ -2820,12 +2949,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:mdb_led:clear": {
@@ -2837,12 +2961,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:mdb_led:set_state": {
@@ -2855,10 +2974,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "state": {
                     "type": "enum",
                     "values": {
@@ -2882,12 +2997,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "state": {
                     "type": "enum",
@@ -2911,20 +3021,17 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-                "r": {
-                    "type": "f32",
-                    "default": null,
-                },
-                "g": {
-                    "type": "f32",
-                    "default": null,
-                },
-                "b": {
-                    "type": "f32",
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
                     "default": null,
                 },
             },
@@ -2939,21 +3046,19 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
-                "r": {
-                    "type": "f32",
-                },
-                "g": {
-                    "type": "f32",
-                },
-                "b": {
-                    "type": "f32",
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
                 },
             },
         },
@@ -2969,6 +3074,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
@@ -2999,6 +3118,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3029,6 +3162,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
                 "intensity": {
@@ -3050,6 +3197,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3071,6 +3232,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
                 "gamma": {
@@ -3092,6 +3267,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3100,6 +3289,85 @@
                     "type": "f32",
                 },
             },
+        },
+        "cmd:tcs34725:calibrate": {
+            "title": "tcs34725.calibrate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:auto_expose": {
+            "title": "tcs34725.auto_expose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "target_c": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
         },
         "cmd:tcs34725:set_gain": {
             "title": "tcs34725.set_gain",
@@ -3113,6 +3381,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
                 "gain": {
@@ -3134,6 +3416,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3155,6 +3451,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
                 "ms": {
@@ -3176,12 +3486,166 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
                     "default": null,
                 },
             },
             "value_outputs": {
                 "ms": {
                     "type": "f32",
+                },
+            },
+        },
+        "cmd:tcs34725:set_flash_differential": {
+            "title": "tcs34725.set_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "enabled": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_flash_differential": {
+            "title": "tcs34725.get_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:tcs34725:get_chip_id": {
+            "title": "tcs34725.get_chip_id",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "chip_id": {
+                    "type": "u8",
+                },
+            },
+        },
+        "cmd:tcs34725:get_status": {
+            "title": "tcs34725.get_status",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "status": {
+                    "type": "u8",
                 },
             },
         },
@@ -3197,6 +3661,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
                 "angle": {
@@ -3218,6 +3696,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
                 "fraction": {
@@ -3239,6 +3731,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3256,6 +3762,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
                 "position": {
@@ -3277,6 +3797,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3298,6 +3832,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3319,6 +3867,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3340,6 +3902,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
                 "speed": {
@@ -3361,6 +3937,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3378,6 +3968,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3395,6 +3999,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3416,6 +4034,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3437,6 +4069,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3458,6 +4104,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3479,6 +4139,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -3500,6 +4174,20 @@
             "value_inputs": {
                 "peripheral": {
                     "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
                     "default": null,
                 },
             },
@@ -4309,16 +4997,17 @@
                     "type": "str",
                     "default": null,
                 },
-                "r": {
-                    "type": "f32",
-                    "default": null,
-                },
-                "g": {
-                    "type": "f32",
-                    "default": null,
-                },
-                "b": {
-                    "type": "f32",
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
                     "default": null,
                 },
             },
@@ -4340,14 +5029,17 @@
                 },
             },
             "value_outputs": {
-                "r": {
-                    "type": "f32",
-                },
-                "g": {
-                    "type": "f32",
-                },
-                "b": {
-                    "type": "f32",
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
                 },
             },
         },
@@ -4555,6 +5247,48 @@
             },
             "value_outputs": {},
         },
+        "cmd:virtual_tcs34725:set_flash_differential": {
+            "title": "virtual_tcs34725.set_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "enabled": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:get_flash_differential": {
+            "title": "virtual_tcs34725.get_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "fail",
+                "ok",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
         "cmd:virtual_tcs34725:inject_color": {
             "title": "virtual_tcs34725.inject_color",
             "flow_inputs": [
@@ -4694,12 +5428,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:rplidar:stop": {
@@ -4711,12 +5440,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:virtual_lidar:start": {
@@ -4762,12 +5486,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "x": {
                     "type": "f32",
@@ -4790,10 +5509,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "pose": {
                     "type": "struct",
                     "fields": {
@@ -4821,12 +5536,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:trajman:disable": {
@@ -4838,12 +5548,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:trajman:free": {
@@ -4855,12 +5560,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:trajman:unfree": {
@@ -4872,12 +5572,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:trajman:abort": {
@@ -4889,12 +5584,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {},
         },
         "cmd:trajman:go_to": {
@@ -4907,10 +5597,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "target": {
                     "type": "struct",
                     "fields": {
@@ -4940,10 +5626,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "heading": {
                     "type": "f32",
                     "default": null,
@@ -4965,10 +5647,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "distance": {
                     "type": "f32",
                     "default": null,
@@ -4990,10 +5668,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "address": {
                     "type": "u8",
                     "default": null,
@@ -5015,10 +5689,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "address": {
                     "type": "u8",
                     "default": null,
@@ -5044,10 +5714,6 @@
                 "ok",
             ],
             "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
                 "address": {
                     "type": "u8",
                     "default": null,
@@ -5076,12 +5742,7 @@
                 "fail",
                 "ok",
             ],
-            "value_inputs": {
-                "peripheral": {
-                    "type": "str",
-                    "default": null,
-                },
-            },
+            "value_inputs": {},
             "value_outputs": {
                 "addresses": {
                     "type": "array",
@@ -5110,9 +5771,9 @@
                 "position": {
                     "type": "str",
                     "choices": [
-                        "down",
                         "half",
                         "up",
+                        "down",
                     ],
                     "default": null,
                 },
@@ -5138,9 +5799,9 @@
                 "position": {
                     "type": "str",
                     "choices": [
+                        "closed",
                         "flipped",
                         "opened",
-                        "closed",
                     ],
                     "default": null,
                 },
@@ -5193,8 +5854,8 @@
                 "position": {
                     "type": "str",
                     "choices": [
-                        "far",
                         "stored",
+                        "far",
                         "mid",
                         "near",
                     ],
