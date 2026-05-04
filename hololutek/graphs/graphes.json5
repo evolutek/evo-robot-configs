@@ -1,7 +1,7 @@
 {
     version: 1,
     graphes: {
-        test: {
+        match_belgique: {
             value_inputs: {
                 finger: {
                     type: 'int',
