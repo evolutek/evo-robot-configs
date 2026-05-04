@@ -1423,9 +1423,7 @@
                 },
                 'node-32': {
                     type: 'cmd:mdb_led:get_team_color',
-                    inputs: {
-                        peripheral: '',
-                    },
+                    inputs: {},
                     outputs: {
                         color: [],
                     },
