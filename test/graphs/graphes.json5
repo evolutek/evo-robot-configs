@@ -86,8 +86,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-21': {
@@ -172,8 +172,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-12': {
@@ -216,7 +216,9 @@
                         b: 4,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-14:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -296,8 +298,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-2': {
@@ -345,7 +347,9 @@
                         b: false,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-14:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -476,8 +480,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-31': {
@@ -487,8 +491,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-29': {
@@ -508,8 +512,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-35': {
@@ -519,8 +523,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
             },
@@ -545,8 +549,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-30': {
@@ -616,8 +620,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-29': {
@@ -627,8 +631,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
             },
@@ -659,8 +663,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-27': {
@@ -670,8 +674,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-23': {
@@ -681,8 +685,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-24': {
@@ -746,8 +750,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
             },
@@ -778,8 +782,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-12': {
@@ -789,8 +793,10 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [
+                            'node-16:flow',
+                        ],
                     },
                 },
                 'node-13': {
@@ -854,8 +860,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-16': {
@@ -865,8 +871,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
             },
@@ -897,8 +903,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-1': {
@@ -940,8 +946,10 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [
+                            'node-2:fail',
+                        ],
                     },
                 },
                 'node-11': {
@@ -951,8 +959,8 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
                         ok: [],
+                        fail: [],
                     },
                 },
                 'node-10': {
@@ -962,8 +970,12 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
-                        ok: [],
+                        ok: [
+                            'node-2:fail',
+                        ],
+                        fail: [
+                            'node-2:done',
+                        ],
                     },
                 },
                 'node-7': {
@@ -1031,8 +1043,8 @@
                     },
                     outputs: {},
                     flow: {
-                        true: [],
                         false: [],
+                        true: [],
                     },
                 },
                 'node-5': {
@@ -1042,7 +1054,9 @@
                         b: false,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-5:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -1077,6 +1091,231 @@
                     flow: {
                         next: [],
                     },
+                },
+            },
+        },
+        store_finger: {
+            value_inputs: {
+                finger: {
+                    type: 'int',
+                    default: 0,
+                },
+            },
+            value_outputs: {},
+            flow_outputs: [
+                'done',
+                'fail',
+            ],
+            nodes: {
+                'node-7': {
+                    type: 'math/mod',
+                    inputs: {
+                        a: 0,
+                        b: 10,
+                    },
+                    outputs: {
+                        result: [
+                            'node-4:a',
+                            'node-5:a',
+                        ],
+                    },
+                    flow: {},
+                },
+                'node-4': {
+                    type: 'compare/gt',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [
+                            'node-6:a',
+                        ],
+                    },
+                    flow: {},
+                },
+                'node-5': {
+                    type: 'compare/lt',
+                    inputs: {
+                        a: 1,
+                        b: 5,
+                    },
+                    outputs: {
+                        result: [
+                            'node-6:b',
+                        ],
+                    },
+                    flow: {},
+                },
+                'node-6': {
+                    type: 'logic/and',
+                    inputs: {
+                        a: false,
+                        b: false,
+                    },
+                    outputs: {
+                        result: [
+                            'node-3:condition',
+                        ],
+                    },
+                    flow: {},
+                },
+                'node-8': {
+                    type: 'action:move_barrier_from_arm',
+                    inputs: {
+                        position: 'stored',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [
+                            'node-2:fail',
+                        ],
+                        ok: [
+                            'node-2:done',
+                        ],
+                    },
+                },
+                'node-3': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        false: [
+                            'node-2:fail',
+                        ],
+                        true: [
+                            'node-8:flow',
+                            'node-10:flow',
+                        ],
+                    },
+                },
+                'node-10': {
+                    type: 'action:get_tip_position',
+                    inputs: {
+                        epsilon: 5,
+                    },
+                    outputs: {
+                        position: [
+                            'node-14:a',
+                        ],
+                    },
+                    flow: {
+                        fail: [
+                            'node-13:flow',
+                        ],
+                        ok: [
+                            'node-2:fail',
+                        ],
+                    },
+                },
+                'node-14': {
+                    type: 'compare/eq_str',
+                    inputs: {
+                        a: '',
+                        b: 'closed',
+                    },
+                    outputs: {
+                        result: [
+                            'node-13:condition',
+                        ],
+                    },
+                    flow: {},
+                },
+                'node-13': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        false: [
+                            'node-16:flow',
+                        ],
+                        true: [
+                            'node-15:flow',
+                        ],
+                    },
+                },
+                'node-15': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'up',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [
+                            'node-2:done',
+                        ],
+                        ok: [
+                            'node-2:fail',
+                        ],
+                    },
+                },
+                'node-2': {
+                    type: 'graph:exit',
+                    inputs: {},
+                    outputs: {},
+                    flow: {},
+                },
+                'node-16': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [
+                            'node-15:flow',
+                            'node-21:flow',
+                        ],
+                        ok: [
+                            'node-2:fail',
+                        ],
+                    },
+                },
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {
+                        finger: [
+                            'node-7:a',
+                            'node-8:arm',
+                            'node-10:arm',
+                            'node-15:arm',
+                            'node-16:arm',
+                        ],
+                    },
+                    flow: {
+                        next: [
+                            'node-3:flow',
+                        ],
+                    },
+                },
+                'node-21': {
+                    type: 'cmd:tcs34725:get_color',
+                    inputs: {},
+                    outputs: {
+                        name: [],
+                    },
+                    flow: {
+                        fail: [
+                            'node-2:fail',
+                        ],
+                        ok: [],
+                    },
+                },
+                'node-20': {
+                    type: 'compare/eq_enum',
+                    inputs: {
+                        a: 0,
+                        b: 0,
+                    },
+                    outputs: {
+                        result: [],
+                    },
+                    flow: {},
                 },
             },
         },
