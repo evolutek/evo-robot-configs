@@ -1,0 +1,119 @@
+{
+    version: 1,
+
+   graphes: {
+      'test': {
+        'node-7': {
+            type: 'entry',
+            inputs: {},
+            outputs: {},
+            flow: {
+                next: [
+                    'node-8:flow',
+                ],
+            },
+        },
+        'node-9': {
+            type: 'cmd:holonomic_serial_pilot:head_to',
+            inputs: {
+                peripheral: 'pilot',
+                heading: 0,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-10:flow',
+                ],
+            },
+        },
+        'node-8': {
+            type: 'cmd:holonomic_serial_pilot:go_to',
+            inputs: {
+                peripheral: 'pilot',
+                x: 700,
+                y: 300,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-9:flow',
+                ],
+            },
+        },
+        'node-10': {
+            type: 'cmd:holonomic_serial_pilot:go_to',
+            inputs: {
+                peripheral: 'pilot',
+                x: 700,
+                y: 1200,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-11:flow',
+                ],
+            },
+        },
+        'node-11': {
+            type: 'cmd:holonomic_serial_pilot:go_to',
+            inputs: {
+                peripheral: 'pilot',
+                x: 800,
+                y: 1300,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-12:flow',
+                ],
+            },
+        },
+        'node-12': {
+            type: 'cmd:holonomic_serial_pilot:head_to',
+            inputs: {
+                peripheral: 'pilot',
+                heading: 3.14,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-13:flow',
+                ],
+            },
+        },
+        'node-13': {
+            type: 'cmd:holonomic_serial_pilot:go_to',
+            inputs: {
+                peripheral: 'pilot',
+                x: 800,
+                y: 400,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [
+                    'node-14:flow',
+                ],
+            },
+        },
+        'node-14': {
+            type: 'cmd:holonomic_serial_pilot:go_to',
+            inputs: {
+                peripheral: 'pilot',
+                x: 200,
+                y: 300,
+            },
+            outputs: {},
+            flow: {
+                fail: [],
+                ok: [],
+            },
+        },
+      },
+    },
+}

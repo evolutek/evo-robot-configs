@@ -47,20 +47,20 @@
 
             // Tip servo (degrees, range 0-205)
             "tip": {
-                "11": {"flipped": 10, "opened": 100, "closed": 195},
-                "12": {"flipped":  5, "opened":  95, "closed": 195},
-                "13": {"flipped":  5, "opened":  90, "closed": 190},
-                "14": {"flipped": 10, "opened":  90, "closed": 195},
+                "11": {"flipped": 10, "opened": 100, "closed": 195, "folded": 225},
+                "12": {"flipped":  5, "opened":  95, "closed": 195, "folded": 225},
+                "13": {"flipped":  5, "opened":  90, "closed": 190, "folded": 225},
+                "14": {"flipped": 10, "opened":  90, "closed": 195, "folded": 225},
 
-                "21": {"flipped":  0, "opened":  85, "closed": 185},
-                "22": {"flipped": 15, "opened": 100, "closed": 195},
-                "23": {"flipped": 10, "opened":  95, "closed": 190},
-                "24": {"flipped": 21, "opened": 105, "closed": 195},
+                "21": {"flipped":  0, "opened":  85, "closed": 185, "folded": 225},
+                "22": {"flipped": 15, "opened": 100, "closed": 195, "folded": 225},
+                "23": {"flipped": 10, "opened":  95, "closed": 190, "folded": 225},
+                "24": {"flipped": 21, "opened": 105, "closed": 195, "folded": 225},
 
-                "31": {"flipped": 10, "opened": 100, "closed": 195},
-                "32": {"flipped": 15, "opened": 100, "closed": 195},
-                "33": {"flipped": 15, "opened":  95, "closed": 190},
-                "34": {"flipped": 10, "opened":  85, "closed": 195},
+                "31": {"flipped": 10, "opened": 100, "closed": 195, "folded": 225},
+                "32": {"flipped": 15, "opened": 100, "closed": 195, "folded": 225},
+                "33": {"flipped": 15, "opened":  95, "closed": 190, "folded": 225},
+                "34": {"flipped": 10, "opened":  85, "closed": 195, "folded": 225},
             },
 
             // Flipper servo (degrees)
