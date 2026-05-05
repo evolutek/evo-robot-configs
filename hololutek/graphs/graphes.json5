@@ -11,10 +11,7 @@
                     inputs: {},
                     outputs: {},
                     flow: {
-                        next: [
-                            'node-21:flow',
-                            'node-22:flow',
-                        ],
+                        next: [],
                     },
                 },
                 'node-22': {
@@ -61,7 +58,9 @@
                         b: 0,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-6:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -72,7 +71,9 @@
                         b: 5,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-6:b',
+                        ],
                     },
                     flow: {},
                 },
@@ -82,11 +83,13 @@
                         epsilon: 5,
                     },
                     outputs: {
-                        position: [],
+                        position: [
+                            'node-14:a',
+                        ],
                     },
                     flow: {
                         fail: [
-                            'node-3:flow',
+                            'node-13:flow',
                         ],
                         ok: [
                             'node-2:fail',
@@ -100,7 +103,9 @@
                         b: 'closed',
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-13:condition',
+                        ],
                     },
                     flow: {},
                 },
@@ -111,43 +116,12 @@
                     },
                     outputs: {},
                     flow: {
-                        false: [],
-                        true: [],
-                    },
-                },
-                'node-15': {
-                    type: 'action:move_arm',
-                    inputs: {
-                        position: 'up',
-                    },
-                    outputs: {},
-                    flow: {
-                        fail: [],
-                        ok: [
-                            'node-2:fail',
+                        false: [
+                            'node-16:flow',
                         ],
-                    },
-                },
-                'node-16': {
-                    type: 'action:move_tip_from_arm',
-                    inputs: {
-                        position: 'closed',
-                    },
-                    outputs: {},
-                    flow: {
-                        fail: [],
-                        ok: [],
-                    },
-                },
-                'node-23': {
-                    type: 'if',
-                    inputs: {
-                        condition: false,
-                    },
-                    outputs: {},
-                    flow: {
-                        false: [],
-                        true: [],
+                        true: [
+                            'node-15:flow',
+                        ],
                     },
                 },
                 'node-2': {
@@ -164,22 +138,11 @@
                     outputs: {},
                     flow: {
                         fail: [
-                            'node-2:done',
-                        ],
-                        ok: [],
-                    },
-                },
-                'node-21': {
-                    type: 'cmd:tcs34725:get_color',
-                    inputs: {},
-                    outputs: {
-                        name: [],
-                    },
-                    flow: {
-                        fail: [
                             'node-2:fail',
                         ],
-                        ok: [],
+                        ok: [
+                            'node-2:done',
+                        ],
                     },
                 },
                 'node-7': {
@@ -189,7 +152,10 @@
                         b: 10,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-4:a',
+                            'node-5:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -200,7 +166,9 @@
                         b: false,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-3:condition',
+                        ],
                     },
                     flow: {},
                 },
@@ -208,11 +176,19 @@
                     type: 'graph:entry',
                     inputs: {},
                     outputs: {
-                        finger: [],
+                        finger: [
+                            'node-7:a',
+                            'node-10:arm',
+                            'node-15:arm',
+                            'node-16:arm',
+                            'node-24:arm',
+                            'node-26:a',
+                            'node-8:arm',
+                        ],
                     },
                     flow: {
                         next: [
-                            'node-2:fail',
+                            'node-3:flow',
                         ],
                     },
                 },
@@ -223,7 +199,10 @@
                         b: 10,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-27:a',
+                            'node-28:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -234,7 +213,9 @@
                         b: 1,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-31:a',
+                        ],
                     },
                     flow: {},
                 },
@@ -245,7 +226,9 @@
                         b: 4,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-31:b',
+                        ],
                     },
                     flow: {},
                 },
@@ -256,20 +239,11 @@
                         b: false,
                     },
                     outputs: {
-                        result: [],
+                        result: [
+                            'node-30:condition',
+                        ],
                     },
                     flow: {},
-                },
-                'node-30': {
-                    type: 'if',
-                    inputs: {
-                        condition: false,
-                    },
-                    outputs: {},
-                    flow: {
-                        false: [],
-                        true: [],
-                    },
                 },
                 'node-8': {
                     type: 'action:move_barrier_from_arm',
@@ -278,34 +252,12 @@
                     },
                     outputs: {},
                     flow: {
-                        fail: [],
-                        ok: [],
-                    },
-                },
-                'node-22': {
-                    type: 'compare/eq_enum',
-                    inputs: {
-                        a: 0,
-                        b: 'Yellow',
-                    },
-                    outputs: {
-                        result: [],
-                    },
-                    flow: {},
-                },
-                'node-32': {
-                    type: 'cmd:mdb_led:get_team_color',
-                    inputs: {
-                        peripheral: '',
-                    },
-                    outputs: {
-                        r: [],
-                        g: [],
-                        b: [],
-                    },
-                    flow: {
-                        fail: [],
-                        ok: [],
+                        fail: [
+                            'node-2:fail',
+                        ],
+                        ok: [
+                            'node-2:done',
+                        ],
                     },
                 },
                 'node-3': {
@@ -316,9 +268,57 @@
                     outputs: {},
                     flow: {
                         false: [
+                            'node-2:fail',
+                        ],
+                        true: [
+                            'node-10:flow',
+                            'node-30:flow',
+                        ],
+                    },
+                },
+                'node-30': {
+                    type: 'if',
+                    inputs: {
+                        condition: false,
+                    },
+                    outputs: {},
+                    flow: {
+                        false: [
+                            'node-2:done',
+                        ],
+                        true: [
                             'node-8:flow',
                         ],
-                        true: [],
+                    },
+                },
+                'node-16': {
+                    type: 'action:move_tip_from_arm',
+                    inputs: {
+                        position: 'closed',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [
+                            'node-15:flow',
+                        ],
+                        ok: [
+                            'node-2:fail',
+                        ],
+                    },
+                },
+                'node-15': {
+                    type: 'action:move_arm',
+                    inputs: {
+                        position: 'up',
+                    },
+                    outputs: {},
+                    flow: {
+                        fail: [
+                            'node-24:flow',
+                        ],
+                        ok: [
+                            'node-2:fail',
+                        ],
                     },
                 },
             },
