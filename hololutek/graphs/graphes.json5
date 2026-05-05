@@ -89,10 +89,10 @@
                     },
                     flow: {
                         fail: [
-                            'node-13:flow',
+                            'node-2:fail',
                         ],
                         ok: [
-                            'node-2:fail',
+                            'node-13:flow',
                         ],
                     },
                 },
