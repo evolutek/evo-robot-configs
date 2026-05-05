@@ -23,8 +23,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "false",
                 "true",
+                "false",
             ],
             "value_inputs": {
                 "condition": {
@@ -506,8 +506,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -522,8 +522,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -543,8 +543,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -560,8 +560,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -577,8 +577,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -593,8 +593,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -614,8 +614,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -631,8 +631,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -648,8 +648,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -664,8 +664,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -676,8 +676,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -697,8 +697,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -714,8 +714,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -731,8 +731,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -748,8 +748,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -765,8 +765,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -782,8 +782,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -799,8 +799,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -816,8 +816,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -840,8 +840,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -867,8 +867,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -910,8 +910,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -942,8 +942,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -959,8 +959,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -984,8 +984,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1005,8 +1005,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1030,8 +1030,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1051,8 +1051,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1072,8 +1072,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1084,8 +1084,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1096,8 +1096,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1108,8 +1108,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1120,8 +1120,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1139,8 +1139,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1161,8 +1161,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1199,8 +1199,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "pose": {
@@ -1227,8 +1227,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1239,8 +1239,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "x": {
@@ -1260,8 +1260,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "heading": {
@@ -1277,8 +1277,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "x": {
@@ -1298,8 +1298,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "angle": {
@@ -1315,8 +1315,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "forward": {
@@ -1332,8 +1332,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -1344,8 +1344,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "p": {
@@ -1369,8 +1369,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "p": {
@@ -1394,8 +1394,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "trsl_acc": {
@@ -1431,8 +1431,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "diam_left": {
@@ -1456,8 +1456,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "trsl": {
@@ -1477,8 +1477,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "size_x": {
@@ -1498,8 +1498,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "left": {
@@ -1519,8 +1519,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "interval_ms": {
@@ -1536,8 +1536,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "direction": {
@@ -1561,8 +1561,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1583,8 +1583,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1605,8 +1605,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1627,8 +1627,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1658,8 +1658,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1680,8 +1680,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -1699,8 +1699,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1716,8 +1716,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1733,8 +1733,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1750,8 +1750,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1767,8 +1767,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1791,8 +1791,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1818,8 +1818,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1861,8 +1861,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1893,8 +1893,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1910,8 +1910,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1935,8 +1935,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1956,8 +1956,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -1981,8 +1981,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2002,8 +2002,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2023,8 +2023,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2040,8 +2040,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2057,8 +2057,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2074,8 +2074,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2091,8 +2091,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2115,8 +2115,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2142,8 +2142,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2185,8 +2185,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2217,8 +2217,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2234,8 +2234,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2259,8 +2259,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2280,8 +2280,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2305,8 +2305,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2326,8 +2326,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2347,8 +2347,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2368,8 +2368,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2385,8 +2385,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2406,8 +2406,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2427,8 +2427,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2448,8 +2448,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2501,8 +2501,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2554,8 +2554,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2603,8 +2603,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2656,8 +2656,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2709,8 +2709,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2762,8 +2762,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2797,8 +2797,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -2832,8 +2832,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "index": {
@@ -2861,8 +2861,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "index": {
@@ -2888,8 +2888,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "r": {
@@ -2913,8 +2913,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "brightness": {
@@ -2930,8 +2930,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -2946,8 +2946,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -2958,8 +2958,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -2970,8 +2970,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "state": {
@@ -2994,8 +2994,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -3017,8 +3017,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "color": {
@@ -3043,8 +3043,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -3068,8 +3068,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3112,8 +3112,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3156,8 +3156,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3191,8 +3191,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3226,8 +3226,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3261,8 +3261,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3296,8 +3296,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3340,8 +3340,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3375,8 +3375,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3410,8 +3410,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3445,8 +3445,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3480,8 +3480,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3515,8 +3515,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3550,8 +3550,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3585,8 +3585,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3620,8 +3620,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3655,8 +3655,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3690,8 +3690,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3725,8 +3725,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3756,8 +3756,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3791,8 +3791,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3826,8 +3826,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3861,8 +3861,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3896,8 +3896,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3931,8 +3931,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3962,8 +3962,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -3993,8 +3993,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4028,8 +4028,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4063,8 +4063,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4098,8 +4098,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4133,8 +4133,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4168,8 +4168,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4203,8 +4203,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4224,8 +4224,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4245,8 +4245,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4262,8 +4262,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4283,8 +4283,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4304,8 +4304,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4325,8 +4325,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4346,8 +4346,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4367,8 +4367,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4392,8 +4392,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4421,8 +4421,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4454,8 +4454,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4478,8 +4478,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4499,8 +4499,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4520,8 +4520,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4537,8 +4537,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4558,8 +4558,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4579,8 +4579,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4600,8 +4600,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4621,8 +4621,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4642,8 +4642,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4659,8 +4659,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4680,8 +4680,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4701,8 +4701,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4722,8 +4722,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4743,8 +4743,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4764,8 +4764,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4797,8 +4797,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4828,8 +4828,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4857,8 +4857,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4878,8 +4878,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4899,8 +4899,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4916,8 +4916,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4933,8 +4933,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4961,8 +4961,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -4989,8 +4989,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5019,8 +5019,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5049,8 +5049,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5079,8 +5079,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5109,8 +5109,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5130,8 +5130,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5151,8 +5151,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5172,8 +5172,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5193,8 +5193,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5223,8 +5223,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5253,8 +5253,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5274,8 +5274,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5295,8 +5295,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5328,8 +5328,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5349,8 +5349,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5370,8 +5370,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5391,8 +5391,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5408,8 +5408,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5425,8 +5425,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5437,8 +5437,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5449,8 +5449,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5466,8 +5466,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "peripheral": {
@@ -5483,8 +5483,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -5505,8 +5505,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "pose": {
@@ -5533,8 +5533,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5545,8 +5545,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5557,8 +5557,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5569,8 +5569,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5581,8 +5581,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {},
@@ -5593,8 +5593,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "target": {
@@ -5622,8 +5622,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "heading": {
@@ -5643,8 +5643,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "distance": {
@@ -5664,8 +5664,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "address": {
@@ -5685,8 +5685,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "address": {
@@ -5710,8 +5710,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "address": {
@@ -5739,8 +5739,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {},
             "value_outputs": {
@@ -5758,8 +5758,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5772,8 +5772,8 @@
                     "type": "str",
                     "choices": [
                         "half",
-                        "up",
                         "down",
+                        "up",
                     ],
                     "default": null,
                 },
@@ -5786,8 +5786,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5799,9 +5799,9 @@
                 "position": {
                     "type": "str",
                     "choices": [
-                        "closed",
                         "flipped",
                         "opened",
+                        "closed",
                     ],
                     "default": null,
                 },
@@ -5814,8 +5814,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5827,8 +5827,8 @@
                 "position": {
                     "type": "str",
                     "choices": [
-                        "b",
                         "a",
+                        "b",
                     ],
                     "default": null,
                 },
@@ -5841,8 +5841,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5854,10 +5854,10 @@
                 "position": {
                     "type": "str",
                     "choices": [
-                        "stored",
-                        "far",
                         "mid",
                         "near",
+                        "far",
+                        "stored",
                     ],
                     "default": null,
                 },
@@ -5870,8 +5870,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5897,8 +5897,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5924,8 +5924,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5951,8 +5951,8 @@
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "ok",
+                "fail",
             ],
             "value_inputs": {
                 "arm": {
@@ -5999,176 +5999,31 @@
             "value_inputs": {},
             "value_outputs": {},
         },
-        "graph:call:open_face": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "face": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:lower_face": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "face": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:grip_face": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "face": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:fold_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "finger": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:open_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "finger": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:lower_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "finger": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:grip_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "finger": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:load_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "finger": {
-                    "type": "float",
-                    "default": 0.0,
-                },
-            },
-            "value_outputs": {},
-        },
-        "graph:call:prepare_finger": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [],
-            "value_inputs": {},
-            "value_outputs": {},
-        },
-        "graph:call:prepare_face": {
-            "title": "Call",
-            "flow_inputs": [
-                "flow",
-            ],
-            "flow_outputs": [
-                "fail",
-                "done",
-            ],
-            "value_inputs": {
-                "face": {
-                    "type": "int",
-                    "default": 0,
-                },
-            },
-            "value_outputs": {},
-        },
         "graph:call:store_finger": {
             "title": "Call",
             "flow_inputs": [
                 "flow",
             ],
             "flow_outputs": [
-                "fail",
                 "done",
+                "fail",
+            ],
+            "value_inputs": {
+                "finger": {
+                    "type": "int",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {},
+        },
+        "graph:call:test": {
+            "title": "Call",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "done",
+                "fail",
             ],
             "value_inputs": {
                 "finger": {
