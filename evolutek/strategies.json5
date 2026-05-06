@@ -1,0 +1,10 @@
+{
+    version: 1,
+    strategies: {
+        /*main: {
+            runner: "graph",
+            graph: "main",
+            title: "Main",
+        },*/
+    },
+}
