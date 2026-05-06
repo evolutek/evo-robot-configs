@@ -66,6 +66,50 @@
             args: {}
         },*/
 
+        // ───────────────────── Cameras (3 faces) ─────────────────────
+        // Stable device paths come from /etc/udev/rules.d/evolutek.rules
+        // (see hololutek/udev/cameras.rules). Each Innomaker U20CAM-1080p
+        // is autofocus-disabled at init and locked to a fixed focus value
+        // measured during calibration. ArUco detector reads its calibration
+        // from the matching JSON5 in calibration/.
+        "cam_face1": {
+            driver: "uvc_camera",
+            args: { device: "/dev/CAM_FACE1", width: 1280, height: 720, focus: 0 },
+        },
+        "cam_face2": {
+            driver: "uvc_camera",
+            args: { device: "/dev/CAM_FACE2", width: 1280, height: 720, focus: 0 },
+        },
+        "cam_face3": {
+            driver: "uvc_camera",
+            args: { device: "/dev/CAM_FACE3", width: 1280, height: 720, focus: 0 },
+        },
+
+        "aruco_face1": {
+            driver: "aruco_detector",
+            args: {
+                camera: "cam_face1",
+                marker_size_mm: 32.0,
+                calibration_path: "/home/pi/configs/hololutek/calibration/cam_face1.json5",
+            },
+        },
+        "aruco_face2": {
+            driver: "aruco_detector",
+            args: {
+                camera: "cam_face2",
+                marker_size_mm: 32.0,
+                calibration_path: "/home/pi/configs/hololutek/calibration/cam_face2.json5",
+            },
+        },
+        "aruco_face3": {
+            driver: "aruco_detector",
+            args: {
+                camera: "cam_face3",
+                marker_size_mm: 32.0,
+                calibration_path: "/home/pi/configs/hololutek/calibration/cam_face3.json5",
+            },
+        },
+
         // Trajman
         "trajman": {
             driver: "trajman",
