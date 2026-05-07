@@ -67,31 +67,29 @@
         },*/
 
         // ───────────────────── Cameras (3 faces) ─────────────────────
-        // Stable device paths come from /etc/udev/rules.d/evolutek-cameras.rules.
-        // Each Innomaker U20CAM-1080p is autofocus-disabled at init and locked
-        // to a fixed focus. ArUco detection + calibration are built into the
-        // driver — no separate detector peripheral.
+        // Innomaker U20CAM-1080p, fixed focus (no actuator).
+        // marker_size_mm = ArUco on game bricks (30mm), not the ChArUco mire.
         "cam_face1": {
             driver: "uvc_camera",
             args: {
-                device: "/dev/CAM_FACE1", width: 1280, height: 720, focus: 0,
-                marker_size_mm: 32.0,
+                device: "/dev/CAM_FACE1", width: 1920, height: 1080, focus: 0,
+                marker_size_mm: 30.0,
                 calibration_path: "/home/pi/configs/hololutek/calibration/cam_face1.json5",
             },
         },
         "cam_face2": {
             driver: "uvc_camera",
             args: {
-                device: "/dev/CAM_FACE2", width: 1280, height: 720, focus: 0,
-                marker_size_mm: 32.0,
+                device: "/dev/CAM_FACE2", width: 1920, height: 1080, focus: 0,
+                marker_size_mm: 30.0,
                 calibration_path: "/home/pi/configs/hololutek/calibration/cam_face2.json5",
             },
         },
         "cam_face3": {
             driver: "uvc_camera",
             args: {
-                device: "/dev/CAM_FACE3", width: 1280, height: 720, focus: 0,
-                marker_size_mm: 32.0,
+                device: "/dev/CAM_FACE3", width: 1920, height: 1080, focus: 0,
+                marker_size_mm: 30.0,
                 calibration_path: "/home/pi/configs/hololutek/calibration/cam_face3.json5",
             },
         },
