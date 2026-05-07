@@ -6,8 +6,8 @@
 # different port = the symlink follows the port, not the camera.
 #
 # Mapping (look at the side panel of the hub):
-#   port 1.3.1 -> /dev/CAM_FACE1
-#   port 1.3.2 -> /dev/CAM_FACE2
+#   port 1.3.1 -> /dev/CAM_FACE2
+#   port 1.3.2 -> /dev/CAM_FACE1
 #   port 1.3.3 -> /dev/CAM_FACE3
 #
 # index==0 selects the first /dev/videoN exposed by each camera (the
@@ -18,6 +18,6 @@
 #   sudo cp ~/configs/hololutek/udev/cameras.rules /etc/udev/rules.d/evolutek-cameras.rules
 #   sudo udevadm control --reload-rules && sudo udevadm trigger
 
-KERNEL=="video[0-9]*", KERNELS=="1-1.3.1", ATTR{index}=="0", ATTR{name}=="Innomaker-U20CAM-1080p-S1: Inno", SYMLINK+="CAM_FACE1"
-KERNEL=="video[0-9]*", KERNELS=="1-1.3.2", ATTR{index}=="0", ATTR{name}=="Innomaker-U20CAM-1080p-S1: Inno", SYMLINK+="CAM_FACE2"
+KERNEL=="video[0-9]*", KERNELS=="1-1.3.1", ATTR{index}=="0", ATTR{name}=="Innomaker-U20CAM-1080p-S1: Inno", SYMLINK+="CAM_FACE2"
+KERNEL=="video[0-9]*", KERNELS=="1-1.3.2", ATTR{index}=="0", ATTR{name}=="Innomaker-U20CAM-1080p-S1: Inno", SYMLINK+="CAM_FACE1"
 KERNEL=="video[0-9]*", KERNELS=="1-1.3.3", ATTR{index}=="0", ATTR{name}=="Innomaker-U20CAM-1080p-S1: Inno", SYMLINK+="CAM_FACE3"
