@@ -33,7 +33,7 @@ case "${1:-status}" in
     done
     sleep 1
     echo "loopbacks started:"
-    paste <(printf '  %s\n' "${REAL[@]}") <(printf '-> %s\n' "${LOOP[@]}")
+    paste <(printf '  %s\n' "${REAL[@]}") <(printf -- '-> %s\n' "${LOOP[@]}")
     ;;
   stop)
     [[ -f $PIDFILE ]] || { echo "not running"; exit 0; }
