@@ -27,7 +27,7 @@ case "${1:-status}" in
              -f v4l2 -input_format mjpeg \
              -video_size ${WIDTH}x${HEIGHT} -framerate 30 \
              -i "${REAL[$i]}" \
-             -pix_fmt yuyv422 -f v4l2 "${LOOP[$i]}" \
+             -c:v copy -f v4l2 "${LOOP[$i]}" \
              >/tmp/loopback_$i.log 2>&1 &
       echo $! >> "$PIDFILE"
     done
