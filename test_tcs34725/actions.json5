@@ -1,0 +1,18 @@
+{
+    // Bench config — no actions defined.
+    //
+    // Required by ai_manager.init(): the AI manager unconditionally calls
+    // ActionsEngine.load_config(), which fails if the file is missing. An
+    // empty-but-valid skeleton is enough to satisfy the loader without
+    // wiring any actuator behaviour — testing color sensors only.
+    //
+    // Schema enforced by ActionsEngine.load_config (ai/action.py):
+    //   - "version" must equal 1
+    //   - "values" must be an object (read via get_object("values"))
+    //   - "actions" must be an object (read via get_object("actions"))
+    //   - "peripheral_positions" is optional
+
+    version: 1,
+    values: {},
+    actions: {},
+}
