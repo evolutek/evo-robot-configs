@@ -1,0 +1,105 @@
+{
+    // Test bench config — 12× TCS34725 color sensors on Hololutek 2026.
+    //
+    // Stripped-down twin of hololutek/peripherals.json5: only what is
+    // strictly required to bring up the 12 color sensors and their
+    // illumination LEDs. No pilot, no lidar, no trajman, no AX12, no
+    // servo_*. Boots fast, fails loud, exposes every sensor as a REPL
+    // command target.
+    //
+    // Surface for the test procedure:
+    //   color_sensor_11 .. color_sensor_14   (face 1, mux 0x70, PCA 0x40)
+    //   color_sensor_21 .. color_sensor_24   (face 2, mux 0x71, PCA 0x41)
+    //   color_sensor_31 .. color_sensor_34   (face 3, mux 0x72, PCA 0x42)
+    //
+    // Each sensor sits behind a different TCA9548A channel (ch0..ch3) on
+    // its face's Constellation board. All TCS34725 share I2C address 0x29
+    // — the mux is what makes them addressable individually. The driver
+    // does NOT select the channel itself; the I2C interface object handed
+    // to it (constellation_faceN.mux.chM) wraps every transaction with a
+    // mux select + lock, so the test code never has to think about it.
+    //
+    // Wiring sanity defaults:
+    //   - integration_time_ms: 200 — slow but stable, well above the
+    //     ~24 ms noise floor. Use auto_expose to retune on the bench if C
+    //     saturates or floors.
+    //   - gain: 1 — conservative against saturation under direct lighting
+    //     while a pad is being held close to the sensor. Bump to 4 if all
+    //     channels read < ~2000 with the LED on.
+    //   - light: color_led_NM — a wired LED is required for flash
+    //     differential (ambient subtraction). Omit it and the driver
+    //     silently disables the feature.
+    //   - use_flash_differential: omitted (driver default = true). The
+    //     test procedure flips it via set_flash_differential at runtime.
+
+    version: 1,
+    includes: [],
+    peripherals: {
+
+        // ───────────────────── Shared bus ─────────────────────
+
+        "i2c_bus": {
+            driver: "rpi_i2c",
+            args: { bus: 1 },
+        },
+
+        // ───────────────────── Face 1 (PCA 0x40, mux 0x70) ─────────────────────
+        // PCA channel map on the Constellation: ch0/ch7/ch11/ch12 = LEDs,
+        // others = servo outputs (unused in this test config).
+
+        "constellation_face1": {
+            driver: "constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x40, mux_address: 0x70, servo_freq_hz: 333 },
+        },
+
+        "color_led_11":    { driver: "pwm_led", args: { pwm: "constellation_face1.pwm.ch12" } },
+        "color_sensor_11": { driver: "tcs34725", args: { bus: "constellation_face1.mux.ch0", integration_time_ms: 200, gain: 1, light: "color_led_11" } },
+
+        "color_led_12":    { driver: "pwm_led", args: { pwm: "constellation_face1.pwm.ch11" } },
+        "color_sensor_12": { driver: "tcs34725", args: { bus: "constellation_face1.mux.ch1", integration_time_ms: 200, gain: 1, light: "color_led_12" } },
+
+        "color_led_13":    { driver: "pwm_led", args: { pwm: "constellation_face1.pwm.ch7" } },
+        "color_sensor_13": { driver: "tcs34725", args: { bus: "constellation_face1.mux.ch2", integration_time_ms: 200, gain: 1, light: "color_led_13" } },
+
+        "color_led_14":    { driver: "pwm_led", args: { pwm: "constellation_face1.pwm.ch0" } },
+        "color_sensor_14": { driver: "tcs34725", args: { bus: "constellation_face1.mux.ch3", integration_time_ms: 200, gain: 1, light: "color_led_14" } },
+
+        // ───────────────────── Face 2 (PCA 0x41, mux 0x71) ─────────────────────
+
+        "constellation_face2": {
+            driver: "constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x41, mux_address: 0x71, servo_freq_hz: 333 },
+        },
+
+        "color_led_21":    { driver: "pwm_led", args: { pwm: "constellation_face2.pwm.ch12" } },
+        "color_sensor_21": { driver: "tcs34725", args: { bus: "constellation_face2.mux.ch0", integration_time_ms: 200, gain: 1, light: "color_led_21" } },
+
+        "color_led_22":    { driver: "pwm_led", args: { pwm: "constellation_face2.pwm.ch11" } },
+        "color_sensor_22": { driver: "tcs34725", args: { bus: "constellation_face2.mux.ch1", integration_time_ms: 200, gain: 1, light: "color_led_22" } },
+
+        "color_led_23":    { driver: "pwm_led", args: { pwm: "constellation_face2.pwm.ch7" } },
+        "color_sensor_23": { driver: "tcs34725", args: { bus: "constellation_face2.mux.ch2", integration_time_ms: 200, gain: 1, light: "color_led_23" } },
+
+        "color_led_24":    { driver: "pwm_led", args: { pwm: "constellation_face2.pwm.ch0" } },
+        "color_sensor_24": { driver: "tcs34725", args: { bus: "constellation_face2.mux.ch3", integration_time_ms: 200, gain: 1, light: "color_led_24" } },
+
+        // ───────────────────── Face 3 (PCA 0x42, mux 0x72) ─────────────────────
+
+        "constellation_face3": {
+            driver: "constellation",
+            args: { bus: "i2c_bus", pwm_address: 0x42, mux_address: 0x72, servo_freq_hz: 333 },
+        },
+
+        "color_led_31":    { driver: "pwm_led", args: { pwm: "constellation_face3.pwm.ch12" } },
+        "color_sensor_31": { driver: "tcs34725", args: { bus: "constellation_face3.mux.ch0", integration_time_ms: 200, gain: 1, light: "color_led_31" } },
+
+        "color_led_32":    { driver: "pwm_led", args: { pwm: "constellation_face3.pwm.ch11" } },
+        "color_sensor_32": { driver: "tcs34725", args: { bus: "constellation_face3.mux.ch1", integration_time_ms: 200, gain: 1, light: "color_led_32" } },
+
+        "color_led_33":    { driver: "pwm_led", args: { pwm: "constellation_face3.pwm.ch7" } },
+        "color_sensor_33": { driver: "tcs34725", args: { bus: "constellation_face3.mux.ch2", integration_time_ms: 200, gain: 1, light: "color_led_33" } },
+
+        "color_led_34":    { driver: "pwm_led", args: { pwm: "constellation_face3.pwm.ch0" } },
+        "color_sensor_34": { driver: "tcs34725", args: { bus: "constellation_face3.mux.ch3", integration_time_ms: 200, gain: 1, light: "color_led_34" } },
+    },
+}
