@@ -1,6 +1,10 @@
 {
     version: 1,
 
+    // ========================================
+    //                CONSTANTS
+    // ========================================
+
     values: {
         positions: {
             // ========== Grab elevators position ==========
@@ -138,6 +142,10 @@
         }
     },
 
+    // ========================================
+    //                 ACTIONS
+    // ========================================
+
     actions: {
         move_grab_elevator: {
             inputs: {
@@ -145,34 +153,87 @@
                 "pos": {type: "str", path: "positions.grab_elevator.{id}"},
             },
             commands: [
-                {peripheral: "{id}_stepper", cmd: "go_to", args: {
+                {peripheral: "grab_elevator.{id}", cmd: "go_to", args: {
                     position: {path: "positions.grab_elevator.{id}.{pos}"},
                 }},
             ],
         },
 
         move_reverser_elevator: {
-
+            inputs: {
+                "side": {type: "str", path: "positions.reverser_elevator"},
+                "pos": {type: "str", path: "positions.reverser_elevator.{side}"},
+            },
+            commands: [
+                {peripheral: "reverser_elevator.{side}", cmd: "go_to", args: {
+                    position: {path: "positions.reverser_elevator.{side}.{pos}"},
+                }},
+            ],
         },
 
         move_cursor_arm: {
-
+            inputs: {
+                "arm": {type: "str", path: "positions.cursor_arm"},
+                "pos": {type: "str", path: "positions.cursor_arm.{arm}"},
+            },
+            commands: [
+                {peripheral: "cursor_arm.{arm}", cmd: "go_to", args: {
+                    position: {path: "positions.cursor_arm.{arm}.{pos}"},
+                }},
+            ],
         },
 
         move_reverser_head: {
-
+            inputs: {
+                "side": {type: "str", path: "positions.reverser_head"},
+                "arm": {type: "str", path: "positions.reverser_head.{side}"},
+                "pos": {type: "str", path: "positions.reverser_head.{side}.{arm}"},
+            },
+            commands: [
+                {peripheral: "reverser_head.{side}.{arm}", cmd: "go_to", args: {
+                    position: {path: "positions.reverser_head.{side}.{arm}.{pos}"},
+                }},
+            ],
         },
 
         move_reverser_arm: {
-
+            inputs: {
+                "side": {type: "str", path: "positions.reverser_arm"},
+                "arm": {type: "str", path: "positions.reverser_arm.{side}"},
+                "pos": {type: "str", path: "positions.reverser_arm.{side}.{arm}"},
+            },
+            commands: [
+                {peripheral: "reverser_arm.{side}.{arm}", cmd: "go_to", args: {
+                    position: {path: "positions.reverser_arm.{side}.{arm}.{pos}"},
+                }},
+            ],
         },
 
         move_compacting_arm: {
-
+            inputs: {
+                "side": {type: "str", path: "positions.compacting_arm"},
+                "arm": {type: "str", path: "positions.compacting_arm.{side}"},
+                "pos": {type: "str", path: "positions.compacting_arm.{side}.{arm}"},
+            },
+            commands: [
+                {peripheral: "compacting_arm.{side}.{arm}", cmd: "go_to", args: {
+                    position: {path: "positions.compacting_arm.{side}.{arm}.{pos}"},
+                    speed: {path: "speeds.compacting_arm.{pos}"}
+                }},
+            ],
         },
 
         move_lifting_arm: {
-
+            inputs: {
+                "arm": {type: "int", min: 1, max: 4},
+                "side": {type: "str", path: "positions.lifting_arm"},
+                "pos": {type: "str", path: "positions.lifting_arm.{side}"},
+            },
+            commands: [
+                {peripheral: "lifting_arm.{side}.{arm}", cmd: "go_to", args: {
+                    position: {path: "positions.lifting_arm.{side}.{pos}"},
+                }},
+            ],
         },
     }
 }

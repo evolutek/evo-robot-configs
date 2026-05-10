@@ -106,18 +106,18 @@
             args: { bus: "ax12_serial" },
         },
 
-        "right_compacting_arm":  { driver: "ax12", args: { bus: "bus_ax12", id: 1 } },
-        "left_compacting_arm":  { driver: "ax12", args: { bus: "bus_ax12", id: 2 } },
+        "compacting_arm.front.right":  { driver: "ax12", args: { bus: "bus_ax12", id: 1 } },
+        "compacting_arm.front.left":  { driver: "ax12", args: { bus: "bus_ax12", id: 2 } },
 
-        "right_reversing_arm":  { driver: "ax12", args: { bus: "bus_ax12", id: 3 } },
-        "left_reversing_arm":  { driver: "ax12", args: { bus: "bus_ax12", id: 4 } },
+        "reversing_arm.front.right":  { driver: "ax12", args: { bus: "bus_ax12", id: 3 } },
+        "reversing_arm.front.left":  { driver: "ax12", args: { bus: "bus_ax12", id: 4 } },
 
-        "reversing_arms_elevator":  { driver: "ax12", args: { bus: "bus_ax12", id: 5 } },
+        "reverser_elevator.front":  { driver: "ax12", args: { bus: "bus_ax12", id: 5 } },
 
-        "lifting_arm_1":  { driver: "ax12", args: { bus: "bus_ax12", id: 6 } },
-        "lifting_arm_2":  { driver: "ax12", args: { bus: "bus_ax12", id: 7 } },
-        "lifting_arm_3":  { driver: "ax12", args: { bus: "bus_ax12", id: 8 } },
-        "lifting_arm_4":  { driver: "ax12", args: { bus: "bus_ax12", id: 9 } },
+        "lifting_arm.front.1":  { driver: "ax12", args: { bus: "bus_ax12", id: 6 } },
+        "lifting_arm.front.2":  { driver: "ax12", args: { bus: "bus_ax12", id: 7 } },
+        "lifting_arm.front.3":  { driver: "ax12", args: { bus: "bus_ax12", id: 8 } },
+        "lifting_arm.front.4":  { driver: "ax12", args: { bus: "bus_ax12", id: 9 } },
 
         /*
         // ───────────────────── PWM Servos ─────────────────────
