@@ -1,5 +1,178 @@
 {
     version: 1,
-    values: {},
-    actions: {}
+
+    values: {
+        positions: {
+            // ========== Grab elevators position ==========
+            grab_elevator: {
+                front: {
+                    lowest: -920,
+                    middle: -700,
+                    reverse_down: -340,
+                    reverse_up: -150,
+                    highest: -5,
+                },
+                /*back: {
+                    lowest: -920,
+                    middle: -700,
+                    reverse_down: -340,
+                    reverse_up: -150,
+                    highest: -5,
+                },*/
+            }
+
+            // ========== Lifting arms positions ==========
+            lifting_arm: {
+                front: {
+                    opened: 820
+                    pre_grab: 593
+                    grab: 493
+                    drop: 512
+                    closed: 335
+                },
+                back: {
+                    opened: 820
+                    pre_grab: 593
+                    grab: 493
+                    drop: 512
+                    closed: 335
+                }
+            }
+
+            // ========== Compacting arms positions ==========
+            compacting_arm: {
+                front: {
+                    right: {
+                        opened: 155,
+                        pre_tassed: 255,
+                        tassed: 305,
+                        closed: 600,
+                    },
+                    left: {
+                        opened: 870,
+                        pre_tassed: 770,
+                        tassed: 720,
+                        closed: 425,
+                    },
+                },
+                /*back: {
+                    right: {
+                        opened: 155,
+                        pre_tassed: 255,
+                        tassed: 305,
+                        closed: 600,
+                    },
+                    left: {
+                        opened: 870,
+                        pre_tassed: 770,
+                        tassed: 720,
+                        closed: 425,
+                    },
+                }*/
+            },
+
+            // ========== Reverser elevators positions ==========
+            reverser_elevator: {
+                front: {
+                    top: 545,
+                    closed: 840,
+                    ground: 970,
+                }
+            },
+
+            // ========== Reverser arms positions ==========
+            reverser_arm: {
+                front: {
+                    right: {
+                        crate1: 720,
+                        crate2: 820,
+                        crate3: 920,
+                        crate4: null,
+                        closed: 512,
+                    },
+                    left: {
+                        crate1: null,
+                        crate2: 104,
+                        crate3: 204,
+                        crate4: 304,
+                        closed: 512,
+                    }
+                }
+                //back: ...
+            }
+
+            // ========== Reverser heads positions ==========
+            reverser_head: {
+                front: {
+                    right: {
+                        normal: 0,
+                        reversed: 180,
+                    },
+                    left: {
+                        normal: 180,
+                        reversed: 32,
+                    },
+                }
+            },
+
+            // ========== Cursor arms positions ==========
+            cursor_arm: {
+                right: {
+                    deployed: 60,
+                    closed: 4,
+                },
+                left: {
+                    deployed: 120,
+                    closed: 175,
+                },
+            }
+        },
+
+        speeds: {
+            compacting_arm: {
+                opened: 800,
+                pre_tassed: 120,
+                tassed: 800,
+                closed: 800,
+            }
+        }
+    },
+
+    actions: {
+        move_grab_elevator: {
+            inputs: {
+                "id": {type: "str", path: "positions.grab_elevator"},
+                "pos": {type: "str", path: "positions.grab_elevator.{id}"},
+            },
+            commands: [
+                {peripheral: "{id}_stepper", cmd: "go_to", args: {
+                    position: {path: "positions.grab_elevator.{id}.{pos}"},
+                }},
+            ],
+        },
+
+        move_reverser_elevator: {
+
+        },
+
+        move_cursor_arm: {
+
+        },
+
+        move_reverser_head: {
+
+        },
+
+        move_reverser_arm: {
+
+        },
+
+        move_compacting_arm: {
+
+        },
+
+        move_lifting_arm: {
+
+        },
+    }
 }
