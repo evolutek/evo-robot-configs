@@ -1,58 +1,59 @@
 from evo_lib.argtypes import ArgTypes
-from evo_lib.interfaces.servo import Servo
 
 from evo_robot.ai.script import ScriptContext, script
+from evo_robot.trajman.trajman import TrajmanPeripheral
 
 
 @script(args=[("side", ArgTypes.String(choices=["left", "right"]))])
 def main(ctx: ScriptContext, side: str):
-    servo = ctx.peripheral("servo", Servo)
+    trajman = ctx.peripheral("trajman", TrajmanPeripheral)
 
-    if side == "front":
-        compacting_arms = [CompactingArmId.FRONT_LEFT, CompactingArmId.FRONT_RIGHT]
-        reversing_arms = [ReversingArmId.FRONT_LEFT, ReversingArmId.FRONT_RIGHT]
-        color_sensors = [1, 2, 3, 4]
-    else:
-        raise RuntimeError("Invalid side: %s" % side)
+    move_grab_elevator = ctx.action("move_grab_elevator")
+    move_lifting_arm = ctx.action("move_lifting_arm")
+    move_compacting_arm = ctx.action("move_compacting_arm")
 
-    ctx.get_action("move_elevator").run(id="FRONT", position="LOWEST")
+    Task.wait_all(
+        move_grab_elevator.run(id="front", pos="lowest"),
+        move_lifting_arm.run(side=side, arm=1, pos="pre_grab"),
+        move_lifting_arm.run(side=side, arm=2, pos="pre_grab"),
+        move_lifting_arm.run(side=side, arm=3, pos="pre_grab"),
+        move_lifting_arm.run(side=side, arm=4, pos="pre_grab"),
+        move_compacting_arm.run(side=side, arm="right", pos="opened"),
+        move_compacting_arm.run(side=side, arm="left", pos="opened"),
+    )
 
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_1, LiftingArmPosition.PRE_GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_2, LiftingArmPosition.PRE_GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_3, LiftingArmPosition.PRE_GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_4, LiftingArmPosition.PRE_GRAB)
+    trajman.forward(130).wait()
 
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_RIGHT, CompactingArmPosition.OPENED)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_LEFT, CompactingArmPosition.OPENED)
-    sleep(0.2)
+    Task.wait_all(
+        move_compacting_arm.run(side=side, arm="right", pos="pre_tassed"),
+        move_compacting_arm.run(side=side, arm="left", pos="pre_tassed"),
+    )
+    Task.wait_all(
+        move_compacting_arm.run(side=side, arm="right", pos="tassed"),
+        move_compacting_arm.run(side=side, arm="left", pos="tassed"),
+    )
 
-    ctx.get_action("forward").run(130, avoid=True)
+    Task.wait_all(
+        ctx.action("actuators").run.pumps_grab(ids=[2, 3, 4, 5]),
+        move_lifting_arm.run(side=side, arm=1, pos="grab"),
+        move_lifting_arm.run(side=side, arm=2, pos="grab"),
+        move_lifting_arm.run(side=side, arm=3, pos="grab"),
+        move_lifting_arm.run(side=side, arm=4, pos="grab"),
+    )
 
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_RIGHT, CompactingArmPosition.PRE_TASSED)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_LEFT, CompactingArmPosition.PRE_TASSED)
-    sleep(0.15)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_RIGHT, CompactingArmPosition.TASSED)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_LEFT, CompactingArmPosition.TASSED)
-    sleep(0.5)
+    Task.wait_all(
+        move_compacting_arm.run(side=side, arm="right", pos="opened"),
+        move_compacting_arm.run(side=side, arm="left", pos="opened"),
+    )
 
-    ctx.get_action("actuators").run.pumps_grab(ids=[2, 3, 4, 5])
+    Task.wait_all(
+        move_lifting_arm.run(side=side, arm=1, pos="opened"),
+        move_lifting_arm.run(side=side, arm=2, pos="opened"),
+        move_lifting_arm.run(side=side, arm=3, pos="opened"),
+        move_lifting_arm.run(side=side, arm=4, pos="opened"),
+    )
 
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_1, LiftingArmPosition.GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_2, LiftingArmPosition.GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_3, LiftingArmPosition.GRAB)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_4, LiftingArmPosition.GRAB)
-    sleep(0.15)
-
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_RIGHT, CompactingArmPosition.OPENED)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_LEFT, CompactingArmPosition.OPENED)
-    sleep(0.06)
-
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_1, LiftingArmPosition.OPENED)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_2, LiftingArmPosition.OPENED)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_3, LiftingArmPosition.OPENED)
-    ctx.get_action("move_lifting_arm").run(LiftingArmId.FRONT_4, LiftingArmPosition.OPENED)
-    sleep(0.2)
-
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_RIGHT, CompactingArmPosition.CLOSED)
-    ctx.get_action("move_compacting_arm").run(CompactingArmId.FRONT_LEFT, CompactingArmPosition.CLOSED)
-    sleep(0.3)
+    Task.wait_all(
+        move_compacting_arm.run(side=side, arm="right", pos="closed"),
+        move_compacting_arm.run(side=side, arm="left", pos="closed"),
+    )
