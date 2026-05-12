@@ -69,6 +69,7 @@
         // ───────────────────── Cameras (3 faces) ─────────────────────
         // Innomaker U20CAM-1080p, fixed focus (no actuator).
         // marker_size_mm = ArUco on game bricks (30mm), not the ChArUco mire.
+        /*
         "cam_face1": {
             driver: "uvc_camera",
             args: {
@@ -93,6 +94,7 @@
                 calibration_path: "/home/pi/configs/hololutek/calibration/cam_face3.json5",
             },
         },
+        */
 
         // Trajman
         "trajman": {
