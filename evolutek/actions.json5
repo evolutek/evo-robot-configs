@@ -23,25 +23,25 @@
                     reverse_up: -150,
                     highest: -5,
                 },*/
-            }
+            },
 
             // ========== Lifting arms positions ==========
             lifting_arm: {
                 front: {
-                    opened: 820
-                    pre_grab: 593
-                    grab: 493
-                    drop: 512
+                    opened: 820,
+                    pre_grab: 593,
+                    grab: 493,
+                    drop: 512,
                     closed: 335
                 },
                 back: {
-                    opened: 820
-                    pre_grab: 593
-                    grab: 493
-                    drop: 512
+                    opened: 820,
+                    pre_grab: 593,
+                    grab: 493,
+                    drop: 512,
                     closed: 335
                 }
-            }
+            },
 
             // ========== Compacting arms positions ==========
             compacting_arm: {
@@ -103,7 +103,7 @@
                     }
                 }
                 //back: ...
-            }
+            },
 
             // ========== Reverser heads positions ==========
             reverser_head: {
@@ -233,6 +233,15 @@
                 {peripheral: "lifting_arm.{side}.{arm}", cmd: "go_to", args: {
                     position: {path: "positions.lifting_arm.{side}.{pos}"},
                 }},
+            ],
+        },
+
+        read_color: {
+            inputs: {
+                "sensor": {type: "int", min: 1, max: 4},
+            },
+            commands: [
+                {peripheral: "color_sensor.{sensor}", cmd: "get_color", args: {}},
             ],
         },
     }

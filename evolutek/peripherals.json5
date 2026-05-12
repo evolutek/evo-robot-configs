@@ -33,12 +33,10 @@
         // Mat-de-balise indicator strip. WS2812B chain on RPi GPIO 12 (PWM0,
         // DMA-driven, requires root). State-driven via the high level: Off /
         // Disabled / Loading / Running / Error, plus team color for Loading.
-        /*
         "mdb_led": {
             driver: "mdb_led",
             args: { num_pixels: 36, pin: 12, brightness: 1.0 },
         },
-        */
 
         // ───────────────────── Tirette ─────────────────────
 
@@ -51,7 +49,6 @@
             args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
         },
 
-        /*
         // Reset / Power buttons — pinout from legacy `service_reset.py`:
         //   - GPIO 21: reset push-button (active-HIGH, legacy used PUD_DOWN)
         //   - GPIO 5:  power latch (OUTPUT, driven HIGH by PowerButton.init()
@@ -91,7 +88,6 @@
             driver: "rpi_i2c",
             args: { bus: 1 },
         },
-        */
 
         // ───────────────────── AX12s ─────────────────────
 
@@ -119,7 +115,6 @@
         "lifting_arm.front.3":  { driver: "ax12", args: { bus: "bus_ax12", id: 8 } },
         "lifting_arm.front.4":  { driver: "ax12", args: { bus: "bus_ax12", id: 9 } },
 
-        /*
         // ───────────────────── PWM Servos ─────────────────────
 
         "rpi_i2c_1": {
@@ -132,18 +127,17 @@
             args: { bus: "rpi_i2c_1", address: 0x40, freq_hz: 50 },
         },
 
-        "servo_1": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch0", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
-        "servo_2": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
-        "servo_3": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 180, min_angle: 70, max_angle: 168 } },
+        // "servo_1": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch0", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
+        // "servo_2": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
+        // "servo_3": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 180, min_angle: 70, max_angle: 168 } },
 
         // ─────────────────────  Color sensors ─────────────────────
 
         "tca9548a_1": { driver: "tca9548a", args: { bus: "rpi_i2c_1",  } },
 
-        "color_sensor_1": { driver: "tcs34725", args: { bus: "tca9548a_1.ch0", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_2": { driver: "tcs34725", args: { bus: "tca9548a_1.ch1", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_3": { driver: "tcs34725", args: { bus: "tca9548a_1.ch2", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_4": { driver: "tcs34725", args: { bus: "tca9548a_1.ch3", integration_time_ms: 200, gain: 1 } },
-        */
+        "color_sensor.1": { driver: "tcs34725", args: { bus: "tca9548a_1.ch0", integration_time_ms: 200, gain: 1 } },
+        "color_sensor.2": { driver: "tcs34725", args: { bus: "tca9548a_1.ch1", integration_time_ms: 200, gain: 1 } },
+        "color_sensor.3": { driver: "tcs34725", args: { bus: "tca9548a_1.ch2", integration_time_ms: 200, gain: 1 } },
+        "color_sensor.4": { driver: "tcs34725", args: { bus: "tca9548a_1.ch3", integration_time_ms: 200, gain: 1 } },
     },
 }
