@@ -11,7 +11,9 @@
     //   - servo_{arm}3       : barrier servo — fingers 1 & 4 only (e.g. servo_113)
     //
     // AX12 values are raw goal positions (0-1023). PCA servo values are degrees.
-    // Driver commands: AX12 → move_to_position(position), PWMServo → move_to_angle(angle).
+    // Driver command: unified `move_to(position, unit, wait_multiplier)` on both
+    // AX12 and PWMServo (cf. evo_lib/interfaces/servo.py). `unit` is the
+    // ServoAngleUnit enum: NATIVE for raw AX12 goals, DEGREES for PWM servos.
     // Min/max bounds are enforced by the pwm_servo driver via min_angle/max_angle.
     // Calibration source: Dany (2026-04).
 
@@ -104,8 +106,10 @@
                 "position": {type: "str", path: "positions.arm.{arm}"},
             },
             commands: [
-                {peripheral: "ax12_{arm}", cmd: "move_to_position", args: {
+                {peripheral: "ax12_{arm}", cmd: "move_to", args: {
                     position: {path: "positions.arm.{arm}.{position}"},
+                    unit: {value: "NATIVE"},
+                    wait_multiplier: {value: 1.0},
                 }},
             ],
         },
@@ -119,8 +123,10 @@
                 "position": {type: "str", path: "positions.tip.{arm}"},
             },
             commands: [
-                {peripheral: "servo_{arm}2", cmd: "move_to_angle", args: {
-                    angle: {path: "positions.tip.{arm}.{position}"},
+                {peripheral: "servo_{arm}2", cmd: "move_to", args: {
+                    position: {path: "positions.tip.{arm}.{position}"},
+                    unit: {value: "DEGREES"},
+                    wait_multiplier: {value: 1.0},
                 }},
             ],
         },
@@ -133,8 +139,10 @@
                 "position": {type: "str", path: "positions.flipper.{arm}"},
             },
             commands: [
-                {peripheral: "servo_{arm}1", cmd: "move_to_angle", args: {
-                    angle: {path: "positions.flipper.{arm}.{position}"},
+                {peripheral: "servo_{arm}1", cmd: "move_to", args: {
+                    position: {path: "positions.flipper.{arm}.{position}"},
+                    unit: {value: "DEGREES"},
+                    wait_multiplier: {value: 1.0},
                 }},
             ],
         },
@@ -148,8 +156,10 @@
                 "position": {type: "str", path: "positions.barrier.{arm}"},
             },
             commands: [
-                {peripheral: "servo_{arm}3", cmd: "move_to_angle", args: {
-                    angle: {path: "positions.barrier.{arm}.{position}"},
+                {peripheral: "servo_{arm}3", cmd: "move_to", args: {
+                    position: {path: "positions.barrier.{arm}.{position}"},
+                    unit: {value: "DEGREES"},
+                    wait_multiplier: {value: 1.0},
                 }},
             ],
         },
