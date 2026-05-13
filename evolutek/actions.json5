@@ -235,5 +235,25 @@
                 }},
             ],
         },
+
+        pump_grab: {
+            inputs: {
+                "arm": {type: "int", min: 1, max: 4},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.{arm}", cmd: "grab", args: {}},
+            ],
+        },
+
+        pump_drop: {
+            inputs: {
+                "arm": {type: "int", min: 1, max: 4},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.{arm}", cmd: "drop", args: {}},
+            ],
+        },
     }
 }

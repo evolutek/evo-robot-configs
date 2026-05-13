@@ -93,6 +93,34 @@
         },
         */
 
+        // ───────────────────── Pumps ─────────────────────
+
+        "pump.front.crate_1": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+        "pump.front.crate_2": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+        "pump.front.crate_3": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+        "pump.front.crate_4": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+
+        "pump.front.reversing_left": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+        "pump.front.reversing_right": {
+            driver: "pump",
+            args: { gpio: "pca9685_gpio_ch0" },
+        },
+
         // ───────────────────── AX12s ─────────────────────
 
         // USB2AX dongle shared by all 12 AX12s across all 3 faces.

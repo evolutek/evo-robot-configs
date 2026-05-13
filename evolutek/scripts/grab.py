@@ -1,13 +1,16 @@
 from evo_lib.argtypes import ArgTypes
+from evo_lib.task import Task
 
 from evo_robot.ai.script import ScriptContext, script
 from evo_robot.trajman.trajman import TrajmanPeripheral
 
 
-@script(args=[("side", ArgTypes.String(choices=["left", "right"]))])
+@script(args=[("side", ArgTypes.String(choices=["front", "back"]))])
 def main(ctx: ScriptContext, side: str):
+    # Peripherals
     trajman = ctx.peripheral("trajman", TrajmanPeripheral)
 
+    # Actions
     move_grab_elevator = ctx.action("move_grab_elevator")
     move_lifting_arm = ctx.action("move_lifting_arm")
     move_compacting_arm = ctx.action("move_compacting_arm")
