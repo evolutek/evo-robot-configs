@@ -23,25 +23,25 @@
                     reverse_up: -150,
                     highest: -5,
                 },*/
-            }
+            },
 
             // ========== Lifting arms positions ==========
             lifting_arm: {
                 front: {
-                    opened: 820
-                    pre_grab: 593
-                    grab: 493
-                    drop: 512
-                    closed: 335
+                    opened: 820,
+                    pre_grab: 593,
+                    grab: 493,
+                    drop: 512,
+                    closed: 335,
                 },
                 back: {
-                    opened: 820
-                    pre_grab: 593
-                    grab: 493
-                    drop: 512
-                    closed: 335
+                    opened: 820,
+                    pre_grab: 593,
+                    grab: 493,
+                    drop: 512,
+                    closed: 335,
                 }
-            }
+            },
 
             // ========== Compacting arms positions ==========
             compacting_arm: {
@@ -103,7 +103,7 @@
                     }
                 }
                 //back: ...
-            }
+            },
 
             // ========== Reverser heads positions ==========
             reverser_head: {
