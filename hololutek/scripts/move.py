@@ -22,17 +22,18 @@ Dispatch by id length:
                        2=tip, 3=barrier per legacy `robot_actuators.py:437`).
                        `pos` is cross-checked against the kind.
 """
+
 from __future__ import annotations
 
 from typing import Any
 
 from evo_lib.argtypes import ArgTypes
+from evo_lib.task import Task
 from evo_robot.ai.script import ScriptContext, script
 
-
 ACTION_BY_KIND: dict[str, str] = {
-    "arm":     "move_arm",
-    "tip":     "move_tip_from_arm",
+    "arm": "move_arm",
+    "tip": "move_tip_from_arm",
     "flipper": "move_flipper_from_arm",
     "barrier": "move_barrier_from_arm",
 }
@@ -82,12 +83,10 @@ def _build_indexes(ctx: ScriptContext) -> None:
 
 
 def _invoke(ctx: ScriptContext, kind: str, arm: int, pos: str) -> Any:
-    """Fire the atomic move action for `kind` and wait for completion."""
+    """Fire the atomic move action; returns the running task (caller waits)."""
     action_name = ACTION_BY_KIND[kind]
     ctx.logger().info(f"-> {action_name}(arm={arm}, position={pos!r})")
-    task = ctx.action(action_name).run(arm=arm, position=pos)
-    task.wait()
-    return task
+    return ctx.action(action_name).run(arm=arm, position=pos)
 
 
 def _kind_from_pos(pos: str) -> str:
@@ -95,16 +94,17 @@ def _kind_from_pos(pos: str) -> str:
     kind = _position_to_kind.get(pos)
     if kind is None:
         raise ValueError(
-            f"move: unknown position {pos!r} "
-            f"(known: {sorted(_position_to_kind)})"
+            f"move: unknown position {pos!r} (known: {sorted(_position_to_kind)})"
         )
     return kind
 
 
-@script(args=[
-    ("id",  ArgTypes.I64()),
-    ("pos", ArgTypes.String()),
-])
+@script(
+    args=[
+        ("id", ArgTypes.I64()),
+        ("pos", ArgTypes.String()),
+    ]
+)
 def main(ctx: ScriptContext, id: int, pos: str) -> None:
     if _position_to_kind is None:
         _build_indexes(ctx)
@@ -116,6 +116,7 @@ def main(ctx: ScriptContext, id: int, pos: str) -> None:
         kind = _kind_from_pos(pos)
         face = int(s)
         legal_arms = _arms_per_kind[kind]
+        tasks = []
         for finger in (1, 2, 3, 4):
             arm = face * 10 + finger
             if arm not in legal_arms:
@@ -123,7 +124,8 @@ def main(ctx: ScriptContext, id: int, pos: str) -> None:
                     f"move face={face} pos={pos!r}: skip arm {arm} (no {kind})"
                 )
                 continue
-            _invoke(ctx, kind, arm, pos)
+            tasks.append(_invoke(ctx, kind, arm, pos))
+        Task.wait_all(*tasks)
         return
 
     if len(s) == 2:
@@ -131,7 +133,7 @@ def main(ctx: ScriptContext, id: int, pos: str) -> None:
         arm = int(s)
         if arm not in _arms_per_kind[kind]:
             raise ValueError(f"move: arm {arm} has no {kind}")
-        _invoke(ctx, kind, arm, pos)
+        _invoke(ctx, kind, arm, pos).wait()
         return
 
     if len(s) == 3:
@@ -153,7 +155,7 @@ def main(ctx: ScriptContext, id: int, pos: str) -> None:
                 f"move: position {pos!r} does not belong to kind {kind!r} "
                 f"(servo digit {servo_digit} on arm {arm})"
             )
-        _invoke(ctx, kind, arm, pos)
+        _invoke(ctx, kind, arm, pos).wait()
         return
 
     raise ValueError(f"move: invalid id {id!r} (expected 1, 2, or 3 digits)")
