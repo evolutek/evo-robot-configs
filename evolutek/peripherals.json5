@@ -4,7 +4,6 @@
     peripherals: {
         // ───────────────────── Pilot / Trajman / Avoid / Lidar ─────────────────────
 
-        // Pilot
         "pilot_serial": {
             driver: "rpi_serial",
             args: {
@@ -12,6 +11,7 @@
                 baudrate: 38400,
             }
         },
+
         "pilot": {
             driver: "differential_serial_pilot",
             args: {
@@ -89,53 +89,10 @@
             args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
         },
 
-        /*
-        // Reset / Power buttons — pinout from legacy `service_reset.py`:
-        //   - GPIO 21: reset push-button (active-HIGH, legacy used PUD_DOWN)
-        //   - GPIO 5:  power latch (OUTPUT, driven HIGH by PowerButton.init()
-        //              to keep the robot powered on)
-        //   - GPIO 6:  shutdown signal (active-LOW, legacy used PUD_UP)
-        // The current rpi_gpio driver hardcodes bias=DISABLED, so internal
-        // pulls are not configured here. Counts on external resistors on
-        // the carte-IO; if readings float, we'll need to expose bias.
-        "reset_button_gpio": {
-            driver: "rpi_gpio",
-            args: { pin: 21, direction: "INPUT" },
-        },
-        "reset_button": {
-            driver: "button",
-            args: { gpio: "reset_button_gpio", active_state: true, debounce_s: 0.15 },
-        },
-
-        "power_button_int_gpio": {
-            driver: "rpi_gpio",
-            args: { pin: 6, direction: "INPUT" },
-        },
-        "power_button_hold_gpio": {
-            driver: "rpi_gpio",
-            args: { pin: 5, direction: "OUTPUT" },
-        },
-        "power_button": {
-            driver: "power_button",
-            args: {
-                gpio_int: "power_button_int_gpio",
-                gpio_hold: "power_button_hold_gpio",
-                active_state: false,  // active-LOW per legacy POWER_INT pull-up + falling edge
-                debounce_s: 0.15,
-            },
-        },
-
-        "i2c_bus": {
-            driver: "rpi_i2c",
-            args: { bus: 1 },
-        },
-        */
-
         // ───────────────────── AX12s ─────────────────────
 
         // USB2AX dongle shared by all 12 AX12s across all 3 faces.
         // ax12_bus forces the serial to 1 Mbps on init.
-        /*
         "ax12_serial": {
             driver: "rpi_serial",
             args: { port: "/dev/ttyACM0" },
@@ -153,19 +110,84 @@
         "lifting_arm.front.2":  { driver: "ax12", args: { bus: "bus_ax12", id: 7 } },
         "lifting_arm.front.3":  { driver: "ax12", args: { bus: "bus_ax12", id: 8 } },
         "lifting_arm.front.4":  { driver: "ax12", args: { bus: "bus_ax12", id: 9 } },
-        */
 
-        // ───────────────────── PWM Servos ─────────────────────
+        // ───────────────────── Multiplexers ─────────────────────
 
         "rpi_i2c_1": {
             driver: "rpi_i2c",
             args: { bus: 1 },
         },
 
+        // PWM multiplexer
         "pca9685_1": {
             driver: "pca9685_chip",
-            args: { bus: "rpi_i2c_1", address: 0x70, freq_hz: 50 },
+            args: { bus: "rpi_i2c_1", address: 0x40, freq_hz: 50 },
         },
+
+        // GPIO multiplexer
+        "mcp23017_1": {
+            driver: "mcp23017_chip",
+            args: { bus: "rpi_i2c_1", address: 0x21 },
+        },
+
+        // I2C multiplexer
+        "tca9548a_1": {
+            driver: "tca9548a",
+            args: { bus: "rpi_i2c_1", address: 0x71 }
+        },
+
+        "mcp23017_1.ch8":  { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 8, direction: "OUTPUT" } },
+        "mcp23017_1.ch9":  { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 9, direction: "OUTPUT" } },
+        "mcp23017_1.ch10": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 10, direction: "OUTPUT" } },
+        "mcp23017_1.ch11": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 11, direction: "OUTPUT" } },
+        "mcp23017_1.ch12": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 12, direction: "OUTPUT" } },
+        "mcp23017_1.ch13": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 13, direction: "OUTPUT" } },
+        "mcp23017_1.ch14": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 14, direction: "OUTPUT" } },
+        "mcp23017_1.ch15": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 15, direction: "OUTPUT" } },
+
+        // ───────────────────── Pumps ─────────────────────
+
+        "pump.front.right_reverser": {
+            driver: "pump",
+            args: { "pump_gpio": "pca9685_1.ch0", "ev_gpio": "pca9685_1.ch1" },
+        },
+        "pump.front.left_reverser": {
+            driver: "pump",
+            args: { "pump_gpio": "pca9685_1.ch2", "ev_gpio": "pca9685_1.ch3" },
+        },
+        "pump.front.lifter_0": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch8", "ev_gpio": "pca9685_1.ch9" },
+        },
+        "pump.front.lifter_1": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch10", "ev_gpio": "pca9685_1.ch11" },
+        },
+        "pump.front.lifter_2": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch12", "ev_gpio": "pca9685_1.ch13" },
+        },
+        "pump.front.lifter_3": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch14", "ev_gpio": "pca9685_1.ch15" },
+        },
+
+        // ───────────────────── PWM Servos ─────────────────────
+
+        "reverser_head.front.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch12", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170 } },
+        "reverser_head.front.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch13", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170 } },
+
+        "cursor_arm.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch5", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170 } },
+        "cursor_arm.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch4", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170 } },
+
+        // ─────────────────────  Color sensors ─────────────────────
+
+        "color.front.1": { driver: "tcs34725", args: { bus: "tca9548a_1.ch0", integration_time_ms: 200, gain: 1 } },
+        "color.front.2": { driver: "tcs34725", args: { bus: "tca9548a_1.ch1", integration_time_ms: 200, gain: 1 } },
+        "color.front.3": { driver: "tcs34725", args: { bus: "tca9548a_1.ch2", integration_time_ms: 200, gain: 1 } },
+        "color.front.4": { driver: "tcs34725", args: { bus: "tca9548a_1.ch3", integration_time_ms: 200, gain: 1 } },
+
+        // ─────────────────────  Elevator ─────────────────────
 
         "elevator_board": {
             driver: "elevator_board",
@@ -182,20 +204,5 @@
                 "stepper_id": 0,
             },
         },
-
-        /*
-        "servo_1": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch0", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 195 } },
-        "servo_2": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch1", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 205, min_angle: 10, max_angle: 200 } },
-        "servo_3": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch2", min_pulse_us: 500, max_pulse_us: 2800, angle_range: 180, min_angle: 70, max_angle: 168 } },
-
-        // ─────────────────────  Color sensors ─────────────────────
-
-        "tca9548a_1": { driver: "tca9548a", args: { bus: "rpi_i2c_1",  } },
-
-        "color_sensor_1": { driver: "tcs34725", args: { bus: "tca9548a_1.ch0", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_2": { driver: "tcs34725", args: { bus: "tca9548a_1.ch1", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_3": { driver: "tcs34725", args: { bus: "tca9548a_1.ch2", integration_time_ms: 200, gain: 1 } },
-        "color_sensor_4": { driver: "tcs34725", args: { bus: "tca9548a_1.ch3", integration_time_ms: 200, gain: 1 } },
-        */
     },
 }

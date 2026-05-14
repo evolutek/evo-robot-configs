@@ -122,12 +122,12 @@
             // ========== Cursor arms positions ==========
             cursor_arm: {
                 right: {
-                    deployed: 60,
-                    closed: 4,
+                    deployed: 90,
+                    closed: 35,
                 },
                 left: {
-                    deployed: 120,
-                    closed: 175,
+                    deployed: 90,
+                    closed: 150,
                 },
             }
         },
