@@ -20,9 +20,9 @@ from evo_robot.trajman.trajman import TrajmanPeripheral
 START_POSE = Pose2D(x=200.0, y=1300.0, heading=0.0)
 
 WAYPOINTS: tuple[Pose2D, ...] = (
-    Pose2D(x=800.0, y=1300.0, heading=0.0),
-    Pose2D(x=1200.0, y=1300.0, heading=2 * pi / 3),
-    Pose2D(x=200.0, y=1300.0, heading=-2 * pi / 3),
+    Pose2D(x=550.0, y=1350.0, heading= pi / 6),
+    Pose2D(x=950.0, y=1350.0, heading= pi / 6),
+    Pose2D(x=250.0, y=1350.0, heading= 0),
 )
 
 
