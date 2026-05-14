@@ -30,9 +30,8 @@ automatically when running on BLUE — do NOT pre-mirror here.
 
 Pre-conditions (operator):
   - Robot physically placed at (200, 1300) with theta=0.
-  - Pose set via the GUI before launching the script (the script does NOT
-    call `set_position()` — that would mask a bad physical placement).
-  - Trajman enabled and motors un-freed (standard match-start flow).
+  - Trajman enabled (standard match-start flow). The script handles pose
+    init and motor engagement itself (set_position then unfree).
 
 Avoidance is left enabled (default `avoid=True`) so the lidar can stop
 the robot if anything wanders onto the corridor during the test.
@@ -40,9 +39,12 @@ the robot if anything wanders onto the corridor during the test.
 
 from __future__ import annotations
 
+from evo_lib.types.pose import Pose2D
 from evo_lib.types.vect import Vect2D
 from evo_robot.ai.script import ScriptContext, script
 from evo_robot.trajman.trajman import TrajmanPeripheral
+
+START_POSE = Pose2D(x=200.0, y=1300.0, heading=0.0)
 
 WAYPOINTS: tuple[tuple[float, float], ...] = (
     (800.0, 1300.0),   # leave start zone, reach the stack
@@ -56,7 +58,17 @@ def main(ctx: ScriptContext) -> None:
     log = ctx.logger()
     trajman = ctx.peripheral("trajman", TrajmanPeripheral)
 
-    log.info("homologation: start (assumes pose ~ (200, 1300, 0))")
+    # Init odometry first, THEN re-engage motors. Doing it in the other
+    # order would briefly drive on the previous (stale) pose estimate
+    # before the corrected pose takes effect — risk of a parasitic jolt.
+    log.info(
+        f"homologation: set_position ({START_POSE.x:.0f}, "
+        f"{START_POSE.y:.0f}, theta={START_POSE.heading:.3f} rad)"
+    )
+    trajman.set_position(START_POSE)
+
+    log.info("homologation: unfree motors")
+    trajman.unfree().wait()
 
     for x, y in WAYPOINTS:
         log.info(f"homologation: go_to ({x:.0f}, {y:.0f})")
