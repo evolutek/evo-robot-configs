@@ -28,7 +28,6 @@ from __future__ import annotations
 from typing import Any
 
 from evo_lib.argtypes import ArgTypes
-from evo_lib.drivers.smart_servo.ax12 import AX12, AX12Bus
 from evo_lib.task import Task
 from evo_robot.ai.script import ScriptContext, script
 
@@ -119,31 +118,7 @@ def main(ctx: ScriptContext, id: int, pos: str) -> None:
         kind = _kind_from_pos(pos)
         face = int(s)
         legal_arms = _arms_per_kind[kind]
-        if kind == "arm":
-            # AX12 share the serial bus — sequential WRITE+ACK round-trips
-            # cascade visibly (~10-50 ms each). SYNC_WRITE sends all goals
-            # in a single frame so the 4 servos start at the same cycle.
-            assert _positions_obj is not None
-            bus = ctx.peripheral("bus_ax12", AX12Bus)
-            arm_positions_obj = _positions_obj.get_object("arm")
-            raws_by_id: dict[int, int] = {}
-            wait_pairs: list[tuple[AX12, int]] = []
-            for finger in (1, 2, 3, 4):
-                arm = face * 10 + finger
-                if arm not in legal_arms:
-                    ctx.logger().debug(
-                        f"move face={face} pos={pos!r}: skip arm {arm} (no {kind})"
-                    )
-                    continue
-                raw = int(arm_positions_obj.get_object(str(arm))[pos])
-                ax12 = ctx.peripheral(f"ax12_{arm}", AX12)
-                raws_by_id[ax12.id] = raw
-                wait_pairs.append((ax12, raw))
-                ctx.logger().info(f"-> sync move_arm(arm={arm}, raw={raw})")
-            bus.sync_write_goal_positions(raws_by_id).wait()
-            Task.wait_all(*(ax12.wait_until_position(raw) for ax12, raw in wait_pairs))
-            return
-        # PCA servos: each channel is independent, parallel write-then-wait is fine.
+        # TODO: SYNC_WRITE for kind=="arm" once AX12Bus exposes it.
         tasks = []
         for finger in (1, 2, 3, 4):
             arm = face * 10 + finger
