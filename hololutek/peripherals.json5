@@ -101,7 +101,8 @@
             driver: "trajman",
             args: {
                 lidar: "mdb_lidar",
-                pilot: "pilot"
+                pilot: "pilot",
+                lidar_transform: {type: "identity", offset: {x: 0, y: 0}, angle: 0},
             }
         },
 
