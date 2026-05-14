@@ -1,39 +1,13 @@
-"""Initial actuator setup — fold tips, raise arms, set flippers to A on every face.
-
-Mirrors the spirit of legacy `robot_actions.py:initial()`, extended with a
-tip-folding pre-step so the gripper starts in its most retracted profile
-before the arms swing up.
-
-Order is intentional:
-  1. tips → folded   (smallest footprint, safe before any other motion)
-  2. arms → up       (clears the chassis)
-  3. flippers → a    (neutral side, before any color-based rejection)
-
-Each step uses the polymorphic `move(face, pos)` dispatcher from move.py,
-which fans out over the 4 fingers of the face in a single SYNC_WRITE for
-the AX12 shoulders (see move.py for the rationale).
-"""
-
 from __future__ import annotations
 
-import importlib.util
-from pathlib import Path
-
+from evo_lib.drivers.smart_servo.ax12 import AX12, AX12Bus
+from evo_lib.task import Task
 from evo_robot.ai.script import ScriptContext, script
-
-# Reuse the polymorphic `move(id, pos)` dispatcher from the sibling move.py.
-# Loaded by file path because the omnissiah ScriptsManager does not register
-# loaded scripts in sys.modules, so `from script.move import main` fails.
-_spec = importlib.util.spec_from_file_location(
-    "_evolutek_holo_move_helper_init", Path(__file__).parent / "move.py"
-)
-assert _spec is not None and _spec.loader is not None
-_move_module = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_move_module)
-move = _move_module.main
 
 
 FACES = (1, 2, 3)
+FINGERS = (1, 2, 3, 4)
+ARM_SPEED = 175
 
 
 @script(args=[])
@@ -41,13 +15,43 @@ def main(ctx: ScriptContext) -> None:
     log = ctx.logger()
 
     log.info("init: fold tips on all faces")
-    for face in FACES:
-        move(ctx, face, "folded")
+    Task.wait_all(*(ctx.run_script("move", id=f, pos="folded") for f in FACES))
 
-    log.info("init: raise arms on all faces")
-    for face in FACES:
-        move(ctx, face, "up")
+    log.info(f"init: arms up (speed {ARM_SPEED}), flippers A, barriers stored on all faces")
+    _arms_up(ctx)
+    Task.wait_all(*(
+        ctx.run_script("move", id=f, pos=pos)
+        for f in FACES
+        for pos in ("a", "stored")
+    ))
 
-    log.info("init: set flippers to A on all faces")
+
+def _arms_up(ctx: ScriptContext) -> None:
+    actions_cfg = ctx.robot().get_configs_manager().get_configs_by_name("actions")[0]
+    arm_positions = (
+        actions_cfg.raw.get_object("values").get_object("positions").get_object("arm")
+    )
+    arm_keys = set(arm_positions.keys())
+
+    bus = ctx.peripheral("bus_ax12", AX12Bus)
+    raws: dict[int, int] = {}
+    speeds: dict[int, int] = {}
+    waits: list[tuple[AX12, int]] = []
+
     for face in FACES:
-        move(ctx, face, "a")
+        for finger in FINGERS:
+            arm = face * 10 + finger
+            if str(arm) not in arm_keys:
+                continue
+            raw = int(arm_positions.get_object(str(arm))["up"])
+            ax12 = ctx.peripheral(f"ax12_{arm}", AX12)
+            raws[ax12.id] = raw
+            speeds[ax12.id] = ARM_SPEED
+            waits.append((ax12, raw))
+
+    if not raws:
+        return
+
+    bus.sync_write_speeds(speeds).wait()
+    bus.sync_write_goal_positions(raws).wait()
+    Task.wait_all(*(ax12.wait_until_position(raw) for ax12, raw in waits))
