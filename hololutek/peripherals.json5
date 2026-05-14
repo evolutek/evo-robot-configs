@@ -105,7 +105,7 @@
             args: {
                 lidar: "mdb_lidar",
                 pilot: "pilot",
-                lidar_transform: {type: "identity", offset: {x: 0, y: 0}, angle: 0},
+                lidar_transform: {type: "identity", offset: {x: 0, y: 0}, angle: -1.57},
             }
         },
 
