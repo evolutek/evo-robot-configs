@@ -1,4 +1,5 @@
 from evo_lib.argtypes import ArgTypes
+from evo_lib.task import Task
 
 from evo_robot.ai.script import ScriptContext, script
 from evo_robot.trajman.trajman import TrajmanPeripheral
@@ -11,6 +12,11 @@ def main(ctx: ScriptContext, side: str):
     move_grab_elevator = ctx.action("move_grab_elevator")
     move_lifting_arm = ctx.action("move_lifting_arm")
     move_compacting_arm = ctx.action("move_compacting_arm")
+    lift_pump_grab = ctx.action("lift_pump_grab")
+    lift_pump_drop = ctx.action("lift_pump_drop")
+    reverse_pump_grab = ctx.action("reverse_pump_grab")
+    reverse_pump_drop = ctx.action("reverse_pump_drop")
+
 
     Task.wait_all(
         move_grab_elevator.run(id="front", pos="lowest"),
@@ -34,7 +40,10 @@ def main(ctx: ScriptContext, side: str):
     )
 
     Task.wait_all(
-        ctx.action("actuators").run.pumps_grab(ids=[2, 3, 4, 5]),
+        lift_pump_grab.run(side=side, arm=1),
+        lift_pump_grab.run(side=side, arm=2),
+        lift_pump_grab.run(side=side, arm=3),
+        lift_pump_grab.run(side=side, arm=4),
         move_lifting_arm.run(side=side, arm=1, pos="grab"),
         move_lifting_arm.run(side=side, arm=2, pos="grab"),
         move_lifting_arm.run(side=side, arm=3, pos="grab"),
