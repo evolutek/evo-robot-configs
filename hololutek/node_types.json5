@@ -1,0 +1,6037 @@
+{
+    "version": 1,
+    "nodes": {
+        "wait": {
+            "title": "Wait",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "next",
+            ],
+            "value_inputs": {
+                "delay": {
+                    "type": "f32",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {},
+        },
+        "if": {
+            "title": "If",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "true",
+                "false",
+            ],
+            "value_inputs": {
+                "condition": {
+                    "type": "bool",
+                    "default": false,
+                },
+            },
+            "value_outputs": {},
+        },
+        "graph:entry": {
+            "title": "Entry",
+            "flow_inputs": [],
+            "flow_outputs": [
+                "next",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "graph:exit": {
+            "title": "Exit",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "math/add": {
+            "title": "Add",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/sub": {
+            "title": "Sub",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/mul": {
+            "title": "Mul",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/div": {
+            "title": "Div",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/mod": {
+            "title": "Mod",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/min": {
+            "title": "Min",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/max": {
+            "title": "Max",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/neg": {
+            "title": "Neg",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "math/abs": {
+            "title": "Abs",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "f32",
+                },
+            },
+        },
+        "logic/and": {
+            "title": "And",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "bool",
+                    "default": false,
+                },
+                "b": {
+                    "type": "bool",
+                    "default": false,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "logic/or": {
+            "title": "Or",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "bool",
+                    "default": false,
+                },
+                "b": {
+                    "type": "bool",
+                    "default": false,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "logic/xor": {
+            "title": "Xor",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "bool",
+                    "default": false,
+                },
+                "b": {
+                    "type": "bool",
+                    "default": false,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "logic/not": {
+            "title": "Not",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "bool",
+                    "default": false,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/eq": {
+            "title": "Eq",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/ne": {
+            "title": "Ne",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/lt": {
+            "title": "Lt",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/le": {
+            "title": "Le",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/gt": {
+            "title": "Gt",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/ge": {
+            "title": "Ge",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": 0.0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/eq_str": {
+            "title": "Eq (str)",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "str",
+                    "default": "",
+                },
+                "b": {
+                    "type": "str",
+                    "default": "",
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/ne_str": {
+            "title": "Ne (str)",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "str",
+                    "default": "",
+                },
+                "b": {
+                    "type": "str",
+                    "default": "",
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/eq_enum": {
+            "title": "Eq (enum)",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "enum_any",
+                    "default": 0,
+                },
+                "b": {
+                    "type": "enum_any",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "compare/ne_enum": {
+            "title": "Ne (enum)",
+            "flow_inputs": [],
+            "flow_outputs": [],
+            "value_inputs": {
+                "a": {
+                    "type": "enum_any",
+                    "default": 0,
+                },
+                "b": {
+                    "type": "enum_any",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {
+                "result": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:tirette:get_state": {
+            "title": "tirette.get_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "active_state": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_tirette:get_state": {
+            "title": "virtual_tirette.get_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "active_state": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_tirette:pull": {
+            "title": "virtual_tirette.pull",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tirette:put": {
+            "title": "virtual_tirette.put",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:button:is_pressed": {
+            "title": "button.is_pressed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "pressed": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_button:is_pressed": {
+            "title": "virtual_button.is_pressed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "pressed": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_button:press": {
+            "title": "virtual_button.press",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_button:release": {
+            "title": "virtual_button.release",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:power_button:is_pressed": {
+            "title": "power_button.is_pressed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "pressed": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:power_button:release_power": {
+            "title": "power_button.release_power",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:virtual_power_button:is_pressed": {
+            "title": "virtual_power_button.is_pressed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "pressed": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_power_button:release_power": {
+            "title": "virtual_power_button.release_power",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_power_button:press": {
+            "title": "virtual_power_button.press",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_power_button:release": {
+            "title": "virtual_power_button.release",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:stop": {
+            "title": "differential_serial_pilot.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:free": {
+            "title": "differential_serial_pilot.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:unfree": {
+            "title": "differential_serial_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:match_begin": {
+            "title": "differential_serial_pilot.match_begin",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:get_velocity": {
+            "title": "differential_serial_pilot.get_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:differential_serial_pilot:get_pose": {
+            "title": "differential_serial_pilot.get_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "heading": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:differential_serial_pilot:get_pose_and_velocity": {
+            "title": "differential_serial_pilot.get_pose_and_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                },
+                "velocity": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                    },
+                },
+            },
+        },
+        "cmd:differential_serial_pilot:set_pose": {
+            "title": "differential_serial_pilot.set_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:calibrate_otos": {
+            "title": "differential_serial_pilot.calibrate_otos",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:go_to": {
+            "title": "differential_serial_pilot.go_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:head_to": {
+            "title": "differential_serial_pilot.head_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "heading": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:look_at": {
+            "title": "differential_serial_pilot.look_at",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:rotate": {
+            "title": "differential_serial_pilot.rotate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:differential_serial_pilot:forward": {
+            "title": "differential_serial_pilot.forward",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "forward": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:stop": {
+            "title": "holonomic_serial_pilot.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:free": {
+            "title": "holonomic_serial_pilot.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:unfree": {
+            "title": "holonomic_serial_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:match_begin": {
+            "title": "holonomic_serial_pilot.match_begin",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:get_velocity": {
+            "title": "holonomic_serial_pilot.get_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:get_pose": {
+            "title": "holonomic_serial_pilot.get_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "heading": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:get_pose_and_velocity": {
+            "title": "holonomic_serial_pilot.get_pose_and_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                },
+                "velocity": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                    },
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:set_pose": {
+            "title": "holonomic_serial_pilot.set_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:calibrate_otos": {
+            "title": "holonomic_serial_pilot.calibrate_otos",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:go_to": {
+            "title": "holonomic_serial_pilot.go_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:head_to": {
+            "title": "holonomic_serial_pilot.head_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "heading": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:look_at": {
+            "title": "holonomic_serial_pilot.look_at",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:rotate": {
+            "title": "holonomic_serial_pilot.rotate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:forward": {
+            "title": "holonomic_serial_pilot.forward",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "forward": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:reset": {
+            "title": "holonomic_serial_pilot.reset",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_pid_trsl": {
+            "title": "holonomic_serial_pilot.set_pid_trsl",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "p": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "i": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "d": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_pid_rot": {
+            "title": "holonomic_serial_pilot.set_pid_rot",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "p": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "i": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "d": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_speeds": {
+            "title": "holonomic_serial_pilot.set_speeds",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "trsl_acc": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "trsl_dec": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "trsl_max": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "rot_acc": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "rot_dec": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "rot_max": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_wheels": {
+            "title": "holonomic_serial_pilot.set_wheels",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "diam_left": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "diam_right": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "spacing": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_delta_max": {
+            "title": "holonomic_serial_pilot.set_delta_max",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "trsl": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "rot": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_robot_size": {
+            "title": "holonomic_serial_pilot.set_robot_size",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "size_x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "size_y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_pwm": {
+            "title": "holonomic_serial_pilot.set_pwm",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "left": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "right": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:set_telemetry": {
+            "title": "holonomic_serial_pilot.set_telemetry",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "interval_ms": {
+                    "type": "i32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:recalibrate": {
+            "title": "holonomic_serial_pilot.recalibrate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "direction": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "offset": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "set_position": {
+                    "type": "u8",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:holonomic_serial_pilot:query_position": {
+            "title": "holonomic_serial_pilot.query_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "theta": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:query_pid_trsl": {
+            "title": "holonomic_serial_pilot.query_pid_trsl",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "kp": {
+                    "type": "f32",
+                },
+                "ki": {
+                    "type": "f32",
+                },
+                "kd": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:query_pid_rot": {
+            "title": "holonomic_serial_pilot.query_pid_rot",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "kp": {
+                    "type": "f32",
+                },
+                "ki": {
+                    "type": "f32",
+                },
+                "kd": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:query_speeds": {
+            "title": "holonomic_serial_pilot.query_speeds",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "trsl_acc": {
+                    "type": "f32",
+                },
+                "trsl_dec": {
+                    "type": "f32",
+                },
+                "trsl_max": {
+                    "type": "f32",
+                },
+                "rot_acc": {
+                    "type": "f32",
+                },
+                "rot_dec": {
+                    "type": "f32",
+                },
+                "rot_max": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:query_wheels": {
+            "title": "holonomic_serial_pilot.query_wheels",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "spacing": {
+                    "type": "f32",
+                },
+                "diam_left": {
+                    "type": "f32",
+                },
+                "diam_right": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:holonomic_serial_pilot:query_delta_max": {
+            "title": "holonomic_serial_pilot.query_delta_max",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "trsl": {
+                    "type": "f32",
+                },
+                "rot": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_differential_pilot:stop": {
+            "title": "virtual_differential_pilot.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:free": {
+            "title": "virtual_differential_pilot.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:unfree": {
+            "title": "virtual_differential_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:match_begin": {
+            "title": "virtual_differential_pilot.match_begin",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:get_velocity": {
+            "title": "virtual_differential_pilot.get_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_differential_pilot:get_pose": {
+            "title": "virtual_differential_pilot.get_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "heading": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_differential_pilot:get_pose_and_velocity": {
+            "title": "virtual_differential_pilot.get_pose_and_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                },
+                "velocity": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                    },
+                },
+            },
+        },
+        "cmd:virtual_differential_pilot:set_pose": {
+            "title": "virtual_differential_pilot.set_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:calibrate_otos": {
+            "title": "virtual_differential_pilot.calibrate_otos",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:go_to": {
+            "title": "virtual_differential_pilot.go_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:head_to": {
+            "title": "virtual_differential_pilot.head_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "heading": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:look_at": {
+            "title": "virtual_differential_pilot.look_at",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:rotate": {
+            "title": "virtual_differential_pilot.rotate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_differential_pilot:forward": {
+            "title": "virtual_differential_pilot.forward",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "forward": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:stop": {
+            "title": "virtual_holonomic_pilot.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:free": {
+            "title": "virtual_holonomic_pilot.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:unfree": {
+            "title": "virtual_holonomic_pilot.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:match_begin": {
+            "title": "virtual_holonomic_pilot.match_begin",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:get_velocity": {
+            "title": "virtual_holonomic_pilot.get_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_holonomic_pilot:get_pose": {
+            "title": "virtual_holonomic_pilot.get_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "heading": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_holonomic_pilot:get_pose_and_velocity": {
+            "title": "virtual_holonomic_pilot.get_pose_and_velocity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                },
+                "velocity": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                    },
+                },
+            },
+        },
+        "cmd:virtual_holonomic_pilot:set_pose": {
+            "title": "virtual_holonomic_pilot.set_pose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:calibrate_otos": {
+            "title": "virtual_holonomic_pilot.calibrate_otos",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:go_to": {
+            "title": "virtual_holonomic_pilot.go_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:head_to": {
+            "title": "virtual_holonomic_pilot.head_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "heading": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:look_at": {
+            "title": "virtual_holonomic_pilot.look_at",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "x": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "y": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_holonomic_pilot:rotate": {
+            "title": "virtual_holonomic_pilot.rotate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pca9685_channel:set_duty_cycle": {
+            "title": "pca9685_channel.set_duty_cycle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "duty": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pca9685_channel:set_pulse_width_us": {
+            "title": "pca9685_channel.set_pulse_width_us",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "width_us": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pca9685_channel:free": {
+            "title": "pca9685_channel.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pca9685_channel:get_duty_cycle": {
+            "title": "pca9685_channel.get_duty_cycle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "duty": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:pca9685_channel:get_pulse_width_us": {
+            "title": "pca9685_channel.get_pulse_width_us",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "width_us": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:pca9685_channel:is_enabled": {
+            "title": "pca9685_channel.is_enabled",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:pwm_servo:move_to_angle": {
+            "title": "pwm_servo.move_to_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pwm_servo:move_to_fraction": {
+            "title": "pwm_servo.move_to_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+                "fraction": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pwm_servo:free": {
+            "title": "pwm_servo.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pwm_servo:get_angle": {
+            "title": "pwm_servo.get_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "angle": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:pwm_servo:get_fraction": {
+            "title": "pwm_servo.get_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "fraction": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:pwm_servo:is_enabled": {
+            "title": "pwm_servo.is_enabled",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "servo_111",
+                        "servo_112",
+                        "servo_113",
+                        "servo_121",
+                        "servo_122",
+                        "servo_131",
+                        "servo_132",
+                        "servo_141",
+                        "servo_142",
+                        "servo_143",
+                        "servo_211",
+                        "servo_212",
+                        "servo_213",
+                        "servo_221",
+                        "servo_222",
+                        "servo_231",
+                        "servo_232",
+                        "servo_241",
+                        "servo_242",
+                        "servo_243",
+                        "servo_311",
+                        "servo_312",
+                        "servo_313",
+                        "servo_321",
+                        "servo_322",
+                        "servo_331",
+                        "servo_332",
+                        "servo_341",
+                        "servo_342",
+                        "servo_343",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:pwm_led:set_intensity": {
+            "title": "pwm_led.set_intensity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_led_11",
+                        "color_led_12",
+                        "color_led_13",
+                        "color_led_14",
+                        "color_led_21",
+                        "color_led_22",
+                        "color_led_23",
+                        "color_led_24",
+                        "color_led_31",
+                        "color_led_32",
+                        "color_led_33",
+                        "color_led_34",
+                    ],
+                    "default": null,
+                },
+                "intensity": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:pwm_led:get_intensity": {
+            "title": "pwm_led.get_intensity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_led_11",
+                        "color_led_12",
+                        "color_led_13",
+                        "color_led_14",
+                        "color_led_21",
+                        "color_led_22",
+                        "color_led_23",
+                        "color_led_24",
+                        "color_led_31",
+                        "color_led_32",
+                        "color_led_33",
+                        "color_led_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "intensity": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:mdb_led:set_pixel": {
+            "title": "mdb_led.set_pixel",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "index": {
+                    "type": "u16",
+                    "default": null,
+                },
+                "r": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "g": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:get_pixel": {
+            "title": "mdb_led.get_pixel",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "index": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "r": {
+                    "type": "f32",
+                },
+                "g": {
+                    "type": "f32",
+                },
+                "b": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:mdb_led:fill": {
+            "title": "mdb_led.fill",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "r": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "g": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:set_brightness": {
+            "title": "mdb_led.set_brightness",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "brightness": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:get_brightness": {
+            "title": "mdb_led.get_brightness",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "brightness": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:mdb_led:show": {
+            "title": "mdb_led.show",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:clear": {
+            "title": "mdb_led.clear",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:set_state": {
+            "title": "mdb_led.set_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "state": {
+                    "type": "enum",
+                    "values": {
+                        "Off": 0,
+                        "Disabled": 1,
+                        "Loading": 2,
+                        "Running": 3,
+                        "Error": 4,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:get_state": {
+            "title": "mdb_led.get_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "state": {
+                    "type": "enum",
+                    "values": {
+                        "Off": 0,
+                        "Disabled": 1,
+                        "Loading": 2,
+                        "Running": 3,
+                        "Error": 4,
+                    },
+                },
+            },
+        },
+        "cmd:mdb_led:set_team_color": {
+            "title": "mdb_led.set_team_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:mdb_led:get_team_color": {
+            "title": "mdb_led.get_team_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                },
+            },
+        },
+        "cmd:tcs34725:read_color": {
+            "title": "tcs34725.read_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "r": {
+                    "type": "u16",
+                },
+                "g": {
+                    "type": "u16",
+                },
+                "b": {
+                    "type": "u16",
+                },
+                "c": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:tcs34725:get_color": {
+            "title": "tcs34725.get_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                },
+            },
+        },
+        "cmd:tcs34725:set_light": {
+            "title": "tcs34725.set_light",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "intensity": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_light": {
+            "title": "tcs34725.get_light",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "intensity": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:tcs34725:set_gamma": {
+            "title": "tcs34725.set_gamma",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "gamma": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_gamma": {
+            "title": "tcs34725.get_gamma",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "gamma": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:tcs34725:calibrate": {
+            "title": "tcs34725.calibrate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:auto_expose": {
+            "title": "tcs34725.auto_expose",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "target_c": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:set_gain": {
+            "title": "tcs34725.set_gain",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "gain": {
+                    "type": "u8",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_gain": {
+            "title": "tcs34725.get_gain",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "gain": {
+                    "type": "u8",
+                },
+            },
+        },
+        "cmd:tcs34725:set_integration_time": {
+            "title": "tcs34725.set_integration_time",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "ms": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_integration_time": {
+            "title": "tcs34725.get_integration_time",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "ms": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:tcs34725:set_flash_differential": {
+            "title": "tcs34725.set_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+                "enabled": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:tcs34725:get_flash_differential": {
+            "title": "tcs34725.get_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:tcs34725:get_chip_id": {
+            "title": "tcs34725.get_chip_id",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "chip_id": {
+                    "type": "u8",
+                },
+            },
+        },
+        "cmd:tcs34725:get_status": {
+            "title": "tcs34725.get_status",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "color_sensor_11",
+                        "color_sensor_12",
+                        "color_sensor_13",
+                        "color_sensor_14",
+                        "color_sensor_21",
+                        "color_sensor_22",
+                        "color_sensor_23",
+                        "color_sensor_24",
+                        "color_sensor_31",
+                        "color_sensor_32",
+                        "color_sensor_33",
+                        "color_sensor_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "status": {
+                    "type": "u8",
+                },
+            },
+        },
+        "cmd:ax12:move_to_angle": {
+            "title": "ax12.move_to_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:move_to_fraction": {
+            "title": "ax12.move_to_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+                "fraction": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:free": {
+            "title": "ax12.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:move_to_position": {
+            "title": "ax12.move_to_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+                "position": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:get_position": {
+            "title": "ax12.get_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:ax12:get_angle": {
+            "title": "ax12.get_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "angle": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:ax12:get_fraction": {
+            "title": "ax12.get_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "fraction": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:ax12:set_speed": {
+            "title": "ax12.set_speed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+                "speed": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:enable": {
+            "title": "ax12.enable",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:reset": {
+            "title": "ax12.reset",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ax12:get_speed": {
+            "title": "ax12.get_speed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "speed": {
+                    "type": "i16",
+                },
+            },
+        },
+        "cmd:ax12:get_load": {
+            "title": "ax12.get_load",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "load": {
+                    "type": "i16",
+                },
+            },
+        },
+        "cmd:ax12:get_voltage": {
+            "title": "ax12.get_voltage",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "voltage": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:ax12:get_temperature": {
+            "title": "ax12.get_temperature",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "temperature": {
+                    "type": "u8",
+                },
+            },
+        },
+        "cmd:ax12:get_cw_angle_limit": {
+            "title": "ax12.get_cw_angle_limit",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "cw_limit": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:ax12:get_ccw_angle_limit": {
+            "title": "ax12.get_ccw_angle_limit",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "choices": [
+                        "ax12_11",
+                        "ax12_12",
+                        "ax12_13",
+                        "ax12_14",
+                        "ax12_21",
+                        "ax12_22",
+                        "ax12_23",
+                        "ax12_24",
+                        "ax12_31",
+                        "ax12_32",
+                        "ax12_33",
+                        "ax12_34",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "ccw_limit": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:virtual_smart_servo:move_to_angle": {
+            "title": "virtual_smart_servo.move_to_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_smart_servo:move_to_fraction": {
+            "title": "virtual_smart_servo.move_to_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "fraction": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_smart_servo:free": {
+            "title": "virtual_smart_servo.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_smart_servo:move_to_position": {
+            "title": "virtual_smart_servo.move_to_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "position": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_smart_servo:get_position": {
+            "title": "virtual_smart_servo.get_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:virtual_smart_servo:get_angle": {
+            "title": "virtual_smart_servo.get_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "angle": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_smart_servo:get_fraction": {
+            "title": "virtual_smart_servo.get_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "fraction": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_smart_servo:set_speed": {
+            "title": "virtual_smart_servo.set_speed",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "speed": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_rpi_i2c:write_to": {
+            "title": "virtual_rpi_i2c.write_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "data": {
+                    "type": "bytes",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_rpi_i2c:read_from": {
+            "title": "virtual_rpi_i2c.read_from",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "count": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "data": {
+                    "type": "bytes",
+                },
+            },
+        },
+        "cmd:virtual_rpi_i2c:write_then_read": {
+            "title": "virtual_rpi_i2c.write_then_read",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "out_data": {
+                    "type": "bytes",
+                    "default": null,
+                },
+                "in_count": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "data": {
+                    "type": "bytes",
+                },
+            },
+        },
+        "cmd:virtual_rpi_i2c:scan": {
+            "title": "virtual_rpi_i2c.scan",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "addresses": {
+                    "type": "array",
+                    "element_type": {
+                        "type": "u8",
+                    },
+                },
+            },
+        },
+        "cmd:virtual_pca9685_channel:set_duty_cycle": {
+            "title": "virtual_pca9685_channel.set_duty_cycle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "duty": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pca9685_channel:set_pulse_width_us": {
+            "title": "virtual_pca9685_channel.set_pulse_width_us",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "width_us": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pca9685_channel:free": {
+            "title": "virtual_pca9685_channel.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pca9685_channel:get_duty_cycle": {
+            "title": "virtual_pca9685_channel.get_duty_cycle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "duty": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_pca9685_channel:get_pulse_width_us": {
+            "title": "virtual_pca9685_channel.get_pulse_width_us",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "width_us": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_pca9685_channel:is_enabled": {
+            "title": "virtual_pca9685_channel.is_enabled",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_pwm_servo:move_to_angle": {
+            "title": "virtual_pwm_servo.move_to_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "angle": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pwm_servo:move_to_fraction": {
+            "title": "virtual_pwm_servo.move_to_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "fraction": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pwm_servo:free": {
+            "title": "virtual_pwm_servo.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pwm_servo:get_angle": {
+            "title": "virtual_pwm_servo.get_angle",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "angle": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_pwm_servo:get_fraction": {
+            "title": "virtual_pwm_servo.get_fraction",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "fraction": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_pwm_servo:is_enabled": {
+            "title": "virtual_pwm_servo.is_enabled",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_pwm_led:set_intensity": {
+            "title": "virtual_pwm_led.set_intensity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "intensity": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_pwm_led:get_intensity": {
+            "title": "virtual_pwm_led.get_intensity",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "intensity": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_mdb_led:set_pixel": {
+            "title": "virtual_mdb_led.set_pixel",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "index": {
+                    "type": "u16",
+                    "default": null,
+                },
+                "r": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "g": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:get_pixel": {
+            "title": "virtual_mdb_led.get_pixel",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "index": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "r": {
+                    "type": "f32",
+                },
+                "g": {
+                    "type": "f32",
+                },
+                "b": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_mdb_led:fill": {
+            "title": "virtual_mdb_led.fill",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "r": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "g": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "b": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:set_brightness": {
+            "title": "virtual_mdb_led.set_brightness",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "brightness": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:get_brightness": {
+            "title": "virtual_mdb_led.get_brightness",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "brightness": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_mdb_led:show": {
+            "title": "virtual_mdb_led.show",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:clear": {
+            "title": "virtual_mdb_led.clear",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:set_state": {
+            "title": "virtual_mdb_led.set_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "state": {
+                    "type": "enum",
+                    "values": {
+                        "Off": 0,
+                        "Disabled": 1,
+                        "Loading": 2,
+                        "Running": 3,
+                        "Error": 4,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:get_state": {
+            "title": "virtual_mdb_led.get_state",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "state": {
+                    "type": "enum",
+                    "values": {
+                        "Off": 0,
+                        "Disabled": 1,
+                        "Loading": 2,
+                        "Running": 3,
+                        "Error": 4,
+                    },
+                },
+            },
+        },
+        "cmd:virtual_mdb_led:set_team_color": {
+            "title": "virtual_mdb_led.set_team_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_mdb_led:get_team_color": {
+            "title": "virtual_mdb_led.get_team_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "color": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:read_color": {
+            "title": "virtual_tcs34725.read_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "r": {
+                    "type": "u16",
+                },
+                "g": {
+                    "type": "u16",
+                },
+                "b": {
+                    "type": "u16",
+                },
+                "c": {
+                    "type": "u16",
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:get_color": {
+            "title": "virtual_tcs34725.get_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:set_light": {
+            "title": "virtual_tcs34725.set_light",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "intensity": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:get_light": {
+            "title": "virtual_tcs34725.get_light",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "intensity": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:set_gamma": {
+            "title": "virtual_tcs34725.set_gamma",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "gamma": {
+                    "type": "f32",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:get_gamma": {
+            "title": "virtual_tcs34725.get_gamma",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "gamma": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:set_color": {
+            "title": "virtual_tcs34725.set_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:calibrate": {
+            "title": "virtual_tcs34725.calibrate",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "name": {
+                    "type": "enum",
+                    "values": {
+                        "Unknown": 0,
+                        "Black": 1,
+                        "White": 2,
+                        "Red": 3,
+                        "Green": 4,
+                        "Blue": 5,
+                        "Yellow": 6,
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:set_flash_differential": {
+            "title": "virtual_tcs34725.set_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "enabled": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_tcs34725:get_flash_differential": {
+            "title": "virtual_tcs34725.get_flash_differential",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "enabled": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_tcs34725:inject_color": {
+            "title": "virtual_tcs34725.inject_color",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "r": {
+                    "type": "u16",
+                    "default": null,
+                },
+                "g": {
+                    "type": "u16",
+                    "default": null,
+                },
+                "b": {
+                    "type": "u16",
+                    "default": null,
+                },
+                "c": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_gpio:read": {
+            "title": "virtual_gpio.read",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "state": {
+                    "type": "bool",
+                },
+            },
+        },
+        "cmd:virtual_gpio:write": {
+            "title": "virtual_gpio.write",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "state": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_gpio:inject_input": {
+            "title": "virtual_gpio.inject_input",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+                "state": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ld06:start": {
+            "title": "ld06.start",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:ld06:stop": {
+            "title": "ld06.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:rplidar:start": {
+            "title": "rplidar.start",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:rplidar:stop": {
+            "title": "rplidar.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:virtual_lidar:start": {
+            "title": "virtual_lidar.start",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:virtual_lidar:stop": {
+            "title": "virtual_lidar.stop",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "peripheral": {
+                    "type": "str",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:trajman:get_position": {
+            "title": "trajman.get_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "x": {
+                    "type": "f32",
+                },
+                "y": {
+                    "type": "f32",
+                },
+                "heading": {
+                    "type": "f32",
+                },
+            },
+        },
+        "cmd:trajman:set_position": {
+            "title": "trajman.set_position",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "pose": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                        "heading": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:trajman:enable": {
+            "title": "trajman.enable",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:trajman:disable": {
+            "title": "trajman.disable",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:trajman:free": {
+            "title": "trajman.free",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:trajman:unfree": {
+            "title": "trajman.unfree",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:trajman:abort": {
+            "title": "trajman.abort",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "cmd:trajman:go_to": {
+            "title": "trajman.go_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "target": {
+                    "type": "struct",
+                    "fields": {
+                        "x": {
+                            "type": "f32",
+                        },
+                        "y": {
+                            "type": "f32",
+                        },
+                    },
+                    "default": null,
+                },
+                "avoid": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:trajman:head_to": {
+            "title": "trajman.head_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "heading": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "avoid": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:trajman:forward": {
+            "title": "trajman.forward",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "distance": {
+                    "type": "f32",
+                    "default": null,
+                },
+                "avoid": {
+                    "type": "bool",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:rpi_i2c:write_to": {
+            "title": "rpi_i2c.write_to",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "data": {
+                    "type": "bytes",
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "cmd:rpi_i2c:read_from": {
+            "title": "rpi_i2c.read_from",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "count": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "data": {
+                    "type": "bytes",
+                },
+            },
+        },
+        "cmd:rpi_i2c:write_then_read": {
+            "title": "rpi_i2c.write_then_read",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "address": {
+                    "type": "u8",
+                    "default": null,
+                },
+                "out_data": {
+                    "type": "bytes",
+                    "default": null,
+                },
+                "in_count": {
+                    "type": "u16",
+                    "default": null,
+                },
+            },
+            "value_outputs": {
+                "data": {
+                    "type": "bytes",
+                },
+            },
+        },
+        "cmd:rpi_i2c:scan": {
+            "title": "rpi_i2c.scan",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {},
+            "value_outputs": {
+                "addresses": {
+                    "type": "array",
+                    "element_type": {
+                        "type": "u8",
+                    },
+                },
+            },
+        },
+        "action:move_arm": {
+            "title": "Action (move_arm)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "position": {
+                    "type": "str",
+                    "choices": [
+                        "half",
+                        "down",
+                        "up",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "action:move_tip_from_arm": {
+            "title": "Action (move_tip_from_arm)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "position": {
+                    "type": "str",
+                    "choices": [
+                        "flipped",
+                        "opened",
+                        "closed",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "action:move_flipper_from_arm": {
+            "title": "Action (move_flipper_from_arm)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "position": {
+                    "type": "str",
+                    "choices": [
+                        "a",
+                        "b",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "action:move_barrier_from_arm": {
+            "title": "Action (move_barrier_from_arm)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "position": {
+                    "type": "str",
+                    "choices": [
+                        "mid",
+                        "near",
+                        "far",
+                        "stored",
+                    ],
+                    "default": null,
+                },
+            },
+            "value_outputs": {},
+        },
+        "action:get_arm_position": {
+            "title": "Action (get_arm_position)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "epsilon": {
+                    "type": "f32",
+                    "default": -1.0,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "str",
+                },
+            },
+        },
+        "action:get_flipper_position": {
+            "title": "Action (get_flipper_position)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "epsilon": {
+                    "type": "f32",
+                    "default": -1.0,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "str",
+                },
+            },
+        },
+        "action:get_tip_position": {
+            "title": "Action (get_tip_position)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "epsilon": {
+                    "type": "f32",
+                    "default": -1.0,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "str",
+                },
+            },
+        },
+        "action:get_barrier_position": {
+            "title": "Action (get_barrier_position)",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "ok",
+                "fail",
+            ],
+            "value_inputs": {
+                "arm": {
+                    "type": "int",
+                    "min": 11,
+                    "max": 34,
+                    "default": null,
+                },
+                "epsilon": {
+                    "type": "f32",
+                    "default": -1.0,
+                },
+            },
+            "value_outputs": {
+                "position": {
+                    "type": "str",
+                },
+            },
+        },
+        "event:setup.start_strategy": {
+            "title": "Event (setup.start_strategy)",
+            "flow_inputs": [],
+            "flow_outputs": [
+                "next",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "event:ending.reset": {
+            "title": "Event (ending.reset)",
+            "flow_inputs": [],
+            "flow_outputs": [
+                "next",
+            ],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "graph:call:match_belgique": {
+            "title": "Call",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [],
+            "value_inputs": {},
+            "value_outputs": {},
+        },
+        "graph:call:store_finger": {
+            "title": "Call",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "done",
+                "fail",
+            ],
+            "value_inputs": {
+                "finger": {
+                    "type": "int",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {},
+        },
+        "graph:call:test": {
+            "title": "Call",
+            "flow_inputs": [
+                "flow",
+            ],
+            "flow_outputs": [
+                "done",
+                "fail",
+            ],
+            "value_inputs": {
+                "finger": {
+                    "type": "int",
+                    "default": 0,
+                },
+            },
+            "value_outputs": {},
+        },
+    },
+}

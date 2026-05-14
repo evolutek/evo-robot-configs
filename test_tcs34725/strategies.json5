@@ -1,0 +1,12 @@
+{
+    // Bench config — no strategies defined.
+    //
+    // Required by ai_manager._load_strategies(): it calls load_config(
+    // "strategies", "strategies.json5") unconditionally. An empty
+    // strategies map is valid (the loop iterates over zero entries) and
+    // skips graph loading entirely — exactly what we want for a sensor
+    // bench that should boot to the REPL without any match logic.
+
+    version: 1,
+    strategies: {},
+}
