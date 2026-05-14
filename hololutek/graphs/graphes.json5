@@ -540,5 +540,31 @@
                 },
             },
         },
+        homologation: {
+            value_inputs: {},
+            value_outputs: {},
+            flow_outputs: [],
+            nodes: {
+                'node-1': {
+                    type: 'graph:entry',
+                    inputs: {},
+                    outputs: {},
+                    flow: {
+                        next: [
+                            'node-2:flow',
+                        ],
+                    },
+                },
+                'node-2': {
+                    type: 'script:homologation',
+                    inputs: {},
+                    outputs: {},
+                    flow: {
+                        ok: [],
+                        fail: [],
+                    },
+                },
+            },
+        },
     },
 }

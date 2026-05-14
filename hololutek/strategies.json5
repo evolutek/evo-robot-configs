@@ -17,5 +17,10 @@
             graph: "match_belgique",
             title: "Match Belgique 2025",
         },
+        homologation: {
+            runner: "graph",
+            graph: "homologation",
+            title: "Homologation",
+        },
     },
 }
