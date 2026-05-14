@@ -109,12 +109,14 @@
             reverser_head: {
                 front: {
                     right: {
-                        normal: 0,
-                        reversed: 180,
+                        normal: 180,
+                        vertical: 70,
+                        reversed: 0,
                     },
                     left: {
-                        normal: 180,
-                        reversed: 32,
+                        normal: 0,
+                        vertical: 80,
+                        reversed: 175,
                     },
                 }
             },
@@ -233,6 +235,46 @@
                 {peripheral: "lifting_arm.{side}.{arm}", cmd: "go_to", args: {
                     position: {path: "positions.lifting_arm.{side}.{pos}"},
                 }},
+            ],
+        },
+
+        lift_pump_grab: {
+            inputs: {
+                "arm": {type: "int", min: 1, max: 4},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.lifter_{arm}", cmd: "grab", args: {}},
+            ],
+        },
+
+        lift_pump_drop: {
+            inputs: {
+                "arm": {type: "int", min: 1, max: 4},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.lifter_{arm}", cmd: "drop", args: {}},
+            ],
+        },
+
+        reverse_pump_grab: {
+            inputs: {
+                "arm": {type: "str"},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.{arm}_reverser", cmd: "grab", args: {}},
+            ],
+        },
+
+        reverse_pump_drop: {
+            inputs: {
+                "arm": {type: "str"},
+                "side": {type: "str"},
+            },
+            commands: [
+                {peripheral: "pump.{side}.{arm}_reverser", cmd: "drop", args: {}},
             ],
         },
     }

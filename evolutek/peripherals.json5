@@ -179,11 +179,11 @@
 
         // ───────────────────── PWM Servos ─────────────────────
 
-        "reverser_head.front.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch12", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170, move_speed: 200 } },
-        "reverser_head.front.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch13", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170, move_speed: 200 } },
+        "reverser_head.front.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch12", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+        "reverser_head.front.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch13", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
 
-        "cursor_arm.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch5", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170, move_speed: 200 } },
-        "cursor_arm.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch4", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 10, max_angle: 170, move_speed: 200 } },
+        "cursor_arm.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch5", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+        "cursor_arm.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch4", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
 
         // ─────────────────────  Color sensors ─────────────────────
 
