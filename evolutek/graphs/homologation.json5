@@ -1,0 +1,16 @@
+{
+    version: 1,
+    graphes: {
+        homologation: {
+            nodes: {
+                entry: {
+                    type: "graph:entry",
+                    flow: {"next": ["script"]},
+                },
+                script: {
+                    type: "script:homologation"
+                },
+            },
+        },
+    },
+}

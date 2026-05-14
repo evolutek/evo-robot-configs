@@ -1,0 +1,213 @@
+{
+    version: 1,
+
+    peripherals: {
+        // ───────────────────── Pilot / Trajman / Avoid / Lidar ─────────────────────
+
+        "pilot_serial": {
+            driver: "rpi_serial",
+            args: {
+                port: "/dev/ttyS0",
+                baudrate: 38400,
+            }
+        },
+
+        "pilot": {
+            driver: "differential_serial_pilot",
+            args: {
+                serial: "pilot_serial",
+
+                diam_left: 48.81030256462097,
+                diam_right: 48.81030256462097,
+                spacing: 266.4143212259529,
+
+                trsl_max_accel: 900,
+                trsl_max_decel: 900,
+                trsl_max_speed: 1500,
+
+                rot_max_accel: 10,
+                rot_max_decel: 10,
+                rot_max_speed: 21,
+
+                trsl_p: 220,
+                trsl_i: 10000000,
+                trsl_d: 8,
+
+                rot_p: 60000,
+                rot_i: 1000,
+                rot_d: 10,
+
+                max_delta_rot: 0.75,
+                max_delta_trsl: 200,
+
+                transform: {
+                    type: "rigid",
+                    offset: { x: 0, y: 1500 },
+                    angle: 0,
+                },
+            }
+        },
+
+        // Lidar
+        "mdb_lidar": {
+            driver: "rplidar",
+            args: { port: "/dev/ttyUSB0", baudrate: 115200 }
+        },
+
+        // Trajman
+        "trajman": {
+            driver: "trajman",
+            args: {
+                lidar: "mdb_lidar",
+                pilot: "pilot",
+                lidar_transform: {
+                    type: "rigid",
+                    offset: { x: 0, y: 0 },
+                    angle: 0,
+                },
+            }
+        },
+
+        // ───────────────────── MDB ─────────────────────
+
+        // Mat-de-balise indicator strip. WS2812B chain on RPi GPIO 12 (PWM0,
+        // DMA-driven, requires root). State-driven via the high level: Off /
+        // Disabled / Loading / Running / Error, plus team color for Loading.
+        "mdb_led": {
+            driver: "mdb_led",
+            args: { num_pixels: 36, pin: 12, brightness: 1.0 },
+        },
+
+        // ───────────────────── Tirette ─────────────────────
+
+        "tirette_gpio": {
+            driver: "rpi_gpio",
+            args: { pin: 17, direction: "INPUT" },
+        },
+        "tirette": {
+            driver: "tirette",
+            args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
+        },
+
+        // ───────────────────── AX12s ─────────────────────
+
+        // USB2AX dongle shared by all 12 AX12s across all 3 faces.
+        // ax12_bus forces the serial to 1 Mbps on init.
+        "ax12_serial": {
+            driver: "rpi_serial",
+            args: { port: "/dev/ttyACM0" },
+        },
+
+        "bus_ax12": {
+            driver: "ax12_bus",
+            args: { bus: "ax12_serial" }
+        },
+
+        "compacting_arm.front.right":  { driver: "ax12", args: { bus: "bus_ax12", id: 1 } },
+        "compacting_arm.front.left":  { driver: "ax12", args: { bus: "bus_ax12", id: 2 } },
+
+        "reversing_arm.front.right":  { driver: "ax12", args: { bus: "bus_ax12", id: 3 } },
+        "reversing_arm.front.left":  { driver: "ax12", args: { bus: "bus_ax12", id: 4 } },
+
+        "reverser_elevator.front":  { driver: "ax12", args: { bus: "bus_ax12", id: 5 } },
+
+        "lifting_arm.front.1":  { driver: "ax12", args: { bus: "bus_ax12", id: 6 } },
+        "lifting_arm.front.2":  { driver: "ax12", args: { bus: "bus_ax12", id: 7 } },
+        "lifting_arm.front.3":  { driver: "ax12", args: { bus: "bus_ax12", id: 8 } },
+        "lifting_arm.front.4":  { driver: "ax12", args: { bus: "bus_ax12", id: 9 } },
+
+        // ───────────────────── Multiplexers ─────────────────────
+
+        "rpi_i2c_1": {
+            driver: "rpi_i2c",
+            args: { bus: 1 },
+        },
+
+        // PWM multiplexer
+        "pca9685_1": {
+            driver: "pca9685_chip",
+            args: { bus: "rpi_i2c_1", address: 0x40, freq_hz: 50 },
+        },
+
+        // GPIO multiplexer
+        "mcp23017_1": {
+            driver: "mcp23017",
+            args: { bus: "rpi_i2c_1", address: 0x21 },
+        },
+
+        // I2C multiplexer
+        "tca9548a_1": {
+            driver: "tca9548a",
+            args: { bus: "rpi_i2c_1", address: 0x71 }
+        },
+
+        "mcp23017_1.ch8":  { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 8, direction: "OUTPUT" } },
+        "mcp23017_1.ch9":  { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 9, direction: "OUTPUT" } },
+        "mcp23017_1.ch10": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 10, direction: "OUTPUT" } },
+        "mcp23017_1.ch11": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 11, direction: "OUTPUT" } },
+        "mcp23017_1.ch12": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 12, direction: "OUTPUT" } },
+        "mcp23017_1.ch13": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 13, direction: "OUTPUT" } },
+        "mcp23017_1.ch14": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 14, direction: "OUTPUT" } },
+        "mcp23017_1.ch15": { driver: "mcp23017_pin", args: { chip: "mcp23017_1", pin: 15, direction: "OUTPUT" } },
+
+        // ───────────────────── Pumps ─────────────────────
+
+        "pump.front.right_reverser": {
+            driver: "pump",
+            args: { "pump_gpio": "pca9685_1.ch0", "ev_gpio": "pca9685_1.ch1" },
+        },
+        "pump.front.left_reverser": {
+            driver: "pump",
+            args: { "pump_gpio": "pca9685_1.ch2", "ev_gpio": "pca9685_1.ch3" },
+        },
+        "pump.front.lifter_0": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch8", "ev_gpio": "pca9685_1.ch9" },
+        },
+        "pump.front.lifter_1": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch10", "ev_gpio": "pca9685_1.ch11" },
+        },
+        "pump.front.lifter_2": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch12", "ev_gpio": "pca9685_1.ch13" },
+        },
+        "pump.front.lifter_3": {
+            driver: "pump",
+            args: { "pump_gpio": "mcp23017_1.ch14", "ev_gpio": "pca9685_1.ch15" },
+        },
+
+        // ───────────────────── PWM Servos ─────────────────────
+
+        "reverser_head.front.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch12", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+        "reverser_head.front.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch13", min_pulse_us: 400, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+
+        "cursor_arm.right": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch5", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+        "cursor_arm.left": { driver: "pwm_servo", args: { pwm: "pca9685_1.ch4", min_pulse_us: 500, max_pulse_us: 2700, angle_range: 180, min_angle: 0, max_angle: 180, move_speed: 200 } },
+
+        // ─────────────────────  Color sensors ─────────────────────
+
+        "color.front.1": { driver: "tcs34725", args: { bus: "tca9548a_1.ch0", integration_time_ms: 200, gain: 1 } },
+        "color.front.2": { driver: "tcs34725", args: { bus: "tca9548a_1.ch1", integration_time_ms: 200, gain: 1 } },
+        "color.front.3": { driver: "tcs34725", args: { bus: "tca9548a_1.ch2", integration_time_ms: 200, gain: 1 } },
+        "color.front.4": { driver: "tcs34725", args: { bus: "tca9548a_1.ch3", integration_time_ms: 200, gain: 1 } },
+
+        // ─────────────────────  Elevator ─────────────────────
+
+        "elevator_board": {
+            driver: "elevator_board",
+            args: {
+                "i2c": "rpi_i2c_1",
+                "address": 0x69,
+            },
+        },
+
+        "elevator.front": {
+            driver: "elevator_board_stepper",
+            args: {
+                "board": "elevator_board",
+                "stepper_id": 0,
+            },
+        },
+    },
+}

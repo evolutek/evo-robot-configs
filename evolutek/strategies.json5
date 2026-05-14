@@ -1,0 +1,15 @@
+{
+    version: 1,
+
+    strategies: {
+        homologation: {
+            runner: "graph",
+            graph: "homologation",
+            title: "Homologation",
+        },
+    },
+
+    starting_positions: [
+        { x: 300, y: 1100, theta: 0 },
+    ]
+}
