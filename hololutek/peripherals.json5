@@ -50,7 +50,10 @@
         },
         "pilot": {
             driver: "holonomic_serial_pilot",
-            args: { serial: "pilot_serial" }
+            // telemetry_interval (s): asserv pose+velocity stream period.
+            // 0.1 = 10 Hz — enough for AvoidanceHandler reasoning, low load
+            // on the 256k serial bus and on firmware interrupts.
+            args: { serial: "pilot_serial", telemetry_interval: 0.1 }
         },
 
         // Lidar
