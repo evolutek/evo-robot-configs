@@ -126,6 +126,21 @@
             args: { gpio: "tirette_gpio", active_state: true, debounce_s: 0.15 },
         },
 
+        // BAU (bouton d'arrêt d'urgence) on GPIO 20. Legacy actuators.py used
+        // a 50ms polling loop here; we use GPIO-edge interrupts via Button.
+        // Polarity: HIGH (1) = BAU released (armed, actuators active),
+        // LOW (0) = BAU engaged. Button driver convention is "pressed =
+        // active_state", so active_state:false makes get_trigger_event()
+        // emit True when the BAU is engaged.
+        "bau_gpio": {
+            driver: "rpi_gpio",
+            args: { pin: 20, direction: "INPUT" },
+        },
+        "bau": {
+            driver: "button",
+            args: { gpio: "bau_gpio", active_state: false, debounce_s: 0.15 },
+        },
+
         // Reset / Power buttons — pinout from legacy `service_reset.py`:
         //   - GPIO 21: reset push-button (active-HIGH, legacy used PUD_DOWN)
         //   - GPIO 5:  power latch (OUTPUT, driven HIGH by PowerButton.init()
