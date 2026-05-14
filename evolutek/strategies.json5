@@ -1,10 +1,15 @@
 {
     version: 1,
+
     strategies: {
-        /*main: {
+        homologation: {
             runner: "graph",
-            graph: "main",
-            title: "Main",
-        },*/
+            graph: "homologation",
+            title: "Homologation",
+        },
     },
+
+    starting_positions: [
+        { x: 300, y: 1100, theta: 0 },
+    ]
 }
